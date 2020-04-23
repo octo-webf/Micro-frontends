@@ -1,0 +1,53 @@
+body{margin:0}
+
+header
+{
+    height:10vh;
+    text-align:center;
+    padding-top:4vh;
+    background-color: lightgray;
+    box-shadow: 0 5 10px gray;
+    z-index:1000;
+}
+
+h1, p, nav
+{
+    margin:0;
+    font-family: sans-serif;
+}
+
+nav
+{
+    display: flex;
+    justify-content: center;
+}
+
+.btn
+{
+    text-align: center;
+    padding:2vh;
+    border: 1px solid lightgray;
+    width:33vw;
+}
+
+
+iframe
+{
+    border:none;
+    width:30vw;
+    height:80vh;
+    box-shadow: 0 0 10px gray;
+}
+
+.container
+{
+    display:flex;
+    justify-content: space-evenly;
+    text-align:center;
+    padding-top:2vh;
+}
+
+#app-container
+{
+    width:100%;
+}

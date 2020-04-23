@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <title>Micro-frontends using Web Components</title>
+</head>
+
+<body>
+
+  <div class="container">
+        <div id="ng-container"></div>
+        <!--<div id="react-container"></div>-->
+    </div>
+
+  </div>
+
+  <script>
+
+      //React Component
+
+      /*
+      const reactEl = document.createElement('react-el');
+
+      const reactElContainer =  document.getElementById('react-container')
+      if (reactElContainer.children.length > 0) {
+        reactElContainer.removeChild(reactElContainer.children[0]);
+      }
+      reactElContainer.appendChild(reactEl);
+      */
+
+      //Angular Component
+      const ngEl = document.createElement('ng-el');
+
+      const ngElContainer =  document.getElementById('ng-container')
+      if (ngElContainer.children.length > 0) {
+        ngElContainer.removeChild(ngElContainer.children[0]);
+      }
+      ngElContainer.appendChild(ngEl);
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.9.1/zone.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
+
+  <script src="http://localhost:5001/main.js"></script>
+  <!--<script src="http://localhost:5002/main.js"></script>-->
+  
+</body>
+</html>
