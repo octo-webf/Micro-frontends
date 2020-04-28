@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-  <title>Micro-frontends w/ iframe</title>
-  <link rel='stylesheet' href="./styles.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Micro-frontends w/ iframe</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Les Frameworks peuvent co-exister</h1>
-        <p>Et c'est plutôt cool</p>
-        <a href="./index.html"><button>Retour</button></a>
+      <h1>Les Frameworks peuvent co-exister</h1>
+      <p>Et c'est plutôt cool</p>
+      <a href="./index.html"><button>Retour</button></a>
     </header>
 
     <nav>
-        <div class="btn" onclick="iframe.src=microFrontendsByRoute['/index2/ng-app'];">Angular</div>
-        <div class="btn" onclick="iframe.src=microFrontendsByRoute['/index2/react-app'];">React</div>
-        <div class="btn" onclick="iframe.src=microFrontendsByRoute['/index2/vue-app'];">Vue</div>
+      <div
+        class="btn"
+        onclick="iframe.src=microFrontendsByRoute['/index2/ng-app'];"
+      >
+        Angular
+      </div>
+      <div
+        class="btn"
+        onclick="iframe.src=microFrontendsByRoute['/index2/react-app'];"
+      >
+        React
+      </div>
+      <div
+        class="btn"
+        onclick="iframe.src=microFrontendsByRoute['/index2/vue-app'];"
+      >
+        Vue
+      </div>
     </nav>
-    
-    
+
     <div class="container2">
-        <iframe id="app-container"></iframe>
+      <iframe id="app-container"></iframe>
     </div>
 
     <script type="text/javascript">
-        const microFrontendsByRoute = {
-          '/index2': 'http://localhost:5001/',
-          '/index2/ng-app': 'http://localhost:5001/',
-          '/index2/react-app': 'http://localhost:5002/',
-          '/index2/vue-app': 'http://localhost:5003/',
-        };
-  
-        const iframe = document.getElementById('app-container');
-        iframe.src = microFrontendsByRoute[window.location.pathname];
-      </script>
-</body>
+      const microFrontendsByRoute = {
+        "/index2": "http://localhost:5001/",
+        "/index2/ng-app": "http://localhost:4200/",
+        "/index2/react-app": "http://localhost:5002/",
+        "/index2/vue-app": "http://localhost:5003/",
+      };
+
+      const iframe = document.getElementById("app-container");
+      iframe.src = microFrontendsByRoute[window.location.pathname];
+    </script>
+  </body>
 </html>

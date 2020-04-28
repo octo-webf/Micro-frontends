@@ -1,0 +1,11 @@
+div {
+  padding: 2vh;
+  margin: 2vh auto 2vh auto;
+  width: 70%;
+  text-align: center;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: rgba(243, 243, 243, 0.5);
+  box-shadow: 0 1px 0 lightgray;
+  cursor: pointer;
+}

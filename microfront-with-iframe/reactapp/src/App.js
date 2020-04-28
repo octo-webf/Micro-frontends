@@ -1,6 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+function getQuery() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const myParam = urlParams.get("input");
+  if (myParam !== null && myParam.length > 0) {
+    return myParam;
+  } else {
+    return "Rien pour l'instant";
+  }
+}
 
 function App() {
   return (
@@ -8,7 +18,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Paramètres requête : <code>{getQuery()}</code>
         </p>
         <a
           className="App-link"

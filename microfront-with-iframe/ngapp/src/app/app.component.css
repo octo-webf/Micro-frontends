@@ -1,0 +1,10 @@
+header {
+  background-color: rgb(189, 31, 31);
+  padding: 2vh;
+}
+
+h3,
+h6 {
+  color: white;
+  padding-left: 2vw;
+}

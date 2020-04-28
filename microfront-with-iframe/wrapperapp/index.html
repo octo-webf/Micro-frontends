@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-  <title>Micro-frontends w/ iframe</title>
-  <link rel='stylesheet' href="./styles.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Micro-frontends w/ iframe</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Les Frameworks peuvent co-exister</h1>
-        <p>Et c'est plutôt cool</p>
-        <a href="./index2.html"><button>Autre exemple</button></a>
+      <h1>Dashboard</h1>
+      <input type="text" id="input" />
+      <input type="submit" value="Submit" onclick="query(input.value)" />
     </header>
 
     <div class="container">
-        <div>
-            <p><a href="http://localhost:5001/" target="_blank">http://localhost:5001/</a></p>
-            <iframe id="ng-container" src="http://localhost:5001/"></iframe>
+      <div>
+        <iframe id="ng-container" src="http://localhost:4200/"></iframe>
+      </div>
+      <div>
+        <div style="height: 60vh;">
+          <iframe id="react-container" src="http://localhost:3000/"></iframe>
         </div>
-        
+
         <div>
-            <p><a href="http://localhost:5002/" target="_blank">http://localhost:5002/</a></p>
-            <iframe id="react-container" src="http://localhost:5002/"></iframe>
+          <iframe id="vue-container" src="http://localhost:5003/"></iframe>
         </div>
-    
-        <div>
-            <p><a href="http://localhost:5003/" target="_blank">http://localhost:5003/</a></p>
-            <iframe id="vue-container" src="http://localhost:5003/"></iframe>
-        </div>
-        
+      </div>
     </div>
-  
-</body>
+
+    <script>
+      const ngapp = document.getElementById("ng-container");
+      const reactapp = document.getElementById("react-container");
+      const vueapp = document.getElementById("vue-container");
+
+      function query(input) {
+        ngapp.src = "http://localhost:4200/?input=" + input;
+        reactapp.src = "http://localhost:3000/?input=" + input;
+        vueapp.src = "http://localhost:5003/?input=" + input;
+      }
+    </script>
+  </body>
 </html>

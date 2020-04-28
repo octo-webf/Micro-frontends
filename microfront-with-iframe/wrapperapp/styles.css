@@ -1,53 +1,64 @@
-body{margin:0}
-
-header
-{
-    height:10vh;
-    text-align:center;
-    padding-top:4vh;
-    background-color: lightgray;
-    box-shadow: 0 5 10px gray;
-    z-index:1000;
+body {
+  margin: 0;
+  width: 90vw;
+  margin: auto;
 }
 
-h1, p, nav
-{
-    margin:0;
-    font-family: sans-serif;
+header {
+  text-align: center;
+  padding: 1% 0 1% 0;
+  background-color: white;
+  box-shadow: 0 1px 0 lightgray;
+  z-index: 1000;
 }
 
-nav
-{
-    display: flex;
-    justify-content: center;
+h1,
+p,
+nav {
+  margin: 0;
+  font-family: sans-serif;
 }
 
-.btn
-{
-    text-align: center;
-    padding:2vh;
-    border: 1px solid lightgray;
-    width:33vw;
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 1%;
 }
 
-
-iframe
-{
-    border:none;
-    width:30vw;
-    height:80vh;
-    box-shadow: 0 0 10px gray;
+.btn {
+  text-align: center;
+  padding: 1vh;
+  margin: 1vh;
+  width: 10vw;
+  box-shadow: 0 1px 0 lightgrey;
 }
 
-.container
-{
-    display:flex;
-    justify-content: space-evenly;
-    text-align:center;
-    padding-top:2vh;
+.btn:hover {
+  box-shadow: 0 3px 0 rgb(68, 151, 219);
+  cursor: pointer;
 }
 
-#app-container
-{
-    width:100%;
+iframe {
+  border: 1px solid lightgrey;
+}
+
+.container {
+  display: flex;
+  padding-top: 2vh;
+  width: 90vw;
+  height: 85vh;
+}
+
+#ng-container {
+  height: 100%;
+  width: 25vw;
+}
+
+#react-container {
+  height: 60vh;
+  width: 65vw;
+}
+#vue-container {
+  height: 25vh;
+  width: 65vw;
 }
