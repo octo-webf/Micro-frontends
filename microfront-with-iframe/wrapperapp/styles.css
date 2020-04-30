@@ -12,6 +12,30 @@ header {
   z-index: 1000;
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#input {
+  width: 15vw;
+  height: 3vh;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  padding-left: 1vw;
+}
+#input:focus {
+  border: 2px solid gray;
+  outline: none;
+}
+
+button {
+  height: 2vh;
+  background-color: none;
+  border: none;
+}
+
 h1,
 p,
 nav {
@@ -55,10 +79,11 @@ iframe {
 }
 
 #react-container {
-  height: 60vh;
+  height: 65vh;
   width: 65vw;
 }
 #vue-container {
-  height: 25vh;
+  height: 20vh;
   width: 65vw;
+  margin-top: -6px;
 }

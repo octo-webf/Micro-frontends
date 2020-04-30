@@ -1,38 +1,56 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <h3>Welcome to : Vue</h3>
+    <div>
+      <h1>Message:</h1>
+      <HelloWorld :msg="msg" />
+    </div>
   </div>
 </template>
 
- <script>
-/*s
-var objet = "hello";
+<script>
+import HelloWorld from "./components/HelloWorld.vue";
 
-
-function getQuery() {
+export function getQuery() {
   const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get("input");
-  if (myParam.length > 0) {
+  if (myParam !== null && myParam.length > 0) {
     return myParam;
   } else {
-    return "Vue.js";
+    return "Rien pour l'instant";
   }
 }
-*/
-</script>
 
+export default {
+  name: "App",
+  components: {
+    HelloWorld,
+  },
+  data() {
+    return {
+      msg: getQuery(),
+    };
+  },
+};
+</script>
 
 <style>
 #app {
-  height: 100%;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
   color: #2c3e50;
+  justify-content: center;
+  height: 100vh;
+}
+img {
+  height: 120px;
+}
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
 }
 </style>

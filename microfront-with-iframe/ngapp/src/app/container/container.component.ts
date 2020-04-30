@@ -11,10 +11,8 @@ export class ContainerComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    const urlParams = new URLSearchParams(window.location.search);
-    const myParam = urlParams.get('input');
-    if (myParam.length > 0) {
-      this.objets.push(myParam);
+    for (var i = 1; i < 11; i++) {
+      this.objets.push(i);
     }
   }
 }

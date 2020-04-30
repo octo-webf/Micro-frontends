@@ -6,16 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  page: String;
+  msg: String;
 
   constructor() {}
 
   ngOnInit() {
-    this.page = 'Home';
+    this.msg = "Rien pour l'instant";
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get('input');
-    if (myParam.length > 0) {
-      this.page = myParam;
+    if (myParam !== null && myParam.length > 0) {
+      this.msg = myParam;
     }
   }
 }

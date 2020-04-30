@@ -1,10 +1,25 @@
 header {
-  background-color: rgb(189, 31, 31);
-  padding: 2vh;
+  text-align: center;
+  justify-items: center;
 }
 
-h3,
-h6 {
-  color: white;
-  padding-left: 2vw;
+.img {
+  max-width: 70%;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+}
+
+.msg {
+  width: 70%;
+  display: block;
+  position: sticky;
+  margin: 0 auto 2vh auto;
+  padding-bottom: 2vh;
+  top: 20px;
+  z-index: 100000;
+  background-color: white;
+  box-shadow: 0 1px 0 lightgray;
 }

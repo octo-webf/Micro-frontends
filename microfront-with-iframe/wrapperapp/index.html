@@ -9,22 +9,24 @@
   <body>
     <header>
       <h1>Dashboard</h1>
-      <input type="text" id="input" />
-      <input type="submit" value="Submit" onclick="query(input.value)" />
+      <div class="flex">
+        <input type="text" id="input" />
+        <button class="button" type="submit" onclick="query(input.value)">
+          <img
+            src="https://image.flaticon.com/icons/png/512/2089/2089805.png"
+            style="height: 100%;"
+          />
+        </button>
+      </div>
     </header>
 
     <div class="container">
       <div>
-        <iframe id="ng-container" src="http://localhost:4200/"></iframe>
+        <iframe id="ng-container" src="http://localhost:5001/"></iframe>
       </div>
       <div>
-        <div style="height: 60vh;">
-          <iframe id="react-container" src="http://localhost:3000/"></iframe>
-        </div>
-
-        <div>
-          <iframe id="vue-container" src="http://localhost:5003/"></iframe>
-        </div>
+        <iframe id="react-container" src="http://localhost:5002/"></iframe>
+        <iframe id="vue-container" src="http://localhost:5003/"></iframe>
       </div>
     </div>
 
@@ -34,8 +36,8 @@
       const vueapp = document.getElementById("vue-container");
 
       function query(input) {
-        ngapp.src = "http://localhost:4200/?input=" + input;
-        reactapp.src = "http://localhost:3000/?input=" + input;
+        ngapp.src = "http://localhost:5001/?input=" + input;
+        reactapp.src = "http://localhost:5002/?input=" + input;
         vueapp.src = "http://localhost:5003/?input=" + input;
       }
     </script>
