@@ -11,11 +11,24 @@ export class AppComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.msg = "Rien pour l'instant";
+    // Receive information via routing parameters
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get('input');
     if (myParam !== null && myParam.length > 0) {
       this.msg = myParam;
+    } else {
+      this.msg = 'Nothing yet';
     }
+
+    window.addEventListener('message', this.receiveMessage, false);
+  }
+
+  // Receive information via DOM events
+  receiveMessage(event) {
+    if (event.origin !== 'http://localhost:5000') {
+      return;
+    }
+    console.log(event.data);
+    this.msg = event.data;
   }
 }

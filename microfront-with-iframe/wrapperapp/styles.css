@@ -30,36 +30,28 @@ header {
   outline: none;
 }
 
-button {
+.btn {
   height: 2vh;
   background-color: none;
   border: none;
+  outline: none;
 }
 
 h1,
-p,
-nav {
+h3 {
   margin: 0;
   font-family: sans-serif;
 }
 
-nav {
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 1%;
-}
-
-.btn {
-  text-align: center;
-  padding: 1vh;
+code p {
   margin: 1vh;
-  width: 10vw;
-  box-shadow: 0 1px 0 lightgrey;
+  font-family: monospace;
 }
 
-.btn:hover {
-  box-shadow: 0 3px 0 rgb(68, 151, 219);
-  cursor: pointer;
+a {
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
 }
 
 iframe {
@@ -68,13 +60,13 @@ iframe {
 
 .container {
   display: flex;
+  justify-content: space-between;
   padding-top: 2vh;
   width: 90vw;
-  height: 85vh;
 }
 
 #ng-container {
-  height: 100%;
+  height: 85vh;
   width: 25vw;
 }
 
@@ -86,4 +78,34 @@ iframe {
   height: 20vh;
   width: 65vw;
   margin-top: -6px;
+}
+
+.com-container {
+  width: 25vw;
+  height: 40vh;
+  border-radius: 5px;
+}
+
+#ng-app {
+  border: 2px dashed rgb(198, 13, 13);
+}
+
+#react-app {
+  border: 2px dashed rgb(9, 133, 228);
+}
+
+#vue-app {
+  border: 2px dashed rgb(8, 108, 8);
+}
+
+.console {
+  width: 70vw;
+  margin: 2vh auto 0 auto;
+  padding: 1vh 1vw 1vh 1vw;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.console h3 {
+  border-bottom: 1px solid lightgray;
 }

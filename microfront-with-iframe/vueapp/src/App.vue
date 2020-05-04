@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
     <div>
-      <h1>Message:</h1>
+      <h1>Message</h1>
       <HelloWorld :msg="msg" />
     </div>
   </div>
@@ -17,20 +17,20 @@ export function getQuery() {
   if (myParam !== null && myParam.length > 0) {
     return myParam;
   } else {
-    return "Rien pour l'instant";
+    return "Nothing yet";
   }
 }
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    HelloWorld
   },
   data() {
     return {
-      msg: getQuery(),
+      msg: getQuery()
     };
-  },
+  }
 };
 </script>
 

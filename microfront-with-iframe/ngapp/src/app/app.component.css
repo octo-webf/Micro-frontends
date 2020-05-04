@@ -1,25 +1,16 @@
 header {
   text-align: center;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .img {
-  max-width: 70%;
-  margin: auto;
+  max-width: 30%;
 }
 
 img {
   width: 100%;
-}
-
-.msg {
-  width: 70%;
-  display: block;
-  position: sticky;
-  margin: 0 auto 2vh auto;
-  padding-bottom: 2vh;
-  top: 20px;
-  z-index: 100000;
-  background-color: white;
-  box-shadow: 0 1px 0 lightgray;
 }

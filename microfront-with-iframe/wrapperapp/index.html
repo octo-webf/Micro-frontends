@@ -10,14 +10,15 @@
     <header>
       <h1>Dashboard</h1>
       <div class="flex">
-        <input type="text" id="input" />
-        <button class="button" type="submit" onclick="query(input.value)">
+        <input type="text" id="input" placeholder="Message via routing" />
+        <button class="btn" type="submit" onclick="query(input.value)">
           <img
             src="https://image.flaticon.com/icons/png/512/2089/2089805.png"
             style="height: 100%;"
           />
         </button>
       </div>
+      <a href="./communication.html"><button>Communication</button></a>
     </header>
 
     <div class="container">
@@ -35,6 +36,7 @@
       const reactapp = document.getElementById("react-container");
       const vueapp = document.getElementById("vue-container");
 
+      // Data communication via routing parameters inputs
       function query(input) {
         ngapp.src = "http://localhost:5001/?input=" + input;
         reactapp.src = "http://localhost:5002/?input=" + input;

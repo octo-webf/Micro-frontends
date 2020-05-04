@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Micro-frontends w/ iframe</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Communication cross-document</h1>
+      <div class="flex">
+        <input type="text" id="input" placeholder="Message via DOM event" />
+        <button class="btn" type="submit" onclick="message(input.value)">
+          <img
+            src="https://image.flaticon.com/icons/png/512/2089/2089805.png"
+            style="height: 100%;"
+          />
+        </button>
+      </div>
+    </header>
+
+    <div class="container">
+      <iframe
+        id="ng-app"
+        class="com-container"
+        src="http://localhost:5001/"
+      ></iframe>
+      <iframe
+        id="react-app"
+        class="com-container"
+        src="http://localhost:5002/"
+      ></iframe>
+      <iframe
+        id="vue-app"
+        class="com-container"
+        src="http://localhost:5003/"
+      ></iframe>
+    </div>
+
+    <div class="console">
+      <h3>Console</h3>
+      <code
+        ><p id="console">...<br /></p
+      ></code>
+    </div>
+
+    <script src="./communication.js"></script>
+  </body>
+</html>
