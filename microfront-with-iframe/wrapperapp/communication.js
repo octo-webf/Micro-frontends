@@ -28,6 +28,12 @@ function receiveMessage(event) {
   ) {
     return;
   }
-  console.log(event.data);
   logMessage(event.data);
+
+  if (
+    event.origin === "http://localhost:5001" &&
+    event.data !== "Angular: I got the message!"
+  ) {
+    reactapp.contentWindow.postMessage(event.data, "*");
+  }
 }

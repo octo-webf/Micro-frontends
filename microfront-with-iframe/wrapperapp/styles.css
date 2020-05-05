@@ -32,7 +32,8 @@ header {
 
 .btn {
   height: 2vh;
-  background-color: none;
+  margin-left: -35px;
+  border-radius: 50%;
   border: none;
   outline: none;
 }
@@ -81,7 +82,7 @@ iframe {
 }
 
 .com-container {
-  width: 25vw;
+  width: 29vw;
   height: 40vh;
   border-radius: 5px;
 }
@@ -99,7 +100,9 @@ iframe {
 }
 
 .console {
-  width: 70vw;
+  width: 40vw;
+  max-height: 40vh;
+  overflow: scroll;
   margin: 2vh auto 0 auto;
   padding: 1vh 1vw 1vh 1vw;
   border: 1px solid lightgray;

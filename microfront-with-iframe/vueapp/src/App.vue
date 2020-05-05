@@ -10,7 +10,9 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+var msg = getQuery();
 
+// Receive information via routing parameters
 export function getQuery() {
   const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get("input");
@@ -21,16 +23,30 @@ export function getQuery() {
   }
 }
 
+// Receive information via DOM events
+window.addEventListener("message", receiveMessage, false);
+
+function receiveMessage(event) {
+  if (event.origin !== "http://localhost:5000") {
+    return;
+  }
+  msg = event.data;
+
+  // Passing information back to the parent/wrapper app
+  event.source.postMessage("Vue: I got the message!", event.origin);
+  console.log(msg);
+}
+
 export default {
   name: "App",
   components: {
-    HelloWorld
+    HelloWorld,
   },
   data() {
     return {
-      msg: getQuery()
+      msg: msg,
     };
-  }
+  },
 };
 </script>
 
