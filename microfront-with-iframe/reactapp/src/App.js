@@ -17,7 +17,7 @@ function App() {
   }
 
   // Receive information via DOM events
-  window.addEventListener("message", receiveMessage, false);
+  window.addEventListener("message", receiveMessage.bind(this), false);
 
   function receiveMessage(event) {
     if (event.origin !== "http://localhost:5000") {

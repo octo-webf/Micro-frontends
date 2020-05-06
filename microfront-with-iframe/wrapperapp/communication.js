@@ -30,10 +30,12 @@ function receiveMessage(event) {
   }
   logMessage(event.data);
 
+  // Message from Angular to the other micro-frontends
   if (
     event.origin === "http://localhost:5001" &&
     event.data !== "Angular: I got the message!"
   ) {
     reactapp.contentWindow.postMessage(event.data, "*");
+    vueapp.contentWindow.postMessage(event.data, "*");
   }
 }

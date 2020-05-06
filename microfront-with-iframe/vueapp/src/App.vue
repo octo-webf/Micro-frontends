@@ -3,13 +3,14 @@
     <img alt="Vue logo" src="./assets/logo.png" />
     <div>
       <h1>Message</h1>
-      <HelloWorld :msg="msg" />
+      <HelloWorld v-bind:msg.sync="msg" v-on:message="receiveMessage(event)" />
     </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import HelloWorld from "./components/HelloWorld";
+
 var msg = getQuery();
 
 // Receive information via routing parameters
@@ -24,29 +25,30 @@ export function getQuery() {
 }
 
 // Receive information via DOM events
+
 window.addEventListener("message", receiveMessage, false);
 
-function receiveMessage(event) {
+export function receiveMessage(event) {
   if (event.origin !== "http://localhost:5000") {
     return;
   }
   msg = event.data;
-
   // Passing information back to the parent/wrapper app
   event.source.postMessage("Vue: I got the message!", event.origin);
-  console.log(msg);
 }
 
 export default {
   name: "App",
+  model: { event: "message" },
   components: {
-    HelloWorld,
+    HelloWorld
   },
   data() {
     return {
-      msg: msg,
+      msg: msg
     };
   },
+  methods: {}
 };
 </script>
 
