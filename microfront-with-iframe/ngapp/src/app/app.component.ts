@@ -38,6 +38,6 @@ export class AppComponent implements OnInit {
   }
 
   messageToReact() {
-    window.parent.postMessage('Angular: Hello from Angular', '*');
+    window.parent.postMessage('Hello from Angular', '*');
   }
 }
