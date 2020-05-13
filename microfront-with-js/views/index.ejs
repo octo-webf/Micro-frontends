@@ -5,6 +5,31 @@
     <title>Microfrontends Homepage</title>
   </head>
   <body>
-    <%- react1 %> <%- react2 %> <%- react3 %>
+    <div class="load-app" data-url="react1"></div>
+    <div class="load-app" data-url="react2"></div>
+    <div class="load-app" data-url="react3"></div>
+    <script>
+      function loadPage(element) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function () {
+          if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+            element.innerHTML = xmlHttp.responseText;
+            /* More info: http://stackoverflow.com/questions/22945884/domparser-appending-script-tags-to-head-body-but-not-executing#22997909 */
+            [].forEach.call(element.querySelectorAll("script"), function (
+              nonExecutableScript
+            ) {
+              var script = document.createElement("script");
+              script.setAttribute("src", nonExecutableScript.src);
+              script.setAttribute("type", "text/javascript");
+              element.appendChild(script);
+              nonExecutableScript.parentNode.removeChild(nonExecutableScript);
+            });
+          }
+        };
+        xmlHttp.open("GET", element.dataset.url, true);
+        xmlHttp.send(null);
+      }
+      document.querySelectorAll(".load-app").forEach(loadPage);
+    </script>
   </body>
 </html>

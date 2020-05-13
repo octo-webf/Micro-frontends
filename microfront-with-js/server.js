@@ -1,33 +1,25 @@
 const express = require("express");
 const server = express();
 const request = require("request");
+const { createProxyMiddleware } = require("http-proxy-middleware");
 
 server.set("view engine", "ejs");
 
-server.get("/", (req, res) =>
-  Promise.all([
-    getContents("http://localhost:5001/"),
-    getContents("http://localhost:5002/"),
-    getContents("http://localhost:5003/"),
-  ])
-    .then((responses) =>
-      res.render("index", {
-        react1: responses[0],
-        react2: responses[1],
-        react3: responses[2],
-      })
-    )
-    .catch((error) => res.send(error.message))
-);
+const createProxy = (path, target) =>
+  server.use(
+    path,
+    createProxyMiddleware({
+      target,
+      changeOrigin: true,
+      pathRewrite: { [`^${path}`]: "" },
+    })
+  );
 
-const getContents = (url) =>
-  new Promise((resolve, reject) => {
-    request.get(url, (error, response, body) => {
-      if (error) return resolve("Error loading " + url + ": " + error.message);
+createProxy("/react1", "https://localhost:5001/");
+createProxy("/react2", "https://localhost:5002/");
+createProxy("/react3", "https://localhost:5003/");
 
-      return resolve(body);
-    });
-  });
+server.get("/", (req, res) => res.render("index"));
 
 const port = process.env.PORT || 8080;
 server.listen(port, () => {
