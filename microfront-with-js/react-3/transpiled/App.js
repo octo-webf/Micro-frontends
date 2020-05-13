@@ -7,10 +7,9 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-require("./App.css");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//import "./App.css";
 function App() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "thirdApp"
