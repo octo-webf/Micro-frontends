@@ -11,7 +11,7 @@
       <h1>Communication cross-document</h1>
       <div class="flex">
         <input type="text" id="input" placeholder="Message via DOM event" />
-        <button class="btn" type="submit" onclick="message(input.value)">
+        <button class="btn" type="submit" onclick="sendMessage(input.value)">
           <img
             src="https://image.flaticon.com/icons/png/512/2089/2089805.png"
             style="height: 100%;"
@@ -23,7 +23,7 @@
 
     <div class="container">
       <iframe
-        id="ng-app"
+        id="angular-app"
         class="com-container"
         src="http://localhost:5001/"
       ></iframe>

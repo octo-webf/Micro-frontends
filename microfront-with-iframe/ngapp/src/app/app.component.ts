@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
     event.source.postMessage('Angular: I got the message!', event.origin);
   }
 
-  messageToReact() {
+  messageTheOthers() {
     window.parent.postMessage('Hello from Angular', '*');
   }
 }

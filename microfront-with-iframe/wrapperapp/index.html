@@ -23,7 +23,7 @@
 
     <div class="container">
       <div>
-        <iframe id="ng-container" src="http://localhost:5001/"></iframe>
+        <iframe id="angular-container" src="http://localhost:5001/"></iframe>
       </div>
       <div>
         <iframe id="react-container" src="http://localhost:5002/"></iframe>
@@ -32,13 +32,13 @@
     </div>
 
     <script>
-      const ngapp = document.getElementById("ng-container");
+      const angularapp = document.getElementById("angular-container");
       const reactapp = document.getElementById("react-container");
       const vueapp = document.getElementById("vue-container");
 
       // Data communication via routing parameters inputs
       function query(input) {
-        ngapp.src = "http://localhost:5001/?input=" + input;
+        angularapp.src = "http://localhost:5001/?input=" + input;
         reactapp.src = "http://localhost:5002/?input=" + input;
         vueapp.src = "http://localhost:5003/?input=" + input;
       }

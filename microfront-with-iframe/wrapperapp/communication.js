@@ -1,20 +1,24 @@
-const ngapp = document.getElementById("ng-app");
+const angularapp = document.getElementById("angular-app");
 const reactapp = document.getElementById("react-app");
 const vueapp = document.getElementById("vue-app");
 
+const ANGULAR_URL = "http://localhost:5001";
+const REACT_URL = "http://localhost:5002";
+const VUE_URL = "http://localhost:5003";
+
 const html_console = document.getElementById("console");
 
-function logMessage(message) {
+function logMessageToConsole(message) {
   html_console.innerHTML += "> " + message + "<br/>";
 }
 
 // Passing data to child applications via DOM events
-function message(input) {
-  ngapp.contentWindow.postMessage(input, "*");
-  reactapp.contentWindow.postMessage(input, "*");
-  vueapp.contentWindow.postMessage(input, "*");
+function sendMessage(input) {
+  angularapp.contentWindow.postMessage(input, ANGULAR_URL);
+  reactapp.contentWindow.postMessage(input, REACT_URL);
+  vueapp.contentWindow.postMessage(input, VUE_URL);
 
-  logMessage("Wrapper: Message sent to the micro-frontends");
+  logMessageToConsole("Wrapper: Message sent to the micro-frontends");
 }
 
 // Receiving data from child applications
@@ -22,22 +26,22 @@ window.addEventListener("message", receiveMessage, false);
 
 function receiveMessage(event) {
   if (
-    event.origin !== "http://localhost:5001" &&
-    event.origin !== "http://localhost:5002" &&
-    event.origin !== "http://localhost:5003"
+    event.origin !== ANGULAR_URL &&
+    event.origin !== REACT_URL &&
+    event.origin !== VUE_URL
   ) {
     return;
   }
 
   // Message from Angular to the other micro-frontends
   if (
-    event.origin === "http://localhost:5001" &&
+    event.origin === ANGULAR_URL &&
     event.data !== "Angular: I got the message!"
   ) {
-    logMessage("Angular: " + event.data);
+    logMessageToConsole("Angular: " + event.data);
     reactapp.contentWindow.postMessage(event.data, "*");
     vueapp.contentWindow.postMessage(event.data, "*");
     return;
   }
-  logMessage(event.data);
+  logMessageToConsole(event.data);
 }

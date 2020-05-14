@@ -66,7 +66,7 @@ iframe {
   width: 90vw;
 }
 
-#ng-container {
+#angular-container {
   height: 85vh;
   width: 25vw;
 }
@@ -87,7 +87,7 @@ iframe {
   border-radius: 5px;
 }
 
-#ng-app {
+#angular-app {
   border: 2px dashed rgb(198, 13, 13);
 }
 
