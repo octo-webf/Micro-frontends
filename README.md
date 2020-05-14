@@ -33,12 +33,14 @@ Go to `Micro-frontends/microfront-with-express/`
 
 This will launch 3 micro-frontends at http://localhost:5001/, http://localhost:5002/ & http://localhost:5003/
 
-2. In the root folder, launch the express server with `node server.js``
+2. In the root folder, launch the express server with `node server.js`
 3. View the result at http://localhost:5000/
 
 ---
 
 ## Micro-frontends using JavaScript
+
+Still in development
 
 ---
 
