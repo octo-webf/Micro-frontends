@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "PUBLIC_URL=http://localhost:5000/react1 react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "transpile": "NODE_ENV=production babel src --out-dir transpiled  --presets @babel/preset-env,@babel/preset-react",
@@ -38,6 +38,7 @@
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1",
+    "serve": "^11.3.0"
   }
 }
