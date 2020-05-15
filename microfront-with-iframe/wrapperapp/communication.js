@@ -14,9 +14,11 @@ function logMessageToConsole(message) {
 
 // Passing data to child applications via DOM events
 function sendMessage(input) {
-  angularapp.contentWindow.postMessage(input, ANGULAR_URL);
-  reactapp.contentWindow.postMessage(input, REACT_URL);
-  vueapp.contentWindow.postMessage(input, VUE_URL);
+  const message = { info: input, callback: false };
+
+  angularapp.contentWindow.postMessage(message, ANGULAR_URL);
+  reactapp.contentWindow.postMessage(message, REACT_URL);
+  vueapp.contentWindow.postMessage(message, VUE_URL);
 
   logMessageToConsole("Wrapper: Message sent to the micro-frontends");
 }
@@ -33,15 +35,12 @@ function receiveMessage(event) {
     return;
   }
 
-  // Message from Angular to the other micro-frontends
-  if (
-    event.origin === ANGULAR_URL &&
-    event.data !== "Angular: I got the message!"
-  ) {
-    logMessageToConsole("Angular: " + event.data);
-    reactapp.contentWindow.postMessage(event.data, "*");
-    vueapp.contentWindow.postMessage(event.data, "*");
+  if (event.origin === ANGULAR_URL && !event.data.callback) {
+    logMessageToConsole("Angular: " + event.data.info);
+    reactapp.contentWindow.postMessage(event.data.info, REACT_URL);
+    vueapp.contentWindow.postMessage(event.data.info, VUE_URL);
     return;
   }
-  logMessageToConsole(event.data);
+
+  logMessageToConsole(event.data.info);
 }

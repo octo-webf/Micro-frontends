@@ -11,6 +11,9 @@
 <script>
 import HelloWorld from "./components/HelloWorld";
 
+const PARENT_APPLICATION_URL = "http://localhost:5000";
+const callbackMessage = "Vue: I got the message!";
+
 var msg = getQuery();
 
 // Receive information via routing parameters
@@ -29,12 +32,15 @@ export function getQuery() {
 window.addEventListener("message", receiveMessage, false);
 
 export function receiveMessage(event) {
-  if (event.origin !== "http://localhost:5000") {
+  if (event.origin !== PARENT_APPLICATION_URL) {
     return;
   }
-  msg = event.data;
+  msg = event.data.info;
   // Passing information back to the parent/wrapper app
-  event.source.postMessage("Vue: I got the message!", event.origin);
+  event.source.postMessage(
+    { info: callbackMessage, callback: true },
+    event.origin
+  );
 }
 
 export default {

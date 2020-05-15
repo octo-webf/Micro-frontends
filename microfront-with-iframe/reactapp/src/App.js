@@ -2,6 +2,10 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
+const PARENT_APPLICATION_URL = "http://localhost:5000";
+
+const callbackMessage = "React: I got the message!";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -29,13 +33,16 @@ class App extends React.Component {
   }
 
   receiveMessage = (event) => {
-    if (event.origin !== "http://localhost:5000") {
+    if (event.origin !== PARENT_APPLICATION_URL) {
       return;
     }
-    this.setState({ msg: event.data });
+    this.setState({ msg: event.data.info });
 
     // Passing information back to the parent/wrapper app
-    event.source.postMessage("React: I got the message!", event.origin);
+    event.source.postMessage(
+      { info: callbackMessage, callback: true },
+      event.origin
+    );
   };
 
   render() {

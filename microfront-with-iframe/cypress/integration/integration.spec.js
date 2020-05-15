@@ -1,7 +1,7 @@
 describe("Home page", function () {
   it("Home page integration", function () {
     cy.visit("http://localhost:5000");
-    cy.get("#ng-container").its("0.contentDocument").should("exist");
+    cy.get("#angular-container").its("0.contentDocument").should("exist");
     cy.get("#react-container").its("0.contentDocument").should("exist");
     cy.get("#vue-container").its("0.contentDocument").should("exist");
   });
@@ -16,7 +16,7 @@ describe("Home page", function () {
     cy.get("#input").type("Hello!").should("have.value", "Hello!");
     cy.get(".btn").click();
 
-    cy.get("#ng-container")
+    cy.get("#angular-container")
       .its("0.src")
       .should("eq", "http://localhost:5001/?input=Hello!");
     cy.get("#react-container")
@@ -31,7 +31,7 @@ describe("Home page", function () {
 describe("Communication Page", function () {
   it("Communication page integration", function () {
     cy.visit("http://localhost:5000/communication");
-    cy.get("#ng-app").its("0.contentDocument").should("exist");
+    cy.get("#angular-app").its("0.contentDocument").should("exist");
     cy.get("#react-app").its("0.contentDocument").should("exist");
     cy.get("#vue-app").its("0.contentDocument").should("exist");
     cy.get("#console");
@@ -49,7 +49,7 @@ describe("Communication Page", function () {
   });
 
   it("Updates Micro-Frontends data", function () {
-    cy.get("#ng-app")
+    cy.get("#angular-app")
       .its("0.contentDocument.body")
       .find(".msg h3")
       .should("contain", "Hello!");
