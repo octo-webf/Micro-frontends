@@ -25,11 +25,7 @@ Go to `Micro-frontends/microfront-with-iframe/`
 
 Go to `Micro-frontends/microfront-with-express/`
 
-1. In the 3 `./react-X` folders, execute :
-
-- `npm run build`
-- `npm run transpile`
-- `npm run start:prod`
+1. In the 3 `./react-X` folders, execute `npm run start:prod`
 
 This will launch 3 micro-frontends at http://localhost:5001/, http://localhost:5002/ & http://localhost:5003/
 
@@ -40,7 +36,14 @@ This will launch 3 micro-frontends at http://localhost:5001/, http://localhost:5
 
 ## Micro-frontends using JavaScript
 
-Still in development
+Go to `Micro-frontends/microfront-with-js/` and like with Express/EJS :
+
+1. In the 3 `./react-X` folders, execute `npm run start:prod`
+
+This will launch 3 micro-frontends at http://localhost:5001/, http://localhost:5002/ & http://localhost:5003/
+
+2. In the root folder, launch the express server with `node server.js`
+3. View the result at http://localhost:5000/
 
 ---
 

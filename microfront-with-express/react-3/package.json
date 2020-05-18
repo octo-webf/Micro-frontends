@@ -16,7 +16,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "transpile": "NODE_ENV=production babel src --out-dir transpiled  --presets @babel/preset-env,@babel/preset-react",
-    "start:prod": "NODE_ENV=production node server.js"
+    "prod": "NODE_ENV=production node server.js",
+    "start:prod": "npm run build && npm run transpile && npm run prod"
   },
   "eslintConfig": {
     "extends": "react-app"
