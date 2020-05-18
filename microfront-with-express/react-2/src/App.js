@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./App.styles";
+import "./App.css";
 
 class App extends React.Component {
   constructor() {
@@ -27,12 +27,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="secondApp">
         <div>
           <h1>React 2</h1>
           <p>Second Micro-frontend</p>
         </div>
-        <p>{this.state.info}</p>
+        <p className="info">{this.state.info}</p>
       </div>
     );
   }
