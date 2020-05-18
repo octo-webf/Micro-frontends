@@ -6,6 +6,8 @@ p {
 }
 
 .bloc {
-  margin: 3vh 2vw 3vh 2vw;
+  margin: 3vh auto 3vh auto;
+  width: 800px;
+  color: gray;
   border: 1px solid lightgray;
 }
