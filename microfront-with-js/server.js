@@ -15,13 +15,13 @@ const createProxy = (path, target) =>
     })
   );
 
-createProxy("/react1", "http://localhost:6001/");
-createProxy("/react2", "http://localhost:6002/");
-createProxy("/react3", "http://localhost:6003/");
+createProxy("/react1", "http://localhost:7001/");
+createProxy("/react2", "http://localhost:7002/");
+createProxy("/react3", "http://localhost:7003/");
 
 server.get("/", (req, res) => res.render("index"));
 
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || 7000;
 server.listen(port, () => {
   console.log(`Homepage listening on port ${port}`);
 });
