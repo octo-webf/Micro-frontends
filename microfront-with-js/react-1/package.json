@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "PUBLIC_URL=http://localhost:5000/react1 react-scripts build",
+    "build": "PUBLIC_URL=http://localhost:6000/react1 react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "transpile": "NODE_ENV=production babel src --out-dir transpiled  --presets @babel/preset-env,@babel/preset-react --plugins css-modules-transform",
