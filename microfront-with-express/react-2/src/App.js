@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
+
+const APP_URL = "http://localhost:5000";
 
 class App extends React.Component {
   constructor() {
@@ -18,7 +20,12 @@ class App extends React.Component {
   }
 
   getMessage(event) {
-    this.setState({ info: event.data });
+    if (event.origin !== APP_URL) {
+      return;
+    }
+    if (event.data.microfront === "*" || event.data.microfront === 2) {
+      this.setState({ info: event.data.message });
+    }
   }
 
   render() {

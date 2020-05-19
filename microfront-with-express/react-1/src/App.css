@@ -6,6 +6,12 @@
   justify-content: space-between;
 }
 
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .btn {
   color: white;
   background-color: darkcyan;
@@ -22,4 +28,7 @@
 .btn:hover {
   cursor: pointer;
   background-color: rgb(1, 155, 155);
+}
+.clear {
+  background-color: gray;
 }
