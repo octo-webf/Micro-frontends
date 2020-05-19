@@ -14,11 +14,7 @@ class App extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener(
-      "message",
-      (event) => this.getMessage(event),
-      false
-    );
+    window.removeEventListener("message", this.getMessage, false);
   }
 
   getMessage(event) {
@@ -32,7 +28,7 @@ class App extends React.Component {
           <h1>React 2</h1>
           <p>Second Micro-frontend</p>
         </div>
-        <p className="info">{this.state.info}</p>
+        <p className="info-2">{this.state.info}</p>
       </div>
     );
   }

@@ -9,7 +9,7 @@ function App() {
         <h1>React 3</h1>
         <p>Third Micro-frontend</p>
       </div>
-      <p className="info">{info}</p>
+      <p className="info-3">{info}</p>
     </div>
   );
 }

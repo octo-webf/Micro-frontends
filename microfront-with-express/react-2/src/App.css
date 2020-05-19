@@ -1,6 +1,9 @@
 .secondApp {
-  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.info {
-  color: red;
+.info-2 {
+  font-weight: bold;
+  margin-right: 10px;
 }
