@@ -37,8 +37,8 @@ function receiveMessage(event) {
 
   if (event.origin === ANGULAR_URL && !event.data.callback) {
     logMessageToConsole("Angular: " + event.data.info);
-    reactapp.contentWindow.postMessage(event.data.info, REACT_URL);
-    vueapp.contentWindow.postMessage(event.data.info, VUE_URL);
+    reactapp.contentWindow.postMessage(event.data, REACT_URL);
+    vueapp.contentWindow.postMessage(event.data, VUE_URL);
     return;
   }
 
