@@ -16,15 +16,15 @@ const createProxy = (path, target) =>
     })
   );
 
-createProxy("/react1", "http://localhost:5001/");
-createProxy("/react2", "http://localhost:5002/");
-createProxy("/react3", "http://localhost:5003/");
+createProxy("/react1", "http://localhost:8001/");
+createProxy("/react2", "http://localhost:8002/");
+createProxy("/react3", "http://localhost:8003/");
 
 server.get("/", (req, res) =>
   Promise.all([
-    getContents("http://localhost:5000/react1"),
-    getContents("http://localhost:5000/react2"),
-    getContents("http://localhost:5000/react3"),
+    getContents("http://localhost:8000/react1"),
+    getContents("http://localhost:8000/react2"),
+    getContents("http://localhost:8000/react3"),
   ])
     .then((responses) => {
       res.render("index", {
@@ -45,7 +45,7 @@ const getContents = (url) =>
     });
   });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 server.listen(port, () => {
   console.log(`Homepage listening on port ${port}`);
 });

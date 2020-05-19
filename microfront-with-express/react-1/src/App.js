@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-const PARENT_APP_URL = "http://localhost:5000";
+const PARENT_APP_URL = "http://localhost:8000";
 const HELLO_MESSAGE = "Hello React!";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       <div>
         <h1>React 1</h1>
         <p>First Micro-frontend</p>
-        <p>Send a message to the other microfrontends</p>
+        <p>Send a message to the other Micro-frontends</p>
       </div>
       <div>
         <button className="btn" onClick={() => sendMessage(2, HELLO_MESSAGE)}>

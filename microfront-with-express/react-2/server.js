@@ -20,7 +20,7 @@ server.get("/", (req, res) => {
 
 server.use(express.static("build"));
 
-const port = process.env.PORT || 5002;
+const port = process.env.PORT || 8002;
 server.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });

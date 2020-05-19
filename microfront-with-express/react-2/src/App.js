@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-const APP_URL = "http://localhost:5000";
+const APP_URL = "http://localhost:8000";
 
 class App extends React.Component {
   constructor() {
