@@ -16,7 +16,7 @@
     "build": "PUBLIC_URL=http://localhost:5000/react1 react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "transpile": "NODE_ENV=production babel src --out-dir transpiled  --presets @babel/preset-env,@babel/preset-react",
+    "transpile": "NODE_ENV=production babel src --out-dir transpiled  --presets @babel/preset-env,@babel/preset-react --plugins css-modules-transform",
     "prod": "NODE_ENV=production node server.js",
     "start:prod": "npm run build && npm run transpile && npm run prod"
   },
@@ -38,6 +38,7 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
+    "babel-plugin-css-modules-transform": "^1.6.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "serve": "^11.3.0"

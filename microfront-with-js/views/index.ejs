@@ -2,36 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Microfrontends Homepage</title>
+    <title>Microfrontends w/ JavaScript</title>
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <div class="load-app" data-url="react1"></div>
-    <div class="load-app" data-url="react2"></div>
-    <div class="load-app" data-url="react3"></div>
+    <div class="load-app" data-url="react1">
+      <!--#include virtual="/react1"-->
+    </div>
+    <div class="load-app" data-url="react2">
+      <!--#include virtual="/react2"-->
+    </div>
+    <div class="load-app" data-url="react3">
+      <!--#include virtual="/react3"-->
+    </div>
 
-    <script>
-      function loadPage(element) {
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.onreadystatechange = function () {
-          if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-            element.innerHTML = xmlHttp.responseText;
-            /* More info: http://stackoverflow.com/questions/22945884/domparser-appending-script-tags-to-head-body-but-not-executing#22997909 */
-            [].forEach.call(element.querySelectorAll("script"), function (
-              nonExecutableScript
-            ) {
-              var script = document.createElement("script");
-              script.setAttribute("src", nonExecutableScript.src);
-              script.setAttribute("type", "text/javascript");
-              element.appendChild(script);
-              nonExecutableScript.parentNode.removeChild(nonExecutableScript);
-            });
-          }
-        };
-        xmlHttp.open("GET", element.dataset.url, true);
-        xmlHttp.send(null);
-      }
-      document.querySelectorAll(".load-app").forEach(loadPage);
-    </script>
+    <script src="/js/loadAppsIndex.js"></script>
   </body>
 </html>
