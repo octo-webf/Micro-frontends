@@ -47,6 +47,18 @@ This will launch 3 micro-frontends at http://localhost:5001/, http://localhost:5
 
 ---
 
+## Micro-frontends using JavaScript 2
+
+Go to `Micro-frontends/microfront-with-js-2/` :
+
+1. In the 2 `./microappX` folders, and `./wrapperapp` execute `npm start`
+
+This will launch 3 micro-frontends at http://localhost:3000/ (wrapperapp), http://localhost:3001/ & http://localhost:3002/ (microapps)
+
+2. View the result at http://localhost:3000/
+
+---
+
 ## Micro-frontends using Custom Elements
 
 Still in development
