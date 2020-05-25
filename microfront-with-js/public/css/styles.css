@@ -37,3 +37,11 @@ button:hover {
   cursor: pointer;
   background-color: rgb(1, 155, 155);
 }
+
+.appName {
+  width: 180px;
+}
+
+.message {
+  margin: auto;
+}

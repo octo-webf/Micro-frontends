@@ -1,20 +1,59 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import Component from "./Component";
 
-function App() {
-  const [info, setInfo] = useState(0);
+const PARENT_APPLICATION_URL = "http://localhost:7000";
 
-  return (
-    <div className="secondApp flex">
-      <div>
-        <h1>React 2</h1>
-        <p>Second Micro-frontend</p>
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      info: 0,
+      message: "",
+    };
+  }
+  componentDidMount() {
+    window.addEventListener(
+      "message",
+      this.handleMessageEvent.bind(this),
+      false
+    );
+  }
+
+  handleMessageEvent(event) {
+    if (event.origin !== PARENT_APPLICATION_URL) {
+      return;
+    }
+    if (event.data.targetApp === "*" || event.data.targetApp === 2) {
+      if (event.data.clear) {
+        this.setState({ message: "" });
+        return;
+      }
+      this.setState({ message: "Received message: " + event.data.message });
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("message");
+  }
+
+  render() {
+    return (
+      <div className="secondApp">
+        <div className="flex">
+          <div class="appName">
+            <h1>React 2</h1>
+            <p>Second Micro-frontend</p>
+          </div>
+          <button onClick={() => this.setState({ info: this.state.info + 1 })}>
+            Clic
+          </button>
+          <Component info={this.state.info} />
+        </div>
+        <p class="message">{this.state.message}</p>
       </div>
-      <button onClick={() => setInfo(info + 1)}>clic</button>
-      <Component info={info} />
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

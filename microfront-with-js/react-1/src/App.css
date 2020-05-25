@@ -1,3 +1,7 @@
 .firstApp {
   border: 1px dashed blue;
 }
+
+.clear {
+  background-color: lightgray;
+}
