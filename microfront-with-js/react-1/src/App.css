@@ -1,7 +1,3 @@
 .firstApp {
-  border: 1px solid blue;
-}
-h1,
-p {
-  margin: 0;
+  border: 1px dashed blue;
 }

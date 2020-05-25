@@ -1,7 +1,3 @@
 .thirdApp {
-  font-family: sans-serif;
-}
-h1,
-p {
-  margin: 0;
+  border: 1px dashed green;
 }

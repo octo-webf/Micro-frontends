@@ -1,7 +1,39 @@
+h1,
+h3,
+p {
+  margin: 0;
+}
+
 .load-app {
   font-family: sans-serif;
   color: gray;
   margin: 2vh auto 2vh auto;
+  padding: 2vh;
   width: 800px;
   border: 1px solid lightgray;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  color: white;
+  background-color: darkcyan;
+  box-shadow: 0 0 10px lightgray;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  outline: none;
+  height: 30px;
+  margin-right: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(1, 155, 155);
 }
