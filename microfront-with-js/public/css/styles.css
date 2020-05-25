@@ -1,4 +1,7 @@
 .load-app {
   font-family: sans-serif;
-  color: brown;
+  color: gray;
+  margin: 2vh auto 2vh auto;
+  width: 800px;
+  border: 1px solid lightgray;
 }

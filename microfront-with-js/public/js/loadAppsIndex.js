@@ -7,7 +7,13 @@ function loadPage(element) {
         nonExecutableScript
       ) {
         var script = document.createElement("script");
-        script.setAttribute("src", nonExecutableScript.src);
+        console.log(nonExecutableScript);
+
+        if (nonExecutableScript.innerHTML === "") {
+          script.setAttribute("src", nonExecutableScript.src);
+        } else {
+          script.innerHTML = nonExecutableScript.innerHTML;
+        }
         script.setAttribute("type", "text/javascript");
         element.appendChild(script);
         nonExecutableScript.parentNode.removeChild(nonExecutableScript);
