@@ -3,22 +3,34 @@ import React from "react";
 class MicroFrontend extends React.Component {
   componentDidMount() {
     const { name, host, document } = this.props;
-    const scriptId = `micro-frontend-script-${name}`;
+    const scriptId = `script-${name}-`;
 
     if (document.getElementById(scriptId)) {
       this.renderMicroFrontend();
       return;
     }
 
+    var manifest_length = 1;
+    var loaded = 0;
+
     fetch(`${host}/asset-manifest.json`)
       .then((res) => res.json())
       .then((manifest) => {
-        const script = document.createElement("script");
-        script.id = scriptId;
-        script.src = `${host}${manifest["files"]["main.js"]}`;
-        script.crossOrigin = "";
-        script.onload = this.renderMicroFrontend;
-        document.head.appendChild(script);
+        manifest_length = manifest["entrypoints"].length;
+        manifest["entrypoints"].forEach((entrypoint) => {
+          const script = document.createElement("script");
+          script.id = scriptId + entrypoint.split("/")[2];
+          script.src = `${host}/${entrypoint}`;
+          script.crossOrigin = "";
+          document.head.appendChild(script);
+          script.onload = () => {
+            loaded += 1;
+            if (loaded !== manifest_length) {
+              return;
+            }
+            this.renderMicroFrontend();
+          };
+        });
       });
   }
 
