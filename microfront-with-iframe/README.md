@@ -36,6 +36,8 @@ This will launch 3 micro-frontends at http://localhost:8001/, http://localhost:8
 
 ## Micro-frontends using JavaScript
 
+_This method uses React as Micro-frontends & plain JavaScript to create Micro-frontends_
+
 Go to `Micro-frontends/microfront-with-js/` and like with Express/EJS :
 
 1. In the 3 `./react-X` folders, execute `npm run start:prod`
@@ -49,11 +51,17 @@ This will launch 3 micro-frontends at http://localhost:5001/, http://localhost:5
 
 ## Micro-frontends using JavaScript 2
 
+_This method uses React as Micro-frontends & to create Micro-frontends_
+
 Go to `Micro-frontends/microfront-with-js-2/` :
 
-1. In the 2 `./microappX` folders, and `./wrapperapp` execute `npm start`
+1. In each folder execute `npm start`
 
-This will launch 3 micro-frontends at http://localhost:3000/ (wrapperapp), http://localhost:3001/ & http://localhost:3002/ (microapps)
+This will launch 3 micro-frontends :  
+The container application (wrapperapp) at http://localhost:3000/,  
+Two micro-applications (microappX) at http://localhost:3001/ & http://localhost:3002/
+
+The content server (common-content) at http://localhost:3100/ allows shared content across the micro-frontends such as libraries, CSS, JSON data...
 
 2. View the result at http://localhost:3000/
 
