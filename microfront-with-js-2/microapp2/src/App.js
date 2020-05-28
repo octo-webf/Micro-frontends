@@ -29,6 +29,7 @@ function App({ history }) {
       console.log(cartOrder);
     } else {
       cartOrder[product.id]["quantity"] += 1;
+      setCartOrder(cartOrder);
       console.log(cartOrder);
     }
     setSuccess(true);

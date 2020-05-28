@@ -41,4 +41,23 @@
 .cart {
   box-shadow: 0 0 2px gray;
   width: 90%;
+  margin-bottom: 5vh;
+}
+.item {
+  box-shadow: 0 0 2px gray;
+}
+
+.item h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+.item h6 {
+  font-weight: 200;
+  text-align: center;
+}
+
+.item h5 {
+  padding-right: 1vw;
 }

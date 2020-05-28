@@ -35,7 +35,7 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isAuth, setAuth] = useState(false);
-  const [cartOrder, setCartOrder] = useState({});
+  const [cartOrder, setCartOrder] = useState([]);
 
   return (
     <>
