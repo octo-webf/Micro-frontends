@@ -1,14 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Home.css";
 
-function Home() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [isAuth, setAuth] = useState(false);
-
+function Home({ props }) {
   const handleSubmit = () => {
-    if (username.length > 0) {
-      setAuth(true);
+    if (props.username.length > 0) {
+      props.setAuth(true);
     }
   };
 
@@ -16,8 +12,13 @@ function Home() {
     <>
       <section class="homePage">
         <div class="auth">
-          {isAuth ? (
-            <h3>Authentication successful!</h3>
+          {props.isAuth ? (
+            <>
+              <h3>Authentication successful!</h3>
+              <p>
+                Hello <code>{props.username}</code>
+              </p>
+            </>
           ) : (
             <>
               <h2>Authentication</h2>
@@ -25,16 +26,16 @@ function Home() {
                 <div>
                   <input
                     type="text"
-                    value={username}
-                    onChange={(event) => setUsername(event.target.value)}
+                    value={props.username}
+                    onChange={(event) => props.setUsername(event.target.value)}
                     placeholder="Username"
                   />
                 </div>
                 <div>
                   <input
                     type="text"
-                    value={password}
-                    onChange={(event) => setPassword(event.target.value)}
+                    value={props.password}
+                    onChange={(event) => props.setPassword(event.target.value)}
                     placeholder="Password"
                   />
                 </div>
@@ -42,7 +43,7 @@ function Home() {
                   type="submit"
                   className="button-green login"
                   onClick={() => {
-                    console.log("Username: " + username);
+                    console.log("Username: " + props.username);
                     handleSubmit();
                   }}
                 >

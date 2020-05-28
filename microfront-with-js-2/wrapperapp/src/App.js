@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import "./App.css";
@@ -32,6 +32,10 @@ const BothMicroApps = () => {
 };
 
 function App() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isAuth, setAuth] = useState(false);
+
   return (
     <>
       <BrowserRouter>
@@ -41,14 +45,27 @@ function App() {
             <Navigation />
           </header>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/micro-frontend-1" component={MicroApp1} />
-            <Route exact path="/micro-frontend-2" component={MicroApp2} />
-            <Route
-              exact
-              path="/both-micro-frontends"
-              component={BothMicroApps}
-            />
+            <Route exact path="/">
+              <Home
+                props={{
+                  username,
+                  setUsername,
+                  password,
+                  setPassword,
+                  isAuth,
+                  setAuth,
+                }}
+              />
+            </Route>
+            <Route exact path="/micro-frontend-1">
+              <MicroApp1 />
+            </Route>
+            <Route exact path="/micro-frontend-2">
+              <MicroApp2 />
+            </Route>
+            <Route exact path="/both-micro-frontends">
+              <BothMicroApps />
+            </Route>
           </Switch>
         </React.Fragment>
       </BrowserRouter>
