@@ -22,11 +22,11 @@ const MicroApp2 = ({ history }) => {
   );
 };
 
-const BothMicroApps = () => {
+const BothMicroApps = ({ history }) => {
   return (
     <div>
-      <MicroApp1 />
-      <MicroApp2 />
+      <MicroApp1 history={history} />
+      <MicroApp2 history={history} />
     </div>
   );
 };
@@ -58,13 +58,13 @@ function App() {
               />
             </Route>
             <Route exact path="/micro-frontend-1">
-              <MicroApp1 />
+              <MicroApp1 history={{ isAuth, username }} />
             </Route>
             <Route exact path="/micro-frontend-2">
               <MicroApp2 />
             </Route>
             <Route exact path="/both-micro-frontends">
-              <BothMicroApps />
+              <BothMicroApps history={{ isAuth, username }} />
             </Route>
           </Switch>
         </React.Fragment>

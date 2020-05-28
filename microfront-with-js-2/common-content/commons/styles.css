@@ -6,6 +6,7 @@ body {
 .flex {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .button-blue {
@@ -21,6 +22,10 @@ body {
   font-size: 14px;
   font-weight: bold;
 }
+.button-blue:active {
+  position: relative;
+  top: 5px;
+}
 
 .button-green {
   color: white;
@@ -34,4 +39,9 @@ body {
   cursor: pointer;
   font-size: 14px;
   font-weight: bold;
+}
+
+.button-green:active {
+  position: relative;
+  top: 5px;
 }
