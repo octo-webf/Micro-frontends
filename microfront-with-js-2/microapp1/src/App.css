@@ -37,3 +37,8 @@
     transform: rotate(360deg);
   }
 }
+
+.cart {
+  box-shadow: 0 0 2px gray;
+  width: 90%;
+}

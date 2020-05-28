@@ -43,6 +43,12 @@
   box-shadow: 0 0 2px gray;
   margin: 2vh;
   cursor: pointer;
+  margin-bottom: 5vh;
+}
+
+.productBox:active {
+  position: relative;
+  top: 5px;
 }
 
 .productBox h4,
@@ -65,4 +71,12 @@ h6 {
 .previewImg {
   max-width: 100%;
   max-height: 160px;
+}
+
+.success {
+  position: fixed;
+  top: 50%;
+  margin: auto;
+  color: black;
+  background-color: white;
 }

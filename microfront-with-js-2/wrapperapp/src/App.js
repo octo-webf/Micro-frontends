@@ -35,6 +35,7 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isAuth, setAuth] = useState(false);
+  const [cartOrder, setCartOrder] = useState({});
 
   return (
     <>
@@ -58,13 +59,15 @@ function App() {
               />
             </Route>
             <Route exact path="/micro-frontend-1">
-              <MicroApp1 history={{ isAuth, username }} />
+              <MicroApp1 history={{ isAuth, username, cartOrder }} />
             </Route>
             <Route exact path="/micro-frontend-2">
-              <MicroApp2 />
+              <MicroApp2 history={{ cartOrder, setCartOrder }} />
             </Route>
             <Route exact path="/both-micro-frontends">
-              <BothMicroApps history={{ isAuth, username }} />
+              <BothMicroApps
+                history={{ isAuth, username, cartOrder, setCartOrder }}
+              />
             </Route>
           </Switch>
         </React.Fragment>

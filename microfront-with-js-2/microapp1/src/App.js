@@ -6,7 +6,7 @@ const CONTENT_HOST = process.env.REACT_APP_COMMONS_HOST;
 function App({ history }) {
   return (
     <div className="App">
-      <header className="App-header1">
+      <section className="App-header1">
         <img
           src={`${CONTENT_HOST}/images/logo.svg`}
           className="App-logo"
@@ -17,7 +17,10 @@ function App({ history }) {
           <>
             <img src="https://httpstatusdogs.com/img/200.jpg" />
             <p>Hello {history.username}</p>
-            <div class="cart"></div>
+            <h3>Your cart</h3>
+            <div class="cart">
+              <p>Your cart is empty</p>
+            </div>
           </>
         ) : (
           <>
@@ -25,7 +28,7 @@ function App({ history }) {
             <p>Authentication is necessary to access the content</p>
           </>
         )}
-      </header>
+      </section>
     </div>
   );
 }

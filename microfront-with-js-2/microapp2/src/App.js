@@ -3,9 +3,12 @@ import "./App.css";
 
 const CONTENT_HOST = process.env.REACT_APP_COMMONS_HOST;
 
-function App() {
+function App({ history }) {
   const [productList, setList] = useState([]);
   const [isLoading, setLoading] = useState(true);
+  const [isSuccess, setSuccess] = useState(false);
+
+  const { cartOrder, setCartOrder } = history;
 
   useEffect(() => {
     if (isLoading) {
@@ -17,7 +20,22 @@ function App() {
   });
 
   const handleClick = (product) => {
-    window.alert(`${product.name} has been added to the cart`);
+    if (
+      typeof cartOrder[product.id] === "undefined" ||
+      cartOrder[product.id] === null
+    ) {
+      cartOrder[product.id] = { product, quantity: 1 };
+      setCartOrder(cartOrder);
+      console.log(cartOrder);
+    } else {
+      cartOrder[product.id]["quantity"] += 1;
+      console.log(cartOrder);
+    }
+    setSuccess(true);
+
+    setTimeout(() => {
+      setSuccess(false);
+    }, 2000);
   };
 
   return (
@@ -43,6 +61,7 @@ function App() {
           );
         })}
       </div>
+      {isSuccess && <p class="success">Item added !</p>}
     </div>
   );
 }
