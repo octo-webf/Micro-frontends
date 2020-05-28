@@ -7,13 +7,15 @@ function App() {
   const [counter, setCounter] = useState(0);
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header2">
         <img
           src={`${CONTENT_HOST}/images/logo.svg`}
           className="App-logo"
           alt="logo"
         />
-        <button onClick={() => setCounter(counter + 1)}>{counter}</button>
+        <button className="button-blue" onClick={() => setCounter(counter + 1)}>
+          {counter}
+        </button>
       </header>
     </div>
   );

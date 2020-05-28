@@ -1,0 +1,29 @@
+.homePage {
+  height: 80vh;
+  padding-top: 10vh;
+}
+
+.auth {
+  margin: auto;
+  padding: 3vh;
+  text-align: center;
+  width: calc(200px + 15vw);
+  box-shadow: 0 0 5px lightgray;
+  border-radius: 10px;
+}
+
+input {
+  width: 60%;
+  height: 4vh;
+  font-size: 14px;
+  border: 1px solid lightgray;
+  border-radius: 100px;
+  margin: 1vh auto 1vh auto;
+  padding: 0 15px 0 15px;
+  outline-style: none;
+  text-align: center;
+}
+
+.login {
+  margin-top: 4vh;
+}
