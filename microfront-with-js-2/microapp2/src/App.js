@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-const { REACT_APP_COMMONS_HOST: CONTENT_HOST, MICRO_APP_1 } = process.env;
+const { REACT_APP_COMMONS_HOST: CONTENT_HOST } = process.env;
 
 function App({ history }) {
   const [productList, setList] = useState([]);
@@ -9,6 +9,7 @@ function App({ history }) {
   const [isSuccess, setSuccess] = useState(false);
 
   const { cartOrder, setCartOrder } = history;
+  //const [cartOrder, setCartOrder] = useState([]);
 
   useEffect(() => {
     if (isLoading) {
@@ -26,11 +27,9 @@ function App({ history }) {
     ) {
       cartOrder[product.id] = { product, quantity: 1 };
       setCartOrder(cartOrder);
-      console.log(cartOrder);
     } else {
       cartOrder[product.id]["quantity"] += 1;
       setCartOrder(cartOrder);
-      console.log(cartOrder);
     }
     setSuccess(true);
     setTimeout(() => {

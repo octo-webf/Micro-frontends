@@ -5,6 +5,11 @@ const CONTENT_HOST = process.env.REACT_APP_COMMONS_HOST;
 
 function App({ history }) {
   const { isAuth, username, cartOrder } = history;
+  /*
+  const isAuth = true;
+  const username = "Pierre";
+  const cartOrder = [];
+  */
 
   return (
     <div className="App">
