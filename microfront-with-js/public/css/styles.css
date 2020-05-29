@@ -4,7 +4,8 @@ p {
   margin: 0;
 }
 
-.load-app {
+.load-app,
+.app-sources {
   font-family: sans-serif;
   color: gray;
   margin: 2vh auto 2vh auto;
