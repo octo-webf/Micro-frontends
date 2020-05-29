@@ -10,7 +10,7 @@ import { CustomComponent } from './custom/custom.component';
   imports: [BrowserModule],
   providers: [],
   bootstrap: [],
-  entryComponents: [AppComponent, CustomComponent],
+  entryComponents: [CustomComponent],
 })
 export class AppModule {
   constructor(private injector: Injector) {}
@@ -19,6 +19,6 @@ export class AppModule {
 
     const ngCustomElement = createCustomElement(CustomComponent, { injector });
 
-    customElements.define('angular-app', ngCustomElement);
+    customElements.define('angular-element', ngCustomElement);
   }
 }
