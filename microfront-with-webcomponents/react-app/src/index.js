@@ -1,21 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import CustomElement from "./CustomElement";
-import * as serviceWorker from "./serviceWorker";
+/**
+ * This is the entry file of the Direflow setup.
+ *
+ * You can add any additional functionality here.
+ * For example, this is a good place to hook into your
+ * Web Component once it's mounted on the DOM.
+ *
+ * !This file cannot be removed.
+ * It can be left blank if not needed.
+ */
 
-class WebComponent extends HTMLElement {
-  connectedCallback() {
-    console.log("React connected");
-    ReactDOM.render(<CustomElement />, this);
-  }
+import ReactApp from './direflow-components/react-app';
 
-  disconnectedCallback() {
-    console.log("React disconnected");
-    ReactDOM.unmountComponentAtNode(this);
-  }
-}
+ReactApp.then((element) => {
 
-window.customElements.define("react-el", WebComponent);
-
-serviceWorker.unregister();
+  /**
+   * Access DOM node when it's mounted
+   */
+  console.log('react-app is mounted on the DOM', element);
+});

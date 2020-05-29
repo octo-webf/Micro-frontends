@@ -19,6 +19,6 @@ export class AppModule {
 
     const ngCustomElement = createCustomElement(CustomComponent, { injector });
 
-    customElements.define('ng-el', ngCustomElement);
+    customElements.define('angular-app', ngCustomElement);
   }
 }
