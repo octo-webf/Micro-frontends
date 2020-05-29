@@ -18,6 +18,7 @@ const createProxy = (path, target) =>
 createProxy("/react1", "http://localhost:7001");
 createProxy("/react2", "http://localhost:7002");
 createProxy("/react3", "http://localhost:7003");
+createProxy("/angular", "http://localhost:7004");
 
 server.get("/", (req, res) => res.render("index"));
 
