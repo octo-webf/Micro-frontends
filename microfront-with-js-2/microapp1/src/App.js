@@ -17,7 +17,7 @@ function App({ history }) {
         <h2>First React Micro-frontend</h2>
         {isAuth ? (
           <>
-            <img src="https://httpstatusdogs.com/img/200.jpg" />
+            <img class="dog-img" src="https://httpstatusdogs.com/img/200.jpg" />
             <p>Hello {username}</p>
             <h3>Your cart</h3>
             <div class="cart">
@@ -48,7 +48,7 @@ function App({ history }) {
           </>
         ) : (
           <>
-            <img src="https://httpstatusdogs.com/img/401.jpg" />
+            <img class="dog-img" src="https://httpstatusdogs.com/img/401.jpg" />
             <p>Authentication is necessary to access the content</p>
           </>
         )}

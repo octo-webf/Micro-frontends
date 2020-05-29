@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-const CONTENT_HOST = process.env.REACT_APP_COMMONS_HOST;
+const { REACT_APP_COMMONS_HOST: CONTENT_HOST, MICRO_APP_1 } = process.env;
 
 function App({ history }) {
   const [productList, setList] = useState([]);
@@ -33,7 +33,6 @@ function App({ history }) {
       console.log(cartOrder);
     }
     setSuccess(true);
-
     setTimeout(() => {
       setSuccess(false);
     }, 2000);
