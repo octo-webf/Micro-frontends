@@ -33,7 +33,7 @@ function App({ history }) {
               {Object.keys(cartOrder).length > 0 &&
                 cartOrder.map((item) => {
                   return (
-                    <div class="productList">
+                    <div key={item.product.id} className="productList">
                       <div className="flex item">
                         <img
                           src={item.product.imgURL}
