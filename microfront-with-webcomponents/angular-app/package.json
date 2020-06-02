@@ -5,10 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --output-hashing none --single-bundle true",
+    "concatenate": "concat -o ./build/angularelements.js ./build/{polyfills,main}.js ",
+    "start:server": "serve -l 4001 build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev": "npm run build && serve -l 4001 build"
+    "dev": "npm run build && npm run concatenate && npm run start:server"
   },
   "private": true,
   "dependencies": {
