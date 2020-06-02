@@ -10,8 +10,8 @@ function Home({ props }) {
 
   return (
     <>
-      <section class="homePage">
-        <div class="auth">
+      <section className="homePage">
+        <div className="auth">
           {props.isAuth ? (
             <>
               <h3>Authentication successful!</h3>

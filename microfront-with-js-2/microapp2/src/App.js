@@ -49,8 +49,16 @@ function App({ history }) {
       <div className="flex">
         {productList.map((product) => {
           return (
-            <div class="productBox" onClick={() => handleClick(product)}>
-              <img src={product.imgURL} class="previewImg" alt={product.name} />
+            <div
+              key={product.id}
+              className="productBox"
+              onClick={() => handleClick(product)}
+            >
+              <img
+                src={product.imgURL}
+                className="previewImg"
+                alt={product.name}
+              />
               <div className="flex">
                 <h4>{product.name}</h4>
                 <h5>{product.price}</h5>
@@ -60,7 +68,7 @@ function App({ history }) {
           );
         })}
       </div>
-      {isSuccess && <p class="success">Item added !</p>}
+      {isSuccess && <p className="success">Item added !</p>}
     </div>
   );
 }

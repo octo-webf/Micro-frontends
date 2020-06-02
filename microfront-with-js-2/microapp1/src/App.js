@@ -22,10 +22,13 @@ function App({ history }) {
         <h2>First React Micro-frontend</h2>
         {isAuth ? (
           <>
-            <img class="dog-img" src="https://httpstatusdogs.com/img/200.jpg" />
+            <img
+              className="dog-img"
+              src="https://httpstatusdogs.com/img/200.jpg"
+            />
             <p>Hello {username}</p>
             <h3>Your cart</h3>
-            <div class="cart">
+            <div className="cart">
               {Object.keys(cartOrder).length === 0 && <p>Your cart is empty</p>}
               {Object.keys(cartOrder).length > 0 &&
                 cartOrder.map((item) => {
@@ -34,7 +37,7 @@ function App({ history }) {
                       <div className="flex item">
                         <img
                           src={item.product.imgURL}
-                          class="previewImg"
+                          className="previewImg"
                           alt={item.product.name}
                         />
                         <div>
@@ -53,7 +56,10 @@ function App({ history }) {
           </>
         ) : (
           <>
-            <img class="dog-img" src="https://httpstatusdogs.com/img/401.jpg" />
+            <img
+              className="dog-img"
+              src="https://httpstatusdogs.com/img/401.jpg"
+            />
             <p>Authentication is necessary to access the content</p>
           </>
         )}

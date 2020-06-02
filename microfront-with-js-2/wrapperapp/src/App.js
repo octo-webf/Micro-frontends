@@ -41,7 +41,7 @@ function App() {
     <>
       <BrowserRouter>
         <React.Fragment>
-          <header class="title">
+          <header className="title">
             <h1>Micro-frontends using JS and React</h1>
             <Navigation />
           </header>
