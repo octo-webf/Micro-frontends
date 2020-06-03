@@ -59,10 +59,12 @@ function App() {
               />
             </Route>
             <Route exact path="/micro-frontend-1">
-              <MicroApp1 history={{ isAuth, username, cartOrder }} />
+              <MicroApp1
+                history={{ isAuth, username, cartOrder, setCartOrder }}
+              />
             </Route>
             <Route exact path="/micro-frontend-2">
-              <MicroApp2 history={{ cartOrder, setCartOrder }} />
+              <MicroApp2 />
             </Route>
             <Route exact path="/both-micro-frontends">
               <BothMicroApps
