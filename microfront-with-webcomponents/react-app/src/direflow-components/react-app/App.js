@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./App.css";
+
 import { Styled } from "direflow-component";
 
 const CONTENT_HOST = process.env.REACT_APP_COMMONS_HOST;
