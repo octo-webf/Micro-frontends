@@ -4,11 +4,12 @@ import { createCustomElement } from '@angular/elements';
 
 //import { AppComponent } from './app.component';
 import { CustomComponent } from './custom/custom.component';
+import { Custom2Component } from './custom2/custom2.component';
 
 @NgModule({
-  declarations: [CustomComponent],
+  declarations: [CustomComponent, Custom2Component],
   imports: [BrowserModule],
-  entryComponents: [CustomComponent],
+  entryComponents: [CustomComponent, Custom2Component],
 })
 export class AppModule {
   constructor(private injector: Injector) {}
@@ -16,7 +17,11 @@ export class AppModule {
   ngDoBootstrap(): void {
     const injector = this.injector;
     const ngCustomElement = createCustomElement(CustomComponent, { injector });
+    const ngCustom2Element = createCustomElement(Custom2Component, {
+      injector,
+    });
 
-    customElements.define('angular-element', ngCustomElement);
+    customElements.define('angular-app', ngCustomElement);
+    customElements.define('angular-second-app', ngCustom2Element);
   }
 }
