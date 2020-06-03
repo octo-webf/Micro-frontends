@@ -6,10 +6,10 @@
 
 Research on the use of different methods to integrate micro-frontends :
 
-- With iframes
-- With Express & EJS (server-side rendering)
-- With JavaScript
-- With Custom elements (Web Components)
+- [With iframes](#micro-frontends-using-iframes)
+- [With Express & EJS](#micro-frontends-using-express--ejs) (server-side rendering)
+- [With JavaScript](#micro-frontends-using-javascript)
+- [With Custom elements](#micro-frontends-using-custom-elements) (Web Components)
 
 ## Micro-frontends using iframes
 
