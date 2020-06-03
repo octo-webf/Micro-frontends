@@ -1,8 +1,8 @@
 import { DireflowComponent } from "direflow-component";
-import App from "./App";
+import SecondApp from "./SecondApp";
 
 export default DireflowComponent.create({
-  component: App,
+  component: SecondApp,
   configuration: {
     tagname: "second-app",
   },

@@ -13,15 +13,9 @@ import ReactApp from "./direflow-components/react-app";
 import SecondApp from "./direflow-components/second-app";
 
 ReactApp.then((element) => {
-  /**
-   * Access DOM node when it's mounted
-   */
   console.log("react-app is mounted on the DOM", element);
 });
 
 SecondApp.then((element) => {
-  /**
-   * Access DOM node when it's mounted
-   */
   console.log("second-app is mounted on the DOM", element);
 });

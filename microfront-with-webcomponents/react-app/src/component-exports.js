@@ -10,9 +10,6 @@
  */
 
 import App from "./direflow-components/react-app/App";
+import SecondApp from "./direflow-components/second-app/SecondApp";
 
-export { App };
-
-import App from "./direflow-components/second-app/App";
-
-export { App };
+export { App, SecondApp };
