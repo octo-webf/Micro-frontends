@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "name": "GTA V",
+      "price": "49€",
+      "imgURL": "https://www.cdiscount.com/pdt2/7/9/8/1/700x700/son3491951945798/rw/gta-v-ps4.jpg",
+      "tags": "Adult, Violence, Drugs"
+    },
+    {
+      "id": 1,
+      "name": "Assassin's Creed: Odyssey",
+      "price": "70€",
+      "imgURL": "https://www.cdiscount.com/pdt2/8/9/6/1/700x700/3307216063896/rw/assassin-s-creed-odyssey-jeu-ps4.jpg",
+      "tags": "Violence, Open World, History"
+    },
+    {
+      "id": 2,
+      "name": "Fortnite",
+      "price": "Free",
+      "imgURL": "https://images-na.ssl-images-amazon.com/images/I/917JLu3S8DL._SX522_.jpg",
+      "tags": "Battle Royale, Trending, Violence"
+    }
+  ]
+}
