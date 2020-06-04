@@ -13,9 +13,52 @@
   </head>
 
   <body>
+    <header>
+      <h1>Micro-frontends using Web Components</h1>
+      <div class="flex">
+        <input
+          type="text"
+          id="input"
+          placeholder="Set Username via Custom Event"
+        />
+        <button class="btn" type="submit" onclick="sendUsername(input.value)">
+          <img
+            src="https://image.flaticon.com/icons/png/512/2089/2089805.png"
+            style="height: 100%;"
+          />
+        </button>
+      </div>
+      <div class="flex">
+        <button onclick="setAuthMode(true)">Sign in</button>
+        <button onclick="setAuthMode(false)">Sign out</button>
+      </div>
+    </header>
     <!--<angular-app class="customElement"></angular-app>
     <angular-second-app class="customElement"></angular-second-app>-->
     <react-app class="customElement"></react-app>
     <second-app class="customElement"></second-app>
+
+    <script>
+      //const angularapp = document.querySelector("angular-app");
+      //const angularsecondapp = document.querySelector("angular-second-app");
+      const reactapp = document.querySelector("react-app");
+      const secondapp = document.querySelector("second-app");
+
+      function sendUsername(value) {
+        const event = new CustomEvent("usernameEvent", {
+          bubbles: true,
+          detail: { username: value },
+        });
+        reactapp.dispatchEvent(event);
+      }
+
+      function setAuthMode(bool) {
+        const event = new CustomEvent("setAuthEvent", {
+          bubbles: true,
+          detail: { isAuth: bool },
+        });
+        reactapp.dispatchEvent(event);
+      }
+    </script>
   </body>
 </html>

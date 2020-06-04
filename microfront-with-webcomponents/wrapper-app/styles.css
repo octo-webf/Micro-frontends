@@ -1,0 +1,33 @@
+header {
+  text-align: center;
+  padding: 1% 0 1% 0;
+  background-color: white;
+  box-shadow: 0 1px 0 lightgray;
+  z-index: 1000;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#input {
+  width: 15vw;
+  height: 3vh;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  padding-left: 1vw;
+}
+#input:focus {
+  border: 2px solid gray;
+  outline: none;
+}
+
+.btn {
+  height: 2vh;
+  margin-left: -35px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
