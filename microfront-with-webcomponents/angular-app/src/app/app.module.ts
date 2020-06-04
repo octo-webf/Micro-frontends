@@ -9,6 +9,7 @@ import { Custom2Component } from './custom2/custom2.component';
 @NgModule({
   declarations: [CustomComponent, Custom2Component],
   imports: [BrowserModule],
+  //bootstrap: [CustomComponent],
   entryComponents: [CustomComponent, Custom2Component],
 })
 export class AppModule {
