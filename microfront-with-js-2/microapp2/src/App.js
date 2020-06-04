@@ -8,7 +8,7 @@ function App({ history }) {
   const [isLoading, setLoading] = useState(true);
   const [isSuccess, setSuccess] = useState(false);
 
-  const [quantityOrdered, setQuantityOrdered] = useState([]);
+  const { cartOrder, setCartOrder } = history;
 
   useEffect(() => {
     if (isLoading) {
@@ -21,19 +21,18 @@ function App({ history }) {
 
   const handleClick = (product) => {
     if (
-      typeof quantityOrdered[product.id] === "undefined" ||
-      quantityOrdered[product.id] === null
+      typeof cartOrder[product.id] === "undefined" ||
+      cartOrder[product.id] === null
     ) {
-      quantityOrdered[product.id] = 1;
-      setQuantityOrdered(quantityOrdered);
+      cartOrder[product.id] = { product, quantity: 1 };
+      setCartOrder(cartOrder);
     } else {
-      quantityOrdered[product.id] += 1;
-      setQuantityOrdered(quantityOrdered);
+      cartOrder[product.id]["quantity"] += 1;
+      setCartOrder(cartOrder);
     }
 
     const Event = new CustomEvent("addProductToCart", {
       bubbles: true,
-      detail: { product: product, quantity: quantityOrdered[product.id] },
     });
     dispatchEvent(Event);
 

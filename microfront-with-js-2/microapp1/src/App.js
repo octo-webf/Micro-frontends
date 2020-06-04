@@ -16,18 +16,9 @@ class App extends React.Component {
     window.removeEventListener("addProductToCart", this.handleCart);
   }
 
-  handleCart = (event) => {
-    const { cartOrder, setCartOrder } = this.props.history;
-    cartOrder[event.detail.product.id] = event.detail;
-    setCartOrder(cartOrder);
+  handleCart = () => {
     this.forceUpdate();
   };
-
-  /*
-  const isAuth = true;
-  const username = "Pierre";
-  const cartOrder = [];
-  */
 
   render() {
     const { isAuth, username, cartOrder } = this.props.history;
