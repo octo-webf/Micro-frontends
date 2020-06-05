@@ -92,5 +92,5 @@ export default class App extends React.Component {
 }
 
 App.defaultProps = {
-  history: { isAuth: true, username: "Pierre", cartOrder: [] },
+  history: { isAuth: false, username: "", cartOrder: [] },
 };
