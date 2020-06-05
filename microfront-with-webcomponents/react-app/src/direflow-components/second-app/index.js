@@ -6,14 +6,4 @@ export default DireflowComponent.create({
   configuration: {
     tagname: "second-app",
   },
-  plugins: [
-    {
-      name: "font-loader",
-      options: {
-        google: {
-          families: ["Advent Pro", "Noto Sans JP"],
-        },
-      },
-    },
-  ],
 });
