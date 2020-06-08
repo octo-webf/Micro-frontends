@@ -14,11 +14,14 @@ export class CustomComponent implements OnInit {
   ngOnInit(): void {
     fetch(`${this.CONTENT_HOST}/productList.json`)
       .then((res) => res.json())
-      .then((list) => (this.productList = list.products))
-      .then(() => console.log(this.productList));
+      .then((list) => (this.productList = list.products));
   }
 
   handleClick(product) {
-    console.log(product);
+    const event = new CustomEvent('addProductToCart', {
+      bubbles: true,
+      detail: { product },
+    });
+    window.dispatchEvent(event);
   }
 }

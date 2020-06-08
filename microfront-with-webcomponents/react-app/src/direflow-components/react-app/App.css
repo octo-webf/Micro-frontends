@@ -40,11 +40,18 @@
 
 .cart {
   box-shadow: 0 0 2px gray;
-  width: 90%;
+  width: 80%;
   margin-bottom: 5vh;
 }
 .item {
   box-shadow: 0 0 2px gray;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .item h3,
@@ -60,4 +67,8 @@ h6 {
 
 .item h5 {
   padding-right: 1vw;
+}
+
+.previewImg {
+  height: 15vh;
 }
