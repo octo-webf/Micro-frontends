@@ -11,7 +11,8 @@
     "dev:ssr": "ng run angular2:serve-ssr --port 7005",
     "serve:ssr": "node dist/angular2/server/main.js",
     "build:ssr": "ng build --prod && ng run angular2:server:production",
-    "prerender": "ng run angular2:prerender"
+    "prerender": "ng run angular2:prerender",
+    "start:prod": "npm run build:ssr && npm run serve:ssr"
   },
   "private": true,
   "dependencies": {
