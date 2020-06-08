@@ -44,6 +44,7 @@ export default class App extends React.Component {
                 <img
                   className="dog-img"
                   src="https://httpstatusdogs.com/img/200.jpg"
+                  alt="dog-success"
                 />
                 <p>Hello {username}</p>
                 <h3>Your cart</h3>
@@ -80,6 +81,7 @@ export default class App extends React.Component {
                 <img
                   className="dog-img"
                   src="https://httpstatusdogs.com/img/401.jpg"
+                  alt="dog-denied"
                 />
                 <p>Authentication is necessary to access the content</p>
               </>
