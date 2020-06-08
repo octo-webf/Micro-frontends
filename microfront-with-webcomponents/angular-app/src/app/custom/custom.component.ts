@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-custom',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./custom.component.scss'],
 })
 export class CustomComponent implements OnInit {
-  CONTENT_HOST: String = 'http://localhost:4100';
+  CONTENT_HOST: String = environment.COMMON_CONTENT_HOST_URL;
   productList = [];
 
   constructor() {}
