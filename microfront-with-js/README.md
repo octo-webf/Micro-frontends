@@ -23,29 +23,41 @@ Go to `Micro-frontends/microfront-with-iframe/`
 
 ## Micro-frontends using Express & EJS
 
+_This method uses React & Angular as Micro-frontends rendered server-side & EJS to compose Micro-frontends server-side_
+
 Go to `Micro-frontends/microfront-with-express/`
 
 1. In the 3 `./react-X` folders, execute `npm run start:prod`
 
-This will launch 3 micro-frontends at http://localhost:8001/, http://localhost:8002/ & http://localhost:8003/
+This will launch 3 React micro-frontends at http://localhost:8001/, http://localhost:8002/ & http://localhost:8003/
 
-2. In the root folder, launch the express server with `node server.js`
-3. View the result at http://localhost:8000/
+2. In the `./angular` folders, also execute `npm run start:prod`
+
+This will launch an Angular micro-frontends at http://localhost:8004/
+
+3. In the root folder, launch the express server with `node server.js`
+
+4. View the result at http://localhost:8000/
 
 ---
 
 ## Micro-frontends using JavaScript
 
-_This method uses React as Micro-frontends & plain JavaScript to create Micro-frontends_
+_This method uses React & Angular as Micro-frontends rendered server-side & plain JavaScript to compose Micro-frontends client-side_
 
 Go to `Micro-frontends/microfront-with-js/` and like with Express/EJS :
 
 1. In the 3 `./react-X` folders, execute `npm run start:prod`
 
-This will launch 3 micro-frontends at http://localhost:5001/, http://localhost:5002/ & http://localhost:5003/
+This will launch 3 React micro-frontends at http://localhost:7001/, http://localhost:7002/ & http://localhost:7003/
 
-2. In the root folder, launch the express server with `node server.js`
-3. View the result at http://localhost:5000/
+2. In the 2 `./angularX` folders, also execute `npm run start:prod`
+
+This will launch 2 Angular micro-frontends at http://localhost:7004/ & http://localhost:7005/
+
+3. In the root folder, launch the express server with `node server.js`
+
+View the result at http://localhost:7000/
 
 ---
 
@@ -73,6 +85,6 @@ _This method uses [Direflow](https://direflow.io/) to create React Web Component
 
 Go to `Micro-frontends/microfront-with-webcomponents/` :
 
-1. In `./angular-app` & `react-app` execute `npm run dev` to build & launch the Web Components at http://localhost:4001/ & http://localhost:4002/
+1. In `./angular-app` & `react-app` execute `npm run dev` to build & launch the Angular and React Web Components at http://localhost:4001/ & http://localhost:4002/
 2. In `./common-content` run `npm start` to allow use of shared content serve at http://localhost:4100/
-3. In `./wrapper-app` run `npm start` to see an example of use of Custom Elements
+3. In `./wrapper-app` run `npm start` to see an example of use of Custom Elements at http://localhost:4000/
