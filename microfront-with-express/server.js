@@ -19,18 +19,21 @@ const createProxy = (path, target) =>
 createProxy("/react1", "http://localhost:8001/");
 createProxy("/react2", "http://localhost:8002/");
 createProxy("/react3", "http://localhost:8003/");
+createProxy("/angular", "http://localhost:8004/");
 
 server.get("/", (req, res) =>
   Promise.all([
     getContents("http://localhost:8000/react1"),
     getContents("http://localhost:8000/react2"),
     getContents("http://localhost:8000/react3"),
+    getContents("http://localhost:8000/angular")
   ])
     .then((responses) => {
       res.render("index", {
         react1: responses[0],
         react2: responses[1],
         react3: responses[2],
+        angular: responses[3],
       });
     })
     .catch((error) => res.send(error.message))
