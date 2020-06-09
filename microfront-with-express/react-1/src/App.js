@@ -13,16 +13,16 @@ function App() {
         <p>Send a message to the other Micro-frontends</p>
       </div>
       <div>
-        <button className="btn" onClick={() => window.sendMessage(2, HELLO_MESSAGE)}>
+        <button className="btn" id="btn-react2" onClick={() => window.sendMessage(2, HELLO_MESSAGE)}>
           React2
         </button>
-        <button className="btn" onClick={() => window.sendMessage(3, HELLO_MESSAGE)}>
+        <button className="btn" id="btn-react3" onClick={() => window.sendMessage(3, HELLO_MESSAGE)}>
           React3
         </button>
-        <button className="btn" onClick={() => window.sendMessage("*", HELLO_MESSAGE)}>
+        <button className="btn" id="btn-all" onClick={() => window.sendMessage("*", HELLO_MESSAGE)}>
           All
         </button>
-        <button className="btn clear" onClick={() => window.sendMessage("*", "...")}>
+        <button className="btn clear" id="btn-clear" onClick={() => window.sendMessage("*", "...")}>
           Clear
         </button>
       </div>
