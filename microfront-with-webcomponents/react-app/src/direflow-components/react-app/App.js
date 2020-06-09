@@ -13,11 +13,11 @@ export default class App extends React.Component {
 
   componentDidMount() {
     window.addEventListener("usernameEvent", (event) => {
-      console.log("event received");
+      console.log("Username: event received");
       this.setState({ username: event.detail.username });
     });
     window.addEventListener("setAuthEvent", (event) => {
-      console.log("event received");
+      console.log("Auth: event received");
       this.setState({ isAuth: event.detail.isAuth });
     });
     window.addEventListener("addProductToCart", (event) => {
@@ -39,11 +39,11 @@ export default class App extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener("usernameEvent", (event) => {
-      console.log("event received");
+      console.log("Username: event received");
       this.setState({ username: event.detail.username });
     });
     window.removeEventListener("setAuthEvent", (event) => {
-      console.log("event received");
+      console.log("Auth: event received");
       this.setState({ isAuth: event.detail.isAuth });
     });
     window.removeEventListener("addProductToCart", (event) => {
@@ -91,7 +91,11 @@ export default class App extends React.Component {
                   {Object.keys(cartOrder).length > 0 &&
                     cartOrder.map((item) => {
                       return (
-                        <div key={item.product.id} className="productList">
+                        <div
+                          id={item.product.id}
+                          key={item.product.id}
+                          className="productList"
+                        >
                           <div className="flex item">
                             <img
                               src={item.product.imgURL}

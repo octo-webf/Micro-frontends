@@ -12,6 +12,7 @@
     <li
       class="productBox"
       *ngFor="let product of productList"
+      id="product-{{ product.id }}"
       (click)="handleClick(product)"
     >
       <img
