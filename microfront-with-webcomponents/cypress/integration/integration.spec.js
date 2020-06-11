@@ -1,8 +1,8 @@
 describe("Wrapper  integration", function () {
   it("Integrates the web components", function () {
     cy.visit("http://localhost:4000");
-    cy.get("angular-app").should("not.be.empty");
-    cy.get("second-angular-app").should("not.be.empty");
+    cy.get("angular-app").shadow().should("not.be.empty");
+    cy.get("angular-second-app").shadow().should("not.be.empty");
     cy.get("react-app").shadow().should("not.be.empty");
     cy.get("second-app").shadow().should("not.be.empty");
   });
@@ -19,7 +19,7 @@ describe("Wrapper  integration", function () {
   });
 
   it("Communicates from angular-app to react-app", function () {
-    cy.get("angular-app").find("#product-1").click();
+    cy.get("angular-app").shadow().find("#product-1").click();
     cy.get("react-app").shadow().find("#1 h4").should("contain", "Assassin");
   });
 });
@@ -67,6 +67,6 @@ describe("Custom Events sent", function () {
       };
       win.addEventListener("addProductToCart", listener);
     });
-    cy.get("angular-app").find("#product-1").click();
+    cy.get("angular-app").shadow().find("#product-1").click();
   });
 });

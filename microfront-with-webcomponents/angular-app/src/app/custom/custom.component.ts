@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-custom',
   templateUrl: './custom.component.html',
   styleUrls: ['./custom.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class CustomComponent implements OnInit {
   CONTENT_HOST: String = environment.COMMON_CONTENT_HOST_URL;
   productList = [];
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     fetch(`${this.CONTENT_HOST}/productList.json`)
