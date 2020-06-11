@@ -5,6 +5,7 @@ describe("Wrapper  integration", function () {
     cy.get("angular-second-app").shadow().should("not.be.empty");
     cy.get("react-app").shadow().should("not.be.empty");
     cy.get("second-app").shadow().should("not.be.empty");
+    cy.get("vue-app").shadow().should("not.be.empty");
   });
 
   it("Communicates from wrapper-app to react-app", function () {
