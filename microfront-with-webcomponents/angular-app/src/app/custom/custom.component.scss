@@ -2,17 +2,33 @@ div {
   text-align: center;
 }
 
+h3 {
+  margin: 0;
+}
+
 img {
-  height: 200px;
+  max-height: 200px;
+}
+
+#angular-img {
+  width: 50px;
+  position: relative;
+  top: 50px;
+  margin-top: -50px;
+  margin-bottom: 0;
+  left: calc(-25vw - 20px);
 }
 
 section {
-  background-color: #282c34;
   padding: 2vh;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #282c34;
   text-align: center;
   flex-direction: column;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  box-shadow: 0 0 10px lightgray;
+  width: calc(100px + 50vw);
+  margin: auto;
 }
 
 .flex {
@@ -21,21 +37,18 @@ section {
   flex-wrap: wrap;
 }
 
-.detail {
-  justify-content: space-between;
-}
-
 ul {
   padding: 0;
   justify-content: center;
 }
 
 .productBox {
-  width: 300px;
-  box-shadow: 0 0 2px gray;
-  margin: 2vh;
+  width: 200px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 1vh 1vw 1vh 1vw;
   cursor: pointer;
-  margin-bottom: 5vh;
   list-style: none;
 
   &:active {

@@ -1,13 +1,10 @@
 <section>
-  <div>
-    <img
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png"
-      alt="Angular logo"
-    />
-  </div>
-  <h2>First Angular Micro-frontend</h2>
-  <h3>Products list</h3>
-
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png"
+    alt="Angular logo"
+    id="angular-img"
+  />
+  <h2>Products list</h2>
   <ul class="flex">
     <li
       class="productBox"
@@ -20,11 +17,10 @@
         class="previewImg"
         alt="{{ product.name }}"
       />
-      <div class="flex detail">
-        <h4>{{ product.name }}</h4>
-        <h5>{{ product.price }}</h5>
-      </div>
+
+      <h4>{{ product.name }}</h4>
       <h6>{{ product.tags }}</h6>
+      <h5>{{ product.price }}</h5>
     </li>
   </ul>
 </section>

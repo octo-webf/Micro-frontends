@@ -1,23 +1,43 @@
+body {
+  margin: 5vh 5vw 5vh 5vw;
+}
+
 header {
   text-align: center;
   padding: 1% 0 1% 0;
+  margin: auto;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  box-shadow: 0 0 10px lightgray;
   background-color: white;
-  box-shadow: 0 1px 0 lightgray;
-  z-index: 1000;
+}
+
+.app {
+  margin: 2vw;
 }
 
 .flex {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+}
+
+.center {
   justify-content: center;
+  align-items: center;
+}
+
+.spaced {
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 #input {
-  width: 15vw;
+  width: calc(200px + 5vw);
   height: 3vh;
   border: 1px solid lightgray;
   border-radius: 20px;
   padding-left: 1vw;
+  margin: auto;
 }
 #input:focus {
   border: 2px solid gray;
@@ -26,8 +46,8 @@ header {
 
 .btn {
   height: 2vh;
-  margin-left: -35px;
   border-radius: 50%;
   border: none;
   outline: none;
+  margin-left: -40px;
 }

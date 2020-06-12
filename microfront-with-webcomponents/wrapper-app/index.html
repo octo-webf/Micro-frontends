@@ -21,7 +21,7 @@
   <body>
     <header>
       <h1>Micro-frontends using Web Components</h1>
-      <div class="flex">
+      <div>
         <input
           type="text"
           id="input"
@@ -40,16 +40,24 @@
           />
         </button>
       </div>
-      <div class="flex">
+      <div class="flex center">
         <button id="btn-sign-in" onclick="setAuthMode(true)">Sign in</button>
         <button id="btn-sign-out" onclick="setAuthMode(false)">Sign out</button>
       </div>
     </header>
-    <angular-app class="customElement"></angular-app>
-    <react-app class="customElement"></react-app>
-    <angular-second-app class="customElement"></angular-second-app>
-    <second-app class="customElement"></second-app>
-    <vue-app class="customElement"></vue-app>
+    <div class="flex spaced">
+      <div>
+        <react-app class="app"></react-app>
+        <angular-second-app></angular-second-app>
+      </div>
+      <div>
+        <angular-app class="app"></angular-app>
+        <vue-app class="app"></vue-app>  
+        <second-app class="app"></second-app>
+      </div>
+    </div>
+    </div>
+    
 
     <script src="./communication.js"></script>
   </body>

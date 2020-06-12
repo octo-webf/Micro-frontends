@@ -1,6 +1,9 @@
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  position: relative;
+  width: 80px;
+  margin-top: -100px;
+  top: 40px;
+  left: calc(-25vw - 20px);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -9,16 +12,20 @@
   }
 }
 
-.App-header2 {
+.App {
+  padding: 2vh;
+  color: #282c34;
   text-align: center;
-  background-color: #363c47;
-  min-height: 85vh;
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  box-shadow: 0 0 10px lightgray;
+  width: calc(100px + 50vw);
+  margin: auto;
+}
+
+h3 {
+  margin: 0;
 }
 
 @keyframes App-logo-spin {
@@ -32,16 +39,18 @@
 .flex {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .productBox {
-  width: 300px;
-  box-shadow: 0 0 2px gray;
-  margin: 2vh;
+  width: 200px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 1vh 1vw 1vh 1vw;
   cursor: pointer;
-  margin-bottom: 5vh;
+  list-style: none;
 }
 
 .productBox:active {
@@ -69,12 +78,4 @@ h6 {
 .previewImg {
   max-width: 100%;
   max-height: 160px;
-}
-
-.success {
-  position: fixed;
-  top: 50%;
-  margin: auto;
-  color: black;
-  background-color: white;
 }

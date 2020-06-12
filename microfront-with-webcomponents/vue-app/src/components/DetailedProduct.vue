@@ -19,28 +19,19 @@
 export default {
   name: "DetailedProduct",
   props: {
-    product: Object,
+    product: Object
   },
   methods: {
-    handleClick: (product) => {
+    handleClick: product => {
       console.log(product);
-    },
-  },
+    }
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.item {
-  border: 1px solid lightgray;
-  border-radius: 10px;
-  box-shadow: 0 0 10px lightgray;
-  width: calc(200px + 20vw);
-  padding: calc(10px + 1vw);
-  margin: auto;
-}
-
-.item .flex {
+.flex {
   text-align: left;
   display: flex;
   justify-content: space-between;
@@ -53,7 +44,7 @@ h4,
 h5 {
   margin: 0;
 }
-.item h5 {
+h5 {
   font-weight: 200;
 }
 .button-cart {
@@ -66,6 +57,11 @@ h5 {
   border-radius: 10px;
   box-shadow: 0 0 10px lightgray;
   cursor: pointer;
+}
+.button-cart:active {
+  position: relative;
+  background-color: rgb(1, 116, 1);
+  top: 3px;
 }
 
 #product-img {

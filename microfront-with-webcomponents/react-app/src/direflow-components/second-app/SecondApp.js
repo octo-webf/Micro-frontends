@@ -7,9 +7,7 @@ const { REACT_APP_COMMONS_HOST: CONTENT_HOST } = process.env;
 export default function SecondApp() {
   const [productList, setList] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  const [isSuccess, setSuccess] = useState(false);
 
-  //const { cartOrder, setCartOrder } = history;
   const [cartOrder, setCartOrder] = useState([]);
 
   useEffect(() => {
@@ -32,22 +30,17 @@ export default function SecondApp() {
       cartOrder[product.id]["quantity"] += 1;
       setCartOrder(cartOrder);
     }
-    setSuccess(true);
-    setTimeout(() => {
-      setSuccess(false);
-    }, 2000);
   };
 
   return (
     <Styled styles={styles}>
-      <div className="App-header2">
+      <div className="App">
         <img
           src={`${CONTENT_HOST}/images/logo.svg`}
           className="App-logo"
           alt="logo"
         />
-        <h2>Second React Micro-frontend</h2>
-        <h3>Products list</h3>
+        <h2>Products list details</h2>
         <div className="flex">
           {productList.map((product) => {
             return (
@@ -61,16 +54,13 @@ export default function SecondApp() {
                   className="previewImg"
                   alt={product.name}
                 />
-                <div className="flex">
-                  <h4>{product.name}</h4>
-                  <h5>{product.price}</h5>
-                </div>
+                <h4>{product.name}</h4>
                 <h6>{product.tags}</h6>
+                <h5>{product.price}</h5>
               </div>
             );
           })}
         </div>
-        {isSuccess && <p className="success">Item added !</p>}
       </div>
     </Styled>
   );
