@@ -45,19 +45,19 @@
         <button id="btn-sign-out" onclick="setAuthMode(false)">Sign out</button>
       </div>
     </header>
-    <div class="flex spaced">
-      <div>
-        <react-app class="app"></react-app>
-        <angular-second-app></angular-second-app>
-      </div>
-      <div>
-        <angular-app class="app"></angular-app>
-        <vue-app class="app"></vue-app>  
-        <second-app class="app"></second-app>
+    <div>
+      <div class="flex spaced">
+        <div>
+          <react-app class="app"></react-app>
+          <angular-second-app></angular-second-app>
+        </div>
+        <div style="width: calc(300px + 40vw);">
+          <angular-app class="app"></angular-app>
+          <vue-app class="app"></vue-app>
+          <second-app class="app"></second-app>
+        </div>
       </div>
     </div>
-    </div>
-    
 
     <script src="./communication.js"></script>
   </body>

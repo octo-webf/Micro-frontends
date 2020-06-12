@@ -21,12 +21,6 @@ export default {
   props: {
     product: Object
   },
-  mounted() {
-    window.addEventListener("detailProduct", event => {
-      console.log("event received");
-      this.product = event.detail.product;
-    });
-  },
   methods: {
     handleClick: product => {
       console.log(product);
@@ -41,13 +35,21 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
+h2 {
+  text-align: center;
+}
+
 .flex {
-  text-align: left;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap-reverse;
   align-items: flex-start;
+}
+
+.flex h2 {
+  text-align: left;
 }
 
 .flex h3,
@@ -62,7 +64,9 @@ h5 {
   background-color: rgb(1, 131, 1);
   color: white;
   text-align: center;
+  margin: auto;
   margin-top: 20px;
+  width: calc(100px + 5vw);
   padding: 2vh 5vw 2vh 5vw;
   border: 1px solid lightgray;
   border-radius: 10px;

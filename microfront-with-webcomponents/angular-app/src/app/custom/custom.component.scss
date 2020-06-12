@@ -10,29 +10,30 @@ img {
   max-height: 200px;
 }
 
+h2 {
+  text-align: center;
+}
+
 #angular-img {
-  width: 50px;
   position: relative;
-  top: 50px;
+  top: 40px;
   margin-top: -50px;
-  margin-bottom: 0;
-  left: calc(-25vw - 20px);
+  width: 50px;
 }
 
 section {
   padding: 2vh;
   color: #282c34;
-  text-align: center;
   flex-direction: column;
   border: 1px solid lightgray;
   border-radius: 10px;
   box-shadow: 0 0 10px lightgray;
-  width: calc(100px + 50vw);
   margin: auto;
 }
 
 .flex {
   display: flex;
+  text-align: center;
   align-items: center;
   flex-wrap: wrap;
 }

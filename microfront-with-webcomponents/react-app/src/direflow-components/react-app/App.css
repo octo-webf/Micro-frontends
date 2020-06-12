@@ -4,7 +4,7 @@
   border: 1px solid lightgray;
   border-radius: 10px;
   box-shadow: 0 0 10px lightgray;
-  width: calc(300px + 5vw);
+  width: calc(250px + 10vw);
   padding: calc(10px + 1vw);
   color: #2c3e50;
 }
@@ -37,7 +37,8 @@
 }
 
 .cart {
-  box-shadow: 0 0 2px gray;
+  border: 1px solid lightgray;
+  border-radius: 3px;
   width: calc(180px + 10vw);
   margin: auto;
   margin-bottom: 5vh;

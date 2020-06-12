@@ -1,9 +1,8 @@
 .App-logo {
   position: relative;
-  width: 80px;
-  margin-top: -100px;
   top: 40px;
-  left: calc(-25vw - 20px);
+  margin-top: -50px;
+  width: 80px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -15,17 +14,15 @@
 .App {
   padding: 2vh;
   color: #282c34;
-  text-align: center;
   flex-direction: column;
   border: 1px solid lightgray;
   border-radius: 10px;
   box-shadow: 0 0 10px lightgray;
-  width: calc(100px + 50vw);
   margin: auto;
 }
 
-h3 {
-  margin: 0;
+h2 {
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
@@ -39,6 +36,7 @@ h3 {
 .flex {
   display: flex;
   align-items: center;
+  text-align: center;
   flex-wrap: wrap;
   justify-content: center;
 }

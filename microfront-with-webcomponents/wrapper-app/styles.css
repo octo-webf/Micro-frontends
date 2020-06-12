@@ -13,12 +13,13 @@ header {
 }
 
 .app {
-  margin: 2vw;
+  margin: auto 2vw auto 2vw;
 }
 
 .flex {
   display: flex;
   flex-wrap: wrap;
+  margin: auto;
 }
 
 .center {

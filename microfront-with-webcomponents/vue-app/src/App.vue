@@ -13,6 +13,12 @@ export default {
   components: {
     DetailedProduct
   },
+  mounted() {
+    window.addEventListener("detailProduct", event => {
+      console.log("event received");
+      this.product = event.detail.product;
+    });
+  },
   props: [],
   data() {
     return {
@@ -25,16 +31,13 @@ export default {
         tags: "Adult, Violence, Drugs"
       }
     };
-  },
-  methods: {}
+  }
 };
 </script>
 
 <style>
 #app {
-  text-align: center;
   color: #2c3e50;
-  width: calc(100px + 50vw);
   border: 1px solid lightgray;
   border-radius: 10px;
   box-shadow: 0 0 10px lightgray;
@@ -44,9 +47,8 @@ export default {
 
 #vue-img {
   position: relative;
-  top: 50px;
+  top: 40px;
   margin-top: -50px;
-  left: calc(-10px - 25vw);
   width: 50px;
 }
 </style>
