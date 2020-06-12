@@ -8,8 +8,6 @@ export default function SecondApp() {
   const [productList, setList] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
-  const [cartOrder, setCartOrder] = useState([]);
-
   useEffect(() => {
     if (isLoading) {
       fetch(`${CONTENT_HOST}/productList.json`)
@@ -20,16 +18,14 @@ export default function SecondApp() {
   });
 
   const handleClick = (product) => {
-    if (
-      typeof cartOrder[product.id] === "undefined" ||
-      cartOrder[product.id] === null
-    ) {
-      cartOrder[product.id] = { product, quantity: 1 };
-      setCartOrder(cartOrder);
-    } else {
-      cartOrder[product.id]["quantity"] += 1;
-      setCartOrder(cartOrder);
-    }
+    console.log("event sent");
+    const event = new CustomEvent("detailProduct", {
+      bubbles: true,
+      detail: {
+        product,
+      },
+    });
+    window.dispatchEvent(event);
   };
 
   return (

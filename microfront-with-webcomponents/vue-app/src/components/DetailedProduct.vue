@@ -7,7 +7,7 @@
         <h3>{{ product.price }}</h3>
         <h5>{{ product.tags }}</h5>
         <div class="button-cart" v-on:click="handleClick(product)">
-          <h4>Add to cart</h4>
+          <h3>Add to cart</h3>
         </div>
       </div>
       <img :src="product.imgURL" id="product-img" alt="product-img" />
@@ -21,9 +21,20 @@ export default {
   props: {
     product: Object
   },
+  mounted() {
+    window.addEventListener("detailProduct", event => {
+      console.log("event received");
+      this.product = event.detail.product;
+    });
+  },
   methods: {
     handleClick: product => {
       console.log(product);
+      const event = new CustomEvent("addProductToCart", {
+        bubbles: true,
+        detail: { product }
+      });
+      window.dispatchEvent(event);
     }
   }
 };
@@ -36,10 +47,10 @@ export default {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap-reverse;
+  align-items: flex-start;
 }
 
-.flex h2,
-h3,
+.flex h3,
 h4,
 h5 {
   margin: 0;
@@ -51,8 +62,8 @@ h5 {
   background-color: rgb(1, 131, 1);
   color: white;
   text-align: center;
-  padding: 10px 10px 10px 10px;
   margin-top: 20px;
+  padding: 2vh 5vw 2vh 5vw;
   border: 1px solid lightgray;
   border-radius: 10px;
   box-shadow: 0 0 10px lightgray;
@@ -65,6 +76,8 @@ h5 {
 }
 
 #product-img {
-  max-width: 50%;
+  margin: auto;
+  max-height: 50vh;
+  max-width: 70vw;
 }
 </style>

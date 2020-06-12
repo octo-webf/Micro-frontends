@@ -25,7 +25,8 @@ export default {
         tags: "Adult, Violence, Drugs"
       }
     };
-  }
+  },
+  methods: {}
 };
 </script>
 
