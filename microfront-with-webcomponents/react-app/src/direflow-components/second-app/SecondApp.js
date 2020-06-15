@@ -42,8 +42,9 @@ export default function SecondApp() {
             return (
               <div
                 key={product.id}
-                className="productBox"
+                id={product.id}
                 onClick={() => handleClick(product)}
+                className="productBox"
               >
                 <img
                   src={product.imgURL}
