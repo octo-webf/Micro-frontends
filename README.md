@@ -81,10 +81,10 @@ The content server (common-content) at http://localhost:3100/ allows shared cont
 
 ## Micro-frontends using Custom Elements
 
-_This method uses [Direflow](https://direflow.io/) to create React Web Components & [Angular Elements](https://angular.io/guide/elements) for Angular Web Components_
+_This method uses [Direflow](https://direflow.io/) to create React Web Components, [Angular Elements](https://angular.io/guide/elements) for Angular Web Components & [@vue/web-component-wrapper](https://github.com/vuejs/vue-web-component-wrapper) for Vue Web Components_
 
 Go to `Micro-frontends/microfront-with-webcomponents/` :
 
-1. In `./angular-app` & `react-app` execute `npm run dev` to build & launch the Angular and React Web Components at http://localhost:4001/ & http://localhost:4002/
+1. In `./angular-app`, `react-app` & `vue-app` execute `npm run dev` to build & launch the Angular and React Web Components at http://localhost:4001/, http://localhost:4002/ & http://localhost:4003/
 2. In `./common-content` run `npm start` to allow use of shared content serve at http://localhost:4100/
 3. In `./wrapper-app` run `npm start` to see an example of use of Custom Elements at http://localhost:4000/
