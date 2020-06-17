@@ -10,6 +10,7 @@ Research on the use of different methods to integrate micro-frontends :
 - [With Express & EJS](#micro-frontends-using-express--ejs) (server-side rendering)
 - [With JavaScript](#micro-frontends-using-javascript)
 - [With Custom elements](#micro-frontends-using-custom-elements) (Web Components)
+- [With Single-SPA](#micro-frontends-using-single-spa) Meta-framework (_More information on [Single-SPA's website](https://single-spa.js.org/)_)
 
 ## Micro-frontends using iframes
 
@@ -88,3 +89,9 @@ Go to `Micro-frontends/microfront-with-webcomponents/` :
 1. In `./angular-app`, `react-app` & `vue-app` execute `npm run dev` to build & launch the Angular, React & Vue Web Components at http://localhost:4001/, http://localhost:4002/ & http://localhost:4003/
 2. In `./common-content` run `npm start` to allow use of shared content serve at http://localhost:4100/
 3. In `./wrapper-app` run `npm start` to see an example of use of Custom Elements at http://localhost:4000/
+
+---
+
+## Micro-frontends using Single-SPA
+
+Still in developpement
