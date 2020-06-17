@@ -37,6 +37,7 @@
       }
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script>
 
   <!-- Add your organization's prod import map URL to this script's src  -->
   <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
@@ -46,7 +47,8 @@
     {
       "imports": {
         "@/root-config": "//localhost:9000/-root-config.js",
-        "@/react-app": "//localhost:8500/-.js"
+        "@/react-app": "//localhost:9001/-.js",
+        "@/angular-app": "//localhost:4200/main.js"
       }
     }
   </script>

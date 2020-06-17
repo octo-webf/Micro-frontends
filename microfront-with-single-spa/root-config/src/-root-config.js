@@ -13,10 +13,16 @@ registerApplication({
 
 registerApplication({
   name: "@/react-app",
-  app: () => System.import("//localhost:8500/-.js"),
+  app: () => System.import("//localhost:9001/-.js"),
+  activeWhen: ["/"],
+});
+
+registerApplication({
+  name: "@/angular-app",
+  app: () => System.import("//localhost:4200/main.js"),
   activeWhen: ["/"],
 });
 
 start({
-  urlRerouteOnly: true,
+  urlRerouteOnly: false,
 });
