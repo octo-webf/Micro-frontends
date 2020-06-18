@@ -17,7 +17,7 @@
     Learn more about CSP policies at https://content-security-policy.com/#directive
   -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">
+    content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' https: localhost:* 'unsafe-eval' localhost:*; connect-src https: localhost:* 192.168.0.12:* ws://localhost:* ws://192.168.0.12:*; style-src 'unsafe-inline' https:; object-src 'none';">
   <meta name="importmap-type" content="systemjs-importmap" />
 
   <!-- Shared dependencies go into this import map. Your shared dependencies must be of one of the following formats:
@@ -47,8 +47,9 @@
     {
       "imports": {
         "@/root-config": "//localhost:9000/-root-config.js",
-        "@/react-app": "//localhost:9001/-.js",
-        "@/angular-app": "//localhost:4200/main.js"
+        "@/react-app": "//localhost:9002/-.js",
+        "@/angular-app": "//localhost:9001/main.js",
+        "@/vue-app":"//localhost:9003/js/app.js"
       }
     }
   </script>
