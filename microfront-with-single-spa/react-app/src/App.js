@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function App(props) {
-  return <section>{props.name} is mounted using single-spa CLI !</section>;
+  return (
+    <section>
+      <h1>React single-spa works !</h1>
+    </section>
+  );
 }

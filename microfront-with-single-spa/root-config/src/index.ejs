@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Root Config</title>
+  <title>Micro-frontends w/ Single-SPA</title>
   <!--
     Remove this if you only support browsers that support async/await.
     This is needed by babel to share largeish helper code for compiling async/await in older
@@ -17,7 +17,7 @@
     Learn more about CSP policies at https://content-security-policy.com/#directive
   -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' https: localhost:* 'unsafe-eval' localhost:*; connect-src https: localhost:* 192.168.0.12:* ws://localhost:* ws://192.168.0.12:*; style-src 'unsafe-inline' https:; object-src 'none';">
+    content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' https: localhost:* 'unsafe-eval' localhost:*; connect-src https: localhost:* 192.168.0.12:* ws://localhost:* ws://192.168.0.12:*; style-src 'unsafe-inline' localhost:9000 https:; object-src 'none';">
   <meta name="importmap-type" content="systemjs-importmap" />
 
   <!-- Shared dependencies go into this import map. Your shared dependencies must be of one of the following formats:
@@ -37,7 +37,7 @@
       }
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script>
+  <!--<script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script>-->
 
   <!-- Add your organization's prod import map URL to this script's src  -->
   <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
@@ -55,11 +55,7 @@
   </script>
   <% } %>
 
-  <!--
-    If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
-    Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
-  -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script>
 
   <% if (isLocal) { %>
   <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@1.14.6/dist/import-map-overrides.js"></script>
@@ -72,6 +68,15 @@
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/extras/amd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/extras/named-exports.min.js"></script>
   <% } %>
+  <!--
+  <template>
+    <single-spa-router id="single-spa-layout">
+      <route path="react">
+        <application name="@/react-app"></application>
+      </route>
+    </single-spa-router>
+  </template>
+-->
 </head>
 
 <body>

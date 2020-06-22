@@ -4,7 +4,8 @@
     "lint": "eslint src --ext js",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write './**'",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "dev": "npm run build && serve -l 9000 dist"
   },
   "husky": {
     "hooks": {
@@ -39,6 +40,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "single-spa": "^5.3.1"
+    "single-spa": "^5.5.3",
+    "single-spa-layout": "^1.0.0"
   }
 }
