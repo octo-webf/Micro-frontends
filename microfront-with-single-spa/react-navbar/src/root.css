@@ -1,0 +1,18 @@
+header {
+  text-align: center;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.active-link {
+  font-weight: bold;
+}

@@ -49,7 +49,8 @@
         "@/root-config": "//localhost:9000/-root-config.js",
         "@/react-app": "//localhost:9002/-.js",
         "@/angular-app": "//localhost:9001/main.js",
-        "@/vue-app":"//localhost:9003/js/app.js"
+        "@/vue-app":"//localhost:9003/js/app.js",
+        "@/react-navbar":"//localhost:9004/-.js"
       }
     }
   </script>
@@ -71,8 +72,20 @@
 
   <template id="single-spa-layout">
     <single-spa-router>
+      <application name="@/react-navbar"></application>
       <route path="react">
         <application name="@/react-app"></application>
+      </route>
+      <route path="vue">
+        <application name="@/vue-app"></application>
+      </route>
+      <route path="angular">
+        <application name="@/angular-app"></application>
+      </route>
+      <route path="all">
+        <application name="@/angular-app"></application>
+        <application name="@/react-app"></application>
+        <application name="@/vue-app"></application>
       </route>
     </single-spa-router>
   </template>
