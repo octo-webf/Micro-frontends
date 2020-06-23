@@ -4,7 +4,7 @@ import {
   constructRoutes,
   constructLayoutEngine,
 } from "single-spa-layout";
-
+/*
 registerApplication({
   name: "@/react-app",
   app: () => System.import("//localhost:9002/-.js"),
@@ -26,18 +26,17 @@ registerApplication({
 start({
   urlRerouteOnly: false,
 });
+*/
 
-/*
-const routes = constructRoutes(document.querySelector('#single-spa-layout'));
+const routes = constructRoutes(document.querySelector("#single-spa-layout"));
 const applications = constructApplications({
   routes,
-  loadApp: ({ name }) => {
+  loadApp({ name }) {
     return System.import(name);
   },
 });
 const layoutEngine = constructLayoutEngine({ routes, applications });
 applications.forEach(registerApplication);
 
-layoutEngine.activate();
+//layoutEngine.activate();
 start();
-*/
