@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-app';
+
+  handleClick() {
+    const event = new CustomEvent('messageFromAngular', {
+      bubbles: true,
+      detail: {
+        message: 'Hello!',
+      },
+    });
+    window.dispatchEvent(event);
+  }
 }

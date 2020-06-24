@@ -71,21 +71,22 @@
   <% } %>
 
   <template id="single-spa-layout">
+    <link rel='stylesheet' href='../public/overall-styles.css' />
     <single-spa-router>
-      <application name="@/react-navbar"></application>
+      <application name="@/react-navbar" class="micro-frontend"></application>
       <route path="react">
-        <application name="@/react-app"></application>
+        <application name="@/react-app" class="micro-frontend"></application>
       </route>
       <route path="vue">
-        <application name="@/vue-app"></application>
+        <application name="@/vue-app" class="micro-frontend"></application>
       </route>
       <route path="angular">
-        <application name="@/angular-app"></application>
+        <application name="@/angular-app" class="micro-frontend"></application>
       </route>
       <route path="all">
-        <application name="@/angular-app"></application>
-        <application name="@/react-app"></application>
-        <application name="@/vue-app"></application>
+        <application name="@/angular-app" class="micro-frontend"></application>
+        <application name="@/react-app" class="micro-frontend"></application>
+        <application name="@/vue-app" class="micro-frontend"></application>
       </route>
     </single-spa-router>
   </template>
