@@ -10,5 +10,6 @@
  */
 
 import App from "./direflow-components/react-app/App";
+import Button from "./direflow-components/react-button/Button";
 
-export { App };
+export { App, Button };

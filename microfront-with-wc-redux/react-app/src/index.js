@@ -10,10 +10,18 @@
  */
 
 import ReactApp from "./direflow-components/react-app";
+import Button from "./direflow-components/react-button";
 
 ReactApp.then((element) => {
   /**
    * Access DOM node when it's mounted
    */
   console.log("react-app is mounted on the DOM", element);
+});
+
+Button.then((element) => {
+  /**
+   * Access DOM node when it's mounted
+   */
+  console.log("react-button is mounted on the DOM", element);
 });
