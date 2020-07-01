@@ -1,0 +1,31 @@
+section {
+  border: 1px solid lightgray;
+  box-shadow: 0 0 10px lightgray;
+  min-width: 200px;
+  margin: auto;
+  padding: 50px;
+}
+
+h2 {
+  margin: 0;
+}
+h5 {
+  font-size: medium;
+  font-weight: bold;
+  font-style: italic;
+  color: gray;
+}
+
+.btn-back {
+  background-color: rgb(236, 236, 236);
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 0 0 5px lightgray;
+  width: calc(150px + 2vw);
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+}

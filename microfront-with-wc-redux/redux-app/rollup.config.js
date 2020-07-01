@@ -3,7 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import replace from "rollup-plugin-replace";
 
 export default {
-  input: "./main.js",
+  input: "./redux/main.js",
   output: {
     name: "global-store",
     file: "./bundle/bundle.js",

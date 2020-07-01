@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+  background-color: rgb(243, 243, 243);
+}
+
+header {
+  text-align: center;
+  background-color: white;
+  border: 1px solid lightgray;
+  box-shadow: 0 0 10px lightgray;
+  min-width: 200px;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.micro-frontends {
+  margin-top: 10px;
+}
+
+ul {
+  display: flex;
+  padding: 1vh;
+  justify-content: space-evenly;
+}
+ul li {
+  list-style-type: none;
+  color: black;
+}
