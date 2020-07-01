@@ -8,7 +8,8 @@ export default function App() {
   useEffect(() => {});
 
   const handleGoBack = () => {
-    console.log("handleGoBack");
+    const event = new CustomEvent("redirectHome");
+    window.dispatchEvent(event);
   };
 
   return (

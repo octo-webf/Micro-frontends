@@ -1355,7 +1355,8 @@
                       {
                         className: "btn-back",
                         onClick: function () {
-                          console.log("handleGoBack");
+                          var t = new CustomEvent("redirectHome");
+                          window.dispatchEvent(t);
                         },
                       },
                       "Retour aux achats"
@@ -3757,7 +3758,7 @@
   function (t, e, n) {
     (e = n(13)(!1)).push([
       t.i,
-      "section {\n  border: 1px solid lightgray;\n  box-shadow: 0 0 10px lightgray;\n  min-width: 200px;\n  margin:auto;\n  padding: 50px;\n}\n\nh2 {\n  margin:0;\n}\nh5 {\n  font-size: medium;\n  font-weight: bold;\n  font-style: italic;\n  color:gray;\n}\n\n.btn-back {\n  background-color: rgb(236, 236, 236);\n  border: 1px solid lightgray;\n  border-radius: 5px;\n  box-shadow: 0 0 5px lightgray;\n  width:calc(150px + 2vw);\n  height: 30px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  cursor: pointer;\n  text-align: center;\n}",
+      "section {\n  background-color: white;\n  border: 1px solid lightgray;\n  box-shadow: 0 0 10px lightgray;\n  min-width: 200px;\n  margin: auto;\n  padding: 50px;\n}\n\nh2 {\n  margin: 0;\n}\nh5 {\n  font-size: medium;\n  font-weight: bold;\n  font-style: italic;\n  color: gray;\n}\n\n.btn-back {\n  background-color: rgb(236, 236, 236);\n  border: 1px solid lightgray;\n  border-radius: 5px;\n  box-shadow: 0 0 5px lightgray;\n  width: calc(150px + 2vw);\n  height: 30px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  cursor: pointer;\n  text-align: center;\n}\n",
       "",
     ]),
       (t.exports = e);
