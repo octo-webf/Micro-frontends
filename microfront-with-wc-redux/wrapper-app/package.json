@@ -15,9 +15,7 @@
     "start": "PORT=4000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build:wc": "vue-cli-service build --target wc --name vue-app ./src/App.vue",
-    "dev": "npm run build:wc && serve -l 4003 dist"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
