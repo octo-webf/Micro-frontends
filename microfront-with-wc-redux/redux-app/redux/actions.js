@@ -13,3 +13,8 @@ export const removeFromBasket = (id) => ({
 export const removeAllFromBasket = () => ({
   type: types.REMOVE_ALL_FROM_BASKET,
 });
+
+export const setVisibilityFilter = (filter) => ({
+  type: types.SET_VISIBILITY_FILTER,
+  filter,
+});
