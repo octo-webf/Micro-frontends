@@ -56,7 +56,6 @@ export default {
       return { actions: bindActionCreators(window.actions, dispatch) };
     },
     handleSelectedProduct(product) {
-      console.log("received");
       this.id = product.id;
       this.showList = false;
     },

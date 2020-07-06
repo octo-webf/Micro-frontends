@@ -1405,14 +1405,20 @@
           "section",
           {
             onClick: function () {
-              console.log(t);
+              console.log(t.product);
             },
           },
-          i.a.createElement("h3", null, "Ajouter ", t.title, " au panier")
+          i.a.createElement(
+            "h3",
+            null,
+            "Ajouter ",
+            t.product.name,
+            " au panier"
+          )
         )
       );
     }
-    s.defaultProps = { title: "N/A" };
+    s.defaultProps = { product: { name: "N/A" } };
     e.default = r.a.create({
       component: s,
       configuration: { tagname: "react-button" },
@@ -3766,7 +3772,7 @@
   function (t, e, n) {
     (e = n(13)(!1)).push([
       t.i,
-      "section {\n  width: calc(150px + 5vw);\n  background-color: green;\n  border-radius: 10px;\n  border: 1px solid lightgray;\n  box-shadow: 0 0 10px lightgray;\n  color: white;\n  text-align: center;\n  height: 50px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  cursor: pointer;\n  margin: 2vh;\n}\nsection:active {\n  position: relative;\n  top: 2px;\n}\nh3 {\n  margin: 0;\n}\n",
+      "section {\n  width: calc(200px + 5vw);\n  background-color: green;\n  border-radius: 10px;\n  border: 1px solid lightgray;\n  box-shadow: 0 0 10px lightgray;\n  color: white;\n  text-align: center;\n  height: 50px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  cursor: pointer;\n  margin: 2vh;\n}\nsection:active {\n  position: relative;\n  top: 2px;\n}\nh3 {\n  margin: 0;\n}\n",
       "",
     ]),
       (t.exports = e);

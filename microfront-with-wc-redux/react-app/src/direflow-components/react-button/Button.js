@@ -5,18 +5,18 @@ import styles from "./Button.css";
 
 export default function Button(props) {
   const handleClickBasket = () => {
-    console.log(props);
+    console.log(props.product);
   };
 
   return (
     <Styled styles={styles}>
       <section onClick={handleClickBasket}>
-        <h3>Ajouter {props.title} au panier</h3>
+        <h3>Ajouter {props.product.name} au panier</h3>
       </section>
     </Styled>
   );
 }
 
 Button.defaultProps = {
-  title: "N/A",
+  product: { name: "N/A" },
 };
