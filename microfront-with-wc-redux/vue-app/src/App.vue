@@ -1,29 +1,65 @@
 <template>
-  <section>
-    <div v-if="showList">
-      <productList />
-    </div>
-    <div v-else>
-      <button v-on:click="() => (showList = true)">Produit</button>
-      <productDetail />
-    </div>
-  </section>
+  <Provider
+    :store="store"
+    :mapStateToProps="mapStateToProps"
+    :mapDispatchToProps="mapDispatchToProps"
+  >
+    <template #default="{filteredProducts, actions}">
+      <section>
+        <div v-if="showList">
+          <button v-on:click="() => (showList = false)">Produit</button>
+          <productList
+            :actions="actions"
+            :products="filteredProducts"
+            v-on:selectedProduct="handleSelectedProduct"
+          />
+        </div>
+        <div v-else>
+          <button v-on:click="() => (showList = true)">
+            Liste des produits
+          </button>
+          <productDetail :product="filteredProducts[id]" />
+        </div>
+      </section>
+    </template>
+  </Provider>
 </template>
 
 <script>
 import productList from "./components/productList.vue";
 import productDetail from "./components/productDetails.vue";
+import { bindActionCreators } from "redux";
+
+import Provider from "vuejs-redux";
 
 export default {
   name: "App",
   components: {
     productList,
     productDetail,
+    Provider,
   },
   data() {
     return {
       showList: true,
+      store: window.store,
+      id: 0,
     };
+  },
+  methods: {
+    mapStateToProps(state) {
+      return {
+        filteredProducts: window.selectors.getVisibleProductList(state),
+      };
+    },
+    mapDispatchToProps(dispatch) {
+      return { actions: bindActionCreators(window.actions, dispatch) };
+    },
+    handleSelectedProduct(product) {
+      console.log("received");
+      this.id = product.id;
+      this.showList = false;
+    },
   },
 };
 </script>

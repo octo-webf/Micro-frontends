@@ -1,16 +1,29 @@
 <template>
-  <div class="container">
+  <div class="container" v-on:click="() => handleClick(product)">
     <div class="img-container">
-      <img
-        src="https://images.unsplash.com/photo-1535303311164-664fc9ec6532?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-      />
+      <img :src="product.imgURL" />
     </div>
     <div class="details">
-      <h3>Product name</h3>
-      <h4>Category</h4>
+      <h3>{{ product.name }}</h3>
+      <div class="flex">
+        <h4>{{ product.category }}</h4>
+        <h4>{{ product.price }}</h4>
+      </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "previewProduct",
+  props: ["product"],
+  methods: {
+    handleClick(product) {
+      this.$emit("selectedProduct", product);
+    },
+  },
+};
+</script>
 
 <style scoped>
 .container {
@@ -27,10 +40,14 @@
   position: relative;
   top: -2px;
 }
+.container:active {
+  position: relative;
+  top: 0px;
+}
 
 .img-container {
   overflow: hidden;
-  vertical-align: middle;
+  align-items: center;
   height: 270px;
 }
 
@@ -50,5 +67,9 @@ h4 {
 h4 {
   font-size: 14px;
   color: gray;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
 }
 </style>
