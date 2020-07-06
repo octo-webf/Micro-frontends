@@ -1,7 +1,7 @@
-import state from "./state";
+import store from "./store";
 import * as actions from "./actions";
 import * as selectors from "./selectors";
 
-window.state = state;
+window.store = store;
 window.actions = actions;
 window.selectors = selectors;

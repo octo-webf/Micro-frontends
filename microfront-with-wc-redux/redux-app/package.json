@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup --config",
-    "serve": "serve -l 3001 bundle --cors"
+    "serve": "serve -l 4100 bundle --cors"
   },
   "author": "",
   "license": "ISC",
