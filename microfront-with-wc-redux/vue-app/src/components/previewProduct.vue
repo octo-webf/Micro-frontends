@@ -64,6 +64,11 @@ h4 {
   margin: 0;
 }
 
+h3 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 h4 {
   font-size: 14px;
   color: gray;

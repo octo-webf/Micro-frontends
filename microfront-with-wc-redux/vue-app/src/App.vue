@@ -7,7 +7,6 @@
     <template #default="{filteredProducts, actions}">
       <section>
         <div v-if="showList">
-          <button v-on:click="() => (showList = false)">Produit</button>
           <productList
             :actions="actions"
             :products="filteredProducts"
@@ -15,9 +14,7 @@
           />
         </div>
         <div v-else>
-          <button v-on:click="() => (showList = true)">
-            Liste des produits
-          </button>
+          <button v-on:click="() => (showList = true)">Retour</button>
           <productDetail :product="filteredProducts[id]" />
         </div>
       </section>

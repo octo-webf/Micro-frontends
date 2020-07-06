@@ -3,7 +3,6 @@ section {
   background-color: green;
   border-radius: 10px;
   border: 1px solid lightgray;
-  box-shadow: 0 0 10px lightgray;
   color: white;
   text-align: center;
   height: 50px;
@@ -11,7 +10,6 @@ section {
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
-  margin: 2vh;
 }
 section:active {
   position: relative;
