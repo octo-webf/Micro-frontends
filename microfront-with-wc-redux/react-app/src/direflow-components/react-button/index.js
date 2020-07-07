@@ -12,7 +12,14 @@ const ProvidedApp = (props) => {
   );
 };
 ProvidedApp.defaultProps = {
-  product: { name: "N/A", id: -1 },
+  product: JSON.stringify({
+    name: "N/A",
+    id: -1,
+    tags: "tags",
+    price: "1000€",
+    imgURL:
+      "https://www.cdiscount.com/pdt2/7/9/8/1/700x700/son3491951945798/rw/gta-v-ps4.jpg",
+  }),
 };
 
 export default DireflowComponent.create({

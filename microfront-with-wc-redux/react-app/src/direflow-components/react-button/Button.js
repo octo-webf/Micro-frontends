@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Button.css";
 import { Styled } from "direflow-component";
 import styles from "./Button.css";
 import { useDispatch } from "react-redux";
 
 function Button(props) {
-  const [product, setProduct] = useState(props.product);
+  const product = props.product;
   const dispatch = useDispatch();
 
   const handleClickBasket = () => {
-    console.log(product);
     dispatch(window.actions.addToBasket(product));
   };
 

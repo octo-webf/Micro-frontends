@@ -7,7 +7,10 @@ section {
   padding: 50px;
 }
 
-h2 {
+h2,
+h3,
+h4,
+h6 {
   margin: 0;
 }
 h5 {
@@ -17,9 +20,20 @@ h5 {
   color: gray;
 }
 
-.btn-back {
-  background-color: rgb(236, 236, 236);
-  border: 1px solid lightgray;
+.image {
+  max-width: 80px;
+  max-height: 100px;
+}
+
+.trash {
+  width: 40px;
+  cursor: pointer;
+}
+.trash:hover {
+  width: 45px;
+}
+
+.btn {
   border-radius: 5px;
   box-shadow: 0 0 5px lightgray;
   width: calc(150px + 2vw);
@@ -29,4 +43,41 @@ h5 {
   justify-content: center;
   cursor: pointer;
   text-align: center;
+}
+
+.btn:active {
+  position: relative;
+  top: 2px;
+}
+
+.btn-back {
+  background-color: rgb(236, 236, 236);
+  border: 1px solid lightgray;
+}
+
+.btn-danger {
+  border: 1px solid red;
+  color: red;
+}
+
+.btn-danger:hover {
+  border: 1px solid lightgray;
+  background-color: red;
+  color: white;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.spaced {
+  justify-content: space-between;
+}
+
+.box {
+  border: 1px solid lightgray;
+  padding: 20px;
+  margin: 10px 0 10px 0;
+  overflow: hidden;
 }

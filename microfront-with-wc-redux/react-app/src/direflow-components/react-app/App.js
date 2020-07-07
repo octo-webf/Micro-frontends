@@ -10,7 +10,14 @@ export default function App() {
   const handleGoBack = () => {
     const event = new CustomEvent("redirectHome");
     window.dispatchEvent(event);
-    console.log(basket);
+  };
+
+  const handleDeleteOne = (id) => {
+    dispatch(window.actions.removeFromBasket(id));
+  };
+
+  const handleDeleteAll = () => {
+    dispatch(window.actions.removeAllFromBasket());
   };
 
   return (
@@ -20,27 +27,41 @@ export default function App() {
         {basket.length === 0 ? (
           <>
             <h5>Votre panier est vide...</h5>
-            <div className="btn-back" onClick={handleGoBack}>
-              Retour aux achats
-            </div>
           </>
         ) : (
           basket.map((item) => {
             return (
-              <div key={item.id} className="flex">
-                <div>
-                  <h4>{item.title}</h4>
-                  <h6>{item.description}</h6>
+              <div key={item.id} className="flex spaced box">
+                <div className="flex" style={{ width: "80%" }}>
+                  <img src={item.product.imgURL} className="image" />
+                  <div>
+                    <h3>{item.product.name}</h3>
+                    <h6>{item.product.tags}</h6>
+                  </div>
                 </div>
-                <h3>
-                  {item.price}€ x{item.quantity}
-                </h3>
+                <div className="flex spaced" style={{ width: "15%" }}>
+                  <h3>
+                    {item.product.price} x{item.quantity}
+                  </h3>
+                  <img
+                    src="https://image.flaticon.com/icons/svg/3096/3096673.svg"
+                    className="trash"
+                    onClick={() => handleDeleteOne(item.id)}
+                  />
+                </div>
               </div>
             );
           })
         )}
-        <div className="btn-back" onClick={handleGoBack}>
-          Retour aux achats
+        <div className="flex spaced">
+          <div className="btn btn-back" onClick={handleGoBack}>
+            Retour aux achats
+          </div>
+          {basket.length !== 0 && (
+            <div className="btn btn-danger" onClick={handleDeleteAll}>
+              Tout supprimer
+            </div>
+          )}
         </div>
       </section>
     </Styled>
