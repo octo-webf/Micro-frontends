@@ -3,6 +3,7 @@ import {
   REMOVE_FROM_BASKET,
   REMOVE_ALL_FROM_BASKET,
 } from "../actionTypes";
+
 const initialState = [];
 
 const basket = (state = initialState, action) => {

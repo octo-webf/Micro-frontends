@@ -9,6 +9,7 @@ import {
 
 const getProductList = (state) => state.productList;
 const getVisibilityFilter = (state) => state.visibilityFilter;
+const getBasket = (state) => state.basket;
 
 export const getVisibleProductList = createSelector(
   [getVisibilityFilter, getProductList],
@@ -28,4 +29,6 @@ export const getVisibleProductList = createSelector(
   }
 );
 
-export const getBasket = (state) => state.basket;
+export const getVisibleBasket = createSelector([getBasket], (basket) => {
+  return basket;
+});
