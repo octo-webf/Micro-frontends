@@ -27,7 +27,8 @@
     "build": "direflow-scripts build",
     "build:lib": "direflow-scripts build:lib",
     "test": "direflow-scripts test",
-    "serve": "serve -l 4001 build"
+    "serve": "serve -l 4001 build",
+    "dev": "npm run build && npm run serve"
   },
   "dependencies": {
     "direflow-component": "3.4.14",
