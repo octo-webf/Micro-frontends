@@ -26,6 +26,9 @@
 import productList from "./components/productList.vue";
 import productDetail from "./components/productDetails.vue";
 import { bindActionCreators } from "redux";
+import Vue from "vue";
+
+Vue.config.ignoredElements = ["react-button"];
 
 import Provider from "vuejs-redux";
 

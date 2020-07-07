@@ -4,7 +4,7 @@
       <h2>{{ product.name }}</h2>
       <h1>{{ product.price }}</h1>
       <h4>{{ product.tags }}</h4>
-      <react-button :id="product.id"></react-button>
+      <react-button :product="productString"></react-button>
     </div>
     <img class="image" :src="product.imgURL" />
   </div>
@@ -14,6 +14,11 @@
 export default {
   name: "productDetails",
   props: ["product"],
+  data() {
+    return {
+      productString: JSON.stringify(this.product),
+    };
+  },
 };
 </script>
 
