@@ -92,6 +92,23 @@ Go to `Micro-frontends/microfront-with-webcomponents/` :
 
 ---
 
+## Micro-frontends using Custom Elements with Redux
+
+_Advanced Custom Elements example using a global state with Redux_
+
+_This method uses [Direflow](https://direflow.io/) to create React Web Components & [@vue/web-component-wrapper](https://github.com/vuejs/vue-web-component-wrapper) for Vue Web Components_
+
+_It also implements [react-redux](https://react-redux.js.org/) and [vuejs-redux](https://github.com/titouancreach/vuejs-redux) to handle communication with the store_
+
+Go to `Micro-frontends/microfront-with-wc-redux/` :
+
+1. In `react-app` & `vue-app` execute `npm run dev` to build & launch the React & Vue Web Components at http://localhost:4001/, http://localhost:4002/
+
+2. In `./redux-app` run `npm start` to bundle all the redux logic in a single js file (thanks to [rollup.js](https://rollupjs.org/guide/en/)). The result is served at http://localhost:4100/
+3. In `./wrapper-app` (a React application), run `npm start` to contain the micro-frontend and use a router allowing different lifecycles to our Web components. See the result at http://localhost:4000/
+
+---
+
 ## Micro-frontends using Single-SPA
 
 Still in developpement
