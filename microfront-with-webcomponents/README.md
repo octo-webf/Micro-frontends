@@ -10,6 +10,7 @@ Research on the use of different methods to integrate micro-frontends :
 - [With Express & EJS](#micro-frontends-using-express--ejs) (server-side rendering)
 - [With JavaScript](#micro-frontends-using-javascript)
 - [With Custom elements](#micro-frontends-using-custom-elements) (Web Components)
+- [With Custom elements and Redux](#micro-frontends-using-custom-elements-with-redux) (Web Components)
 - [With Single-SPA](#micro-frontends-using-single-spa) Meta-framework (_More information on [Single-SPA's website](https://single-spa.js.org/)_)
 
 ## Micro-frontends using iframes
