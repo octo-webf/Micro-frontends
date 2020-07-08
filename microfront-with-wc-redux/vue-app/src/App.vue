@@ -15,7 +15,7 @@
         </div>
         <div v-else>
           <button v-on:click="() => (showList = true)">Retour</button>
-          <productDetail :product="filteredProducts[id]" />
+          <productDetail :product="productSelected" />
         </div>
       </section>
     </template>
@@ -43,7 +43,7 @@ export default {
     return {
       showList: true,
       store: window.store,
-      id: 0,
+      productSelected: {},
     };
   },
   methods: {
@@ -56,7 +56,7 @@ export default {
       return { actions: bindActionCreators(window.actions, dispatch) };
     },
     handleSelectedProduct(product) {
-      this.id = product.id;
+      this.productSelected = product;
       this.showList = false;
     },
   },
