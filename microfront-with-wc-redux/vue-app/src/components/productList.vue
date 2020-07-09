@@ -32,7 +32,11 @@ export default {
   components: {
     previewProduct,
   },
-  props: ["actions", "products"],
+  mounted() {
+    let t = this;
+    window.actions.fetchProducts(t.dispatch);
+  },
+  props: ["actions", "products", "dispatch"],
   data() {
     return {
       SHOW_ALL: "SHOW_ALL",

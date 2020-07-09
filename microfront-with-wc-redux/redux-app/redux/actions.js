@@ -18,3 +18,33 @@ export const setVisibilityFilter = (filter) => ({
   type: types.SET_VISIBILITY_FILTER,
   filter,
 });
+
+// fetch
+export const fetchProductsBegin = () => ({
+  type: types.FETCH_PRODUCTS,
+});
+export const fetchProductsSuccess = (products) => ({
+  type: types.FETCH_PRODUCTS_SUCCESS,
+  products,
+});
+export const fetchProductsError = (error) => ({
+  type: types.FETCH_PRODUCTS_ERROR,
+  error,
+});
+
+export const fetchProducts = (dispatch) => {
+  dispatch(fetchProductsBegin());
+  return fetch("http://localhost:4200/products.json")
+    .then((res) => {
+      if (!res.ok) {
+        throw Error(res.statusText);
+      }
+      return res;
+    })
+    .then((res) => res.json())
+    .then((list) => {
+      dispatch(fetchProductsSuccess(list.products));
+      return list.products;
+    })
+    .catch((error) => dispatch(fetchProductsError(error)));
+};

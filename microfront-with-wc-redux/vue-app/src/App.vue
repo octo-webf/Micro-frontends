@@ -4,12 +4,13 @@
     :mapStateToProps="mapStateToProps"
     :mapDispatchToProps="mapDispatchToProps"
   >
-    <template #default="{filteredProducts, actions}">
+    <template #default="{filteredProducts, actions, dispatch}">
       <section>
         <div v-if="showList">
           <productList
             :actions="actions"
             :products="filteredProducts"
+            :dispatch="dispatch"
             v-on:selectedProduct="handleSelectedProduct"
           />
         </div>
@@ -53,7 +54,10 @@ export default {
       };
     },
     mapDispatchToProps(dispatch) {
-      return { actions: bindActionCreators(window.actions, dispatch) };
+      return {
+        actions: bindActionCreators(window.actions, dispatch),
+        dispatch,
+      };
     },
     handleSelectedProduct(product) {
       this.productSelected = product;

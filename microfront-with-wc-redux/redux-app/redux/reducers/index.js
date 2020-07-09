@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 
 import basket from "./basketReducer";
-import productList from "./productListReducer";
+import productListReducer from "./productListReducer";
 import visibilityFilter from "./visibilityFilter";
 
 const rootReducer = combineReducers({
   basket,
-  productList,
+  productListReducer,
   visibilityFilter,
 });
 

@@ -1,4 +1,11 @@
-const initialState = [
+import {
+  FETCH_PRODUCTS,
+  FETCH_PRODUCTS_SUCCESS,
+  FETCH_PRODUCTS_ERROR,
+} from "../actionTypes";
+
+/*
+[
   {
     id: 0,
     name: "GTA V",
@@ -83,12 +90,24 @@ const initialState = [
     category: "Computers",
   },
 ];
+*/
+const initialState = {
+  products: [],
+  loading: false,
+  error: null,
+};
 
-const productList = (state = initialState, action) => {
+const productListReducer = (state = initialState, action) => {
   switch (action.type) {
+    case FETCH_PRODUCTS:
+      return { ...state, loading: true, error: null };
+    case FETCH_PRODUCTS_SUCCESS:
+      return { ...state, loading: false, products: action.products };
+    case FETCH_PRODUCTS_ERROR:
+      return { ...state, loading: false, error: action.error };
     default:
       return state;
   }
 };
 
-export default productList;
+export default productListReducer;

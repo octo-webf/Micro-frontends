@@ -7,7 +7,7 @@ import {
   SHOW_COMPUTERS,
 } from "./constants";
 
-const getProductList = (state) => state.productList;
+const getProductList = (state) => state.productListReducer.products;
 const getVisibilityFilter = (state) => state.visibilityFilter;
 const getBasket = (state) => state.basket;
 
