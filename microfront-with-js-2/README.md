@@ -9,8 +9,11 @@ Research on the use of different methods to integrate micro-frontends :
 - [With iframes](#micro-frontends-using-iframes)
 - [With Express & EJS](#micro-frontends-using-express--ejs) (server-side rendering)
 - [With JavaScript](#micro-frontends-using-javascript)
-- [With Custom elements](#micro-frontends-using-custom-elements) (Web Components)
-- [With Custom elements and Redux](#micro-frontends-using-custom-elements-with-redux) (Web Components)
+- [With React only](#micro-frontends-using-react-javascript-2)
+- With Custom Elements (Web Components)
+  - [Simple example](#micro-frontends-using-custom-elements)
+  - [With Redux store](#micro-frontends-using-custom-elements-with-redux)
+  - [With Vuex store](#micro-frontends-using-custom-elements-with-vuex)
 - [With Single-SPA](#micro-frontends-using-single-spa) Meta-framework (_More information on [Single-SPA's website](https://single-spa.js.org/)_)
 
 ## Micro-frontends using iframes
@@ -63,7 +66,7 @@ View the result at http://localhost:7000/
 
 ---
 
-## Micro-frontends using JavaScript 2
+## Micro-frontends using React (JavaScript 2)
 
 _This method uses React as Micro-frontends & to create Micro-frontends_
 
@@ -107,6 +110,23 @@ Go to `Micro-frontends/microfront-with-wc-redux/` :
 
 2. In `./redux-app` run `npm start` to bundle all the redux logic in a single js file (thanks to [rollup.js](https://rollupjs.org/guide/en/)). The result is served at http://localhost:4100/
 3. In `./wrapper-app` (a React application), run `npm start` to contain the micro-frontend and use a router allowing different lifecycles to our Web components. See the result at http://localhost:4000/
+
+---
+
+## Micro-frontends using Custom Elements with Vuex
+
+_Advanced Custom Elements example using a global state with Vuex_
+
+_This method uses [Direflow](https://direflow.io/) to create React Web Components & [@vue/web-component-wrapper](https://github.com/vuejs/vue-web-component-wrapper) for Vue Web Components_
+
+_To handle communication between Vuex store & React, a script was created at `.../react-app/vuex-react` with useful hooks, using React context_
+
+Go to `Micro-frontends/microfront-with-wc-redux/` :
+
+1. In `react-app` & `vue-app` execute `npm run dev` to build & launch the React & Vue Web Components at http://localhost:4001/, http://localhost:4002/
+
+2. In `./vuex-app` run `npm start` to serve the `main.js` file, which contains all the vuex logic in a json array file (with modifications for React). The result is served at http://localhost:4100/
+3. In `./wrapper-app`, run `npm start` to see the result at http://localhost:4000/
 
 ---
 
