@@ -1,0 +1,8 @@
+export const ADD_TODO = "ADD_TODO";
+export const EDIT_TODO = "EDIT_TODO";
+export const MARK_COMPLETED = "MARK_COMPLETED";
+export const DELETE_TODO = "DELETE_TODO";
+export const DELETE_ALL_TODO = "DELETE_ALL_TODO";
+
+export const CLEAR_COMPLETED = "CLEAR_COMPLETED";
+export const SET_VISIBILITY_FILTER = "SET_VISIBILITY_FILTER";

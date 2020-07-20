@@ -1,0 +1,25 @@
+.filters {
+  display: flex;
+  justify-content: center;
+}
+.deletion {
+  display: flex;
+  justify-content: space-evenly;
+}
+button {
+  width: 100px;
+  margin: 0 10px 0 10px;
+  border: 1px solid lightgray;
+  outline: none;
+}
+button:active {
+  background-color: lightgray;
+}
+.clear {
+  cursor: pointer;
+  color: gray;
+}
+.delete {
+  cursor: pointer;
+  color: red;
+}

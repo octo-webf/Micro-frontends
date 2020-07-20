@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.wc {
+  width: 50%;
+}
