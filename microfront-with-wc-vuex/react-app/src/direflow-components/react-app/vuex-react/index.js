@@ -1,4 +1,4 @@
-import React, { useContext, useState, useCallback } from "react";
+import React, { useContext, useState, useCallback, useEffect } from "react";
 
 const VuexContext = React.createContext(null);
 
@@ -9,11 +9,12 @@ export const Provider = ({ children, store }) => {
 export const useGetter = (_getter) => {
   console.log("useGetter");
 
-  //force update
+  // forcing react update
   const [, updateState] = useState();
   const forceUpdate = useCallback(() => updateState({}), []);
-  window.removeEventListener("forceUpdate", () => forceUpdate());
-  window.addEventListener("forceUpdate", () => forceUpdate());
+
+  window.removeEventListener("forceUpdate", forceUpdate);
+  window.addEventListener("forceUpdate", forceUpdate);
 
   const context = useContext(VuexContext);
   return context.getters[_getter](context.state);

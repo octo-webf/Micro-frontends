@@ -11,10 +11,10 @@ const SHOW_ALL = "SHOW_ALL";
 const SHOW_ACTIVE = "SHOW_ACTIVE";
 const SHOW_COMPLETED = "SHOW_COMPLETED";
 
-function forceReactUpdate() {
+const forceReactUpdate = () => {
   const updateEvent = new CustomEvent("forceUpdate");
   window.dispatchEvent(updateEvent);
-}
+};
 
 const store = {
   state: {
@@ -97,9 +97,10 @@ const store = {
     },
   },
   modules: {},
-  // React Equivalent
+
+  // For React
   commit: (mutation, payload) => {
-    return store.mutations[mutation](store.state, payload);
+    store.mutations[mutation](store.state, payload);
   },
 };
 
