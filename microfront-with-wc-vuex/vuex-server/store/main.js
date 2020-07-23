@@ -11,11 +11,6 @@ const SHOW_ALL = "SHOW_ALL";
 const SHOW_ACTIVE = "SHOW_ACTIVE";
 const SHOW_COMPLETED = "SHOW_COMPLETED";
 
-const forceReactUpdate = () => {
-  const updateEvent = new CustomEvent("forceUpdate");
-  window.dispatchEvent(updateEvent);
-};
-
 const store = {
   state: {
     todoList: [],
@@ -102,6 +97,10 @@ const store = {
   commit: (mutation, payload) => {
     store.mutations[mutation](store.state, payload);
   },
+};
+const forceReactUpdate = () => {
+  const updateEvent = new CustomEvent("forceUpdate");
+  window.dispatchEvent(updateEvent);
 };
 
 window.store = store;
