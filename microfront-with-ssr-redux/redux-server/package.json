@@ -1,11 +1,26 @@
 {
-  "name": "redux-server",
+  "name": "redux-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup --config",
+    "serve": "serve -l 4100 bundle --cors",
+    "start": "npm run build && npm run serve"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^2.18.1",
+    "serve": "^11.3.2",
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "rollup-plugin-replace": "^2.2.0"
+  },
+  "dependencies": {
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0"
+  }
 }
