@@ -21,7 +21,7 @@ export default function TodoItem(props) {
 
   return (
     <Styled styles={styles}>
-      <div className="item">
+      <li className="item">
         {isEdit ? (
           <div>
             <form onSubmit={handleEdit}>
@@ -56,7 +56,7 @@ export default function TodoItem(props) {
             />
           </div>
         )}
-      </div>
+      </li>
     </Styled>
   );
 }

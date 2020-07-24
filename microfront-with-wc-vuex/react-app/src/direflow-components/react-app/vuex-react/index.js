@@ -1,4 +1,4 @@
-import React, { useContext, useState, useCallback, useEffect } from "react";
+import React, { useContext, useState, useCallback } from "react";
 
 const VuexContext = React.createContext(null);
 
