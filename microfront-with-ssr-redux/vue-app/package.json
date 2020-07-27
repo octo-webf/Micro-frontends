@@ -8,6 +8,7 @@
     "start": "nuxt start",
     "export": "nuxt export",
     "serve": "nuxt serve",
+    "start:ssr": "npm run build && npm run serve",
     "test": "jest"
   },
   "dependencies": {
