@@ -5,10 +5,10 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "nuxt start --port 7003",
     "export": "nuxt export",
     "serve": "nuxt serve",
-    "start:ssr": "npm run build && npm run serve",
+    "start:ssr": "npm run build && npm start",
     "test": "jest"
   },
   "dependencies": {
