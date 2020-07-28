@@ -1,9 +1,18 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import App from "./App";
+import { shallow } from "enzyme";
+import sinon from "sinon";
 
-test("renders learn react link", () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import App from "./App";
+import Navigation from "./Components/Navigation";
+
+describe("<App />", () => {
+  it("should render without crashing", () => {
+    const app = shallow(<App />);
+  });
+});
+
+describe("<Navigation />", () => {
+  it("should render without crashing", () => {
+    const navigation = shallow(<Navigation />);
+  });
 });
