@@ -52,5 +52,7 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    publicPath: "http://localhost:7000/vue",
+  },
 };
