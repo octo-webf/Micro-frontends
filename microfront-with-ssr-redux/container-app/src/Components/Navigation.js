@@ -1,21 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
+import "./Navigation.css";
 
 export default function Navigation() {
   return (
     <nav>
       <ul>
-        <li>
-          <Link to="/">Home</Link>
+        <li className="home">
+          <Link className="link homelink" to="/">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/angular">Angular</Link>
+          <Link className="link" activeClassName="activelink" to="/angular">
+            Angular
+          </Link>
         </li>
         <li>
-          <Link to="/react">React</Link>
+          <Link className="link" activeClassName="activelink" to="/react">
+            React
+          </Link>
         </li>
         <li>
-          <Link to="/vue">Vue</Link>
+          <Link className="link" activeClassName="activelink" to="/vue">
+            Vue
+          </Link>
         </li>
       </ul>
     </nav>
