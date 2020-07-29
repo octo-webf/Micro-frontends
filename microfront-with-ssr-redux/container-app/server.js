@@ -5,9 +5,10 @@ const React = require("react");
 const App = require("./transpiled/App.js").default;
 const { renderToString } = require("react-dom/server");
 const { createProxyMiddleware } = require("http-proxy-middleware");
+const { StaticRouter } = require("react-router-dom");
 
 const ANGULAR_URL = "http://localhost:7001/";
-const REACT_URL = "http://localhost:7002";
+const REACT_URL = "http://localhost:7002/";
 const VUE_URL = "http://localhost:7003/";
 
 const server = express();
@@ -17,9 +18,15 @@ server.get("/", (req, res) => {
 
   fs.readFile(htmlPath, "utf8", (err, html) => {
     const rootElem = '<div id="react3">';
-    const renderedApp = renderToString(React.createElement(App, null));
-
-    res.send(html.replace(rootElem, rootElem + renderedApp));
+    const renderedApp = React.createElement(App);
+    const routeredApp = renderToString(
+      React.createElement(StaticRouter, {
+        children: renderedApp,
+        location: req.url,
+        context: {},
+      })
+    );
+    res.send(html.replace(rootElem, rootElem + routeredApp));
   });
 });
 
