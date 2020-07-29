@@ -1,62 +1,76 @@
 import React from "react";
 import "./App.css";
 import Navigation from "./Components/Navigation";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
+import loadApp from "./utils/loadApp";
 
-function Home() {
-  return (
-    <>
-      <h2>Home</h2>
-    </>
-  );
+class AngularApp extends React.Component {
+  componentDidMount() {
+    loadApp(document.querySelector("#angular-app"));
+  }
+  render() {
+    return (
+      <section>
+        <h2>Angular Application</h2>
+        <div id="angular-app" data-url="angular"></div>
+      </section>
+    );
+  }
 }
 
-function AngularApp() {
-  return (
-    <section>
-      <h2>Angular Application</h2>
-    </section>
-  );
+class ReactApp extends React.Component {
+  componentDidMount() {
+    loadApp(document.querySelector("#react-app"));
+  }
+  render() {
+    return (
+      <section>
+        <h2>React Application</h2>
+        <div id="react-app" data-url="react"></div>
+      </section>
+    );
+  }
 }
 
-function ReactApp() {
-  return (
-    <section>
-      <h2>React Application</h2>
-    </section>
-  );
-}
-
-function VueApp() {
-  return (
-    <section>
-      <h2>Vue Application</h2>
-    </section>
-  );
+class VueApp extends React.Component {
+  componentDidMount() {
+    loadApp(document.querySelector("#vue-app"));
+  }
+  render() {
+    return (
+      <section>
+        <h2>Vue Application</h2>
+        <div id="vue-app" data-url="vue"></div>
+      </section>
+    );
+  }
 }
 
 function App() {
   return (
-    <Router>
+    <>
       <header>
-        <h1>Container Application</h1>
         <Navigation />
       </header>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/angular">
-          <AngularApp />
-        </Route>
-        <Route exact path="/react">
-          <ReactApp />
-        </Route>
-        <Route exact path="/vue">
-          <VueApp />
-        </Route>
-      </Switch>
-    </Router>
+      <main>
+        <Switch>
+          <Route path="/angular">
+            <AngularApp />
+          </Route>
+          <Route path="/react">
+            <ReactApp />
+          </Route>
+          <Route path="/vue">
+            <VueApp />
+          </Route>
+          <Route path="/">
+            <AngularApp />
+            <ReactApp />
+            <VueApp />
+          </Route>
+        </Switch>
+      </main>
+    </>
   );
 }
 

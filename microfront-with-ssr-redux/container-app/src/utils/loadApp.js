@@ -7,7 +7,7 @@ export default function loadApp(element) {
         nonExecutableScript
       ) {
         var script = document.createElement("script");
-        //console.log(nonExecutableScript);
+        console.log(nonExecutableScript);
 
         if (nonExecutableScript.innerHTML === "") {
           script.setAttribute("src", nonExecutableScript.src);
