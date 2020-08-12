@@ -1,36 +1,10 @@
-const path = require("path");
-const fs = require("fs");
 const express = require("express");
-const React = require("react");
-const App = require("./transpiled/App.js").default;
-const { renderToString } = require("react-dom/server");
-const { createProxyMiddleware } = require("http-proxy-middleware");
-const { StaticRouter } = require("react-router-dom");
-
-const ANGULAR_URL = "http://localhost:7001/";
-const REACT_URL = "http://localhost:7002/";
-const VUE_URL = "http://localhost:7003/";
-
 const server = express();
+const request = require("request");
+const { createProxyMiddleware } = require("http-proxy-middleware");
 
-server.get("/", (req, res) => {
-  const htmlPath = path.resolve(__dirname, "build", "index.html");
-
-  fs.readFile(htmlPath, "utf8", (err, html) => {
-    const rootElem = '<div id="react3">';
-    const renderedApp = React.createElement(App);
-    const routeredApp = renderToString(
-      React.createElement(StaticRouter, {
-        children: renderedApp,
-        location: req.url,
-        context: {},
-      })
-    );
-    res.send(html.replace(rootElem, rootElem + routeredApp));
-  });
-});
-
-server.use(express.static("build"));
+server.set("view engine", "ejs");
+server.use(express.static(__dirname + "/public"));
 
 const createProxy = (path, target) =>
   server.use(
@@ -41,11 +15,48 @@ const createProxy = (path, target) =>
       pathRewrite: { [`^${path}`]: "" },
     })
   );
-createProxy("/angular", ANGULAR_URL);
-createProxy("/react", REACT_URL);
-createProxy("/vue", VUE_URL);
 
-const port = process.env.PORT || 7000;
+createProxy("/react-app", "http://localhost:8001/");
+createProxy("/vue-app", "http://localhost:8002/");
+
+server.get("/", (req, res) =>
+  Promise.all([
+    getContents("http://localhost:8000/react-app"),
+    getContents("http://localhost:8000/vue-app"),
+  ])
+    .then((responses) => {
+      res.render("index", {
+        react_app: responses[0],
+        vue_app: responses[1],
+      });
+    })
+    .catch((error) => res.send(error.message))
+);
+
+server.get("/basket", (req, res) =>
+  Promise.all([
+    getContents("http://localhost:8000/react-app"),
+    getContents("http://localhost:8000/vue-app"),
+  ])
+    .then((responses) => {
+      res.render("basket", {
+        react_app: responses[0],
+        vue_app: responses[1],
+      });
+    })
+    .catch((error) => res.send(error.message))
+);
+
+const getContents = (url) =>
+  new Promise((resolve, reject) => {
+    request.get(url, (error, response, body) => {
+      if (error) return resolve("Error loading " + url + ": " + error.message);
+
+      return resolve(body);
+    });
+  });
+
+const port = process.env.PORT || 8000;
 server.listen(port, () => {
-  console.log(`App listening on port ${port}`);
+  console.log(`Homepage listening on port ${port}`);
 });

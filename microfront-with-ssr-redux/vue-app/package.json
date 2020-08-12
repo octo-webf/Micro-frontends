@@ -5,20 +5,18 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start --port 7003",
-    "export": "nuxt export",
-    "serve": "nuxt serve",
-    "start:ssr": "npm run build && npm start",
+    "start": "nuxt start -p 8002",
+    "generate": "nuxt generate",
     "test": "jest"
   },
   "dependencies": {
-    "nuxt": "^2.13.0"
+    "nuxt": "^2.14.0"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.3",
     "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^26.0.1",
-    "jest": "^26.0.1",
+    "babel-jest": "^26.1.0",
+    "jest": "^26.1.0",
     "vue-jest": "^3.0.4"
   }
 }
