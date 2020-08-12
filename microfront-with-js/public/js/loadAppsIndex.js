@@ -2,20 +2,28 @@ function loadPage(element) {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.onreadystatechange = function () {
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-      element.innerHTML = xmlHttp.responseText;
+      element.innerHTML = xmlHttp.response;
       [].forEach.call(element.querySelectorAll("script"), function (
         nonExecutableScript
       ) {
         var script = document.createElement("script");
-        //console.log(nonExecutableScript);
-
+        console.log(nonExecutableScript);
         if (nonExecutableScript.innerHTML === "") {
           script.setAttribute("src", nonExecutableScript.src);
+          if (nonExecutableScript.type !== "") {
+            script.setAttribute("type", nonExecutableScript.type);
+          }
+          if (nonExecutableScript.defer) {
+            script.defer = true;
+          }
+          if (nonExecutableScript.noModule) {
+            script.noModule = true;
+          }
         } else {
           script.innerHTML = nonExecutableScript.innerHTML;
         }
-        script.setAttribute("type", "text/javascript");
         element.appendChild(script);
+        console.log(script);
         nonExecutableScript.parentNode.removeChild(nonExecutableScript);
       });
     }
