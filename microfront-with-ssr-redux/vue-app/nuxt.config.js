@@ -39,8 +39,7 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
-  static: {
-    prefix: "/vue-app",
+  build: {
+    publicPath: "http://localhost:8000/vue-app/_nuxt",
   },
 };
