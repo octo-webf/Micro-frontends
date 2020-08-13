@@ -41,7 +41,6 @@ nav ul {
 
 nav li {
   width: 40vw;
-  border: 1px solid lightgray;
   height: 3vh;
   display: flex;
   flex-direction: column;
@@ -69,6 +68,6 @@ nav li {
   }
 
   nav li {
-    width: 50%;
+    width: 50vw;
   }
 }

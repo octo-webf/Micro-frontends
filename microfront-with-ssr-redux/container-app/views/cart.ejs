@@ -1,26 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8" />
-    <title>Party.com | Cart</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-</head>
+<%- include('./common/head.ejs', {title:'Party.com | Cart'}) %>
 
 <body>
-    <header>
-        <h1>Party.com</h1>
-        <nav>
-            <ul>
-                <a href='/'>
-                    <li>🏠 Home</li>
-                </a>
-                <a href='/cart'>
-                    <li class="active">🛒 Cart</li>
-                </a>
-            </ul>
-        </nav>
-    </header>
+    <%- include('./common/navigation.ejs',{active:'cart'}) %>
     <div class="bloc">
         <%- react_app_2 %>
     </div>
