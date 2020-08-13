@@ -16,32 +16,29 @@ const createProxy = (path, target) =>
     })
   );
 
-createProxy("/react-app", "http://localhost:8001/");
-createProxy("/vue-app", "http://localhost:8002/");
+createProxy("/react-app-1", "http://localhost:8001/");
+createProxy("/react-app-2", "http://localhost:8002/");
+createProxy("/vue-app", "http://localhost:8003/");
 
 server.get("/", (req, res) =>
   Promise.all([
-    getContents("http://localhost:8000/react-app"),
+    getContents("http://localhost:8000/react-app-1"),
     getContents("http://localhost:8000/vue-app"),
   ])
     .then((responses) => {
       res.render("index", {
-        react_app: responses[0],
+        react_app_1: responses[0],
         vue_app: responses[1],
       });
     })
     .catch((error) => res.send(error.message))
 );
 
-server.get("/basket", (req, res) =>
-  Promise.all([
-    getContents("http://localhost:8000/react-app"),
-    getContents("http://localhost:8000/vue-app"),
-  ])
+server.get("/cart", (req, res) =>
+  Promise.all([getContents("http://localhost:8000/react-app-2")])
     .then((responses) => {
-      res.render("basket", {
-        react_app: responses[0],
-        vue_app: responses[1],
+      res.render("cart", {
+        react_app_2: responses[0],
       });
     })
     .catch((error) => res.send(error.message))

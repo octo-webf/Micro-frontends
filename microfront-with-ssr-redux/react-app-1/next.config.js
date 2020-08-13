@@ -1,3 +1,3 @@
 module.exports = {
-  assetPrefix: "http://localhost:8000/react-app",
+  assetPrefix: "/react-app-1",
 };

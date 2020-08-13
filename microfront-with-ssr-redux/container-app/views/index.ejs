@@ -3,13 +3,22 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Micro-frontends w/ Express-EJS</title>
+  <title>Party.com</title>
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 
 <body>
+  <header>
+    <h1>Party.com</h1>
+    <nav>
+      <ul>
+        <li><a href='/'>🏠</a></li>
+        <li><a href='/cart'>🛒</a></li>
+      </ul>
+    </nav>
+  </header>
   <div class="bloc">
-    <%- react_app %>
+    <%- react_app_1 %>
   </div>
   <div class="bloc">
     <%- vue_app %>
