@@ -23,6 +23,7 @@ createProxy("/vue-app", "http://localhost:8003/");
 server.get("/", (req, res) =>
   Promise.all([
     getContents("http://localhost:8000/react-app-1"),
+    getContents("http://localhost:8000/react-app-2"),
     getContents("http://localhost:8000/vue-app"),
   ])
     .then((responses) => {

@@ -4,7 +4,21 @@ import {
   REMOVE_ALL_FROM_BASKET,
 } from "../actionTypes";
 
-const initialState = [];
+const initialState = [
+  {
+    id: 0,
+    product: {
+      id: 0,
+      name: "GTA V",
+      price: "49€",
+      imgURL:
+        "https://www.cdiscount.com/pdt2/7/9/8/1/700x700/son3491951945798/rw/gta-v-ps4.jpg",
+      tags: "Adult, Violence, Drugs",
+      category: "Video Games",
+    },
+    quantity: 1,
+  },
+];
 
 const basket = (state = initialState, action) => {
   switch (action.type) {

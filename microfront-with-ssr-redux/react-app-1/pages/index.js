@@ -1,54 +1,79 @@
-import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import styles from "../styles/Home.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import cx from "classnames";
 
-export default function Home() {
+export default function App() {
+  let basket = [];
+  const dispatch = useDispatch();
+
+  if (typeof window !== "undefined") {
+    basket = useSelector(window.selectors.getVisibleBasket);
+  }
+
+  const handleGoBack = () => {
+    console.log("go back");
+  };
+
+  const handleDeleteOne = (id) => {
+    dispatch(window.actions.removeFromBasket(id));
+  };
+
+  const handleDeleteAll = () => {
+    dispatch(window.actions.removeAllFromBasket());
+  };
+
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
+    <section className={styles.section}>
+      <h2 className={styles.h2}>Panier</h2>
+      {basket.length === 0 ? (
+        <>
+          <h3>Votre panier est vide...</h3>
+        </>
+      ) : (
+        basket.map((item) => {
+          return (
+            <div key={item.id} className={cx(styles.flex, styles.spaced)}>
+              <div className={styles.flex}>
+                <img src={item.product.imgURL} className={styles.image} />
+                <div>
+                  <p className={styles.h3}>{item.product.name}</p>
+                  <p className={styles.h6}>{item.product.tags}</p>
+                </div>
+              </div>
+              <div
+                className={cx(styles.flex, styles.spaced)}
+                style={{ width: "15%" }}
+              >
+                <div className={styles.h3}>
+                  {item.product.price} x{item.quantity}
+                </div>
+                <img
+                  src="https://image.flaticon.com/icons/svg/3096/3096673.svg"
+                  className={styles.trash}
+                  onClick={() => handleDeleteOne(item.id)}
+                />
+              </div>
+            </div>
+          );
+        })
+      )}
+      <div className={cx(styles.flex, styles.spaced)}>
+        <button
+          className={cx(styles.btn, styles.btn_back)}
+          onClick={handleGoBack}
+        >
+          Retour aux achats
+        </button>
+        {basket.length !== 0 && (
+          <button
+            className={cx(styles.btn, styles.btn_danger)}
+            onClick={handleDeleteAll}
           >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-        <Link href="/page">
-          <a>
-            <h3>Page &rarr;</h3>
-          </a>
-        </Link>
-      </main>
-    </div>
+            Tout supprimer
+          </button>
+        )}
+      </div>
+    </section>
   );
 }
