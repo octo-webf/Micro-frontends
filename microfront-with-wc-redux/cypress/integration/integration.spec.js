@@ -1,12 +1,35 @@
 describe("Application navigation", () => {
   it("Navigates to basket page", () => {
     cy.visit(Cypress.env("APPLICATION_URL"));
+
     cy.get("#basket-link").click();
     cy.url().should("include", "/basket");
   });
+
   it("Navigates to home page", () => {
     cy.visit("http://localhost:4000/basket");
+
     cy.get("#home-link").click();
+    cy.url().should("equal", Cypress.env("APPLICATION_URL"));
+  });
+
+  it("Navigates from products list to product detail", () => {
+    cy.visit("http://localhost:4000");
+
+    cy.get("vue-app").shadow().find("#0").click();
+    cy.get("vue-app").shadow().find("h1").should("contain", "GTA V");
+
+    cy.get("vue-app").shadow().find(".btn").click();
+    cy.get("vue-app")
+      .shadow()
+      .find("h2")
+      .should("contain", "Liste des produits");
+  });
+
+  it("Redirects from basket to home page", () => {
+    cy.visit("http://localhost:4000/basket");
+
+    cy.get("react-app").shadow().find(".btn-back").click();
     cy.url().should("equal", Cypress.env("APPLICATION_URL"));
   });
 });
