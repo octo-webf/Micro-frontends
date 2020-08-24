@@ -2,14 +2,28 @@
   <div>
     <h2>Liste des produits</h2>
     <div class="flex">
-      <button v-on:click="actions.setVisibilityFilter(SHOW_ALL)">All</button>
-      <button v-on:click="actions.setVisibilityFilter(SHOW_VIDEO_GAMES)">
+      <button
+        id="filter-all"
+        v-on:click="actions.setVisibilityFilter(SHOW_ALL)"
+      >
+        All
+      </button>
+      <button
+        id="filter-videogames"
+        v-on:click="actions.setVisibilityFilter(SHOW_VIDEO_GAMES)"
+      >
         Video Games
       </button>
-      <button v-on:click="actions.setVisibilityFilter(SHOW_PHONES)">
+      <button
+        id="filter-phones"
+        v-on:click="actions.setVisibilityFilter(SHOW_PHONES)"
+      >
         Smartphones
       </button>
-      <button v-on:click="actions.setVisibilityFilter(SHOW_COMPUTERS)">
+      <button
+        id="filter-computers"
+        v-on:click="actions.setVisibilityFilter(SHOW_COMPUTERS)"
+      >
         Computers
       </button>
     </div>

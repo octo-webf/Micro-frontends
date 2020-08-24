@@ -32,7 +32,11 @@ export default function App() {
           ) : (
             basket.map((item) => {
               return (
-                <li id={item.id} key={item.id} className="flex spaced box">
+                <li
+                  id={item.product.id}
+                  key={item.id}
+                  className="flex spaced box"
+                >
                   <div className="flex" style={{ width: "80%" }}>
                     <img src={item.product.imgURL} className="image" />
                     <div>
@@ -65,7 +69,7 @@ export default function App() {
             Retour aux achats
           </button>
           {basket.length !== 0 && (
-            <button className="btn btn-danger" onClick={handleDeleteAll}>
+            <button className="btn btn-deleteall" onClick={handleDeleteAll}>
               Tout supprimer
             </button>
           )}
