@@ -11,7 +11,7 @@
             :actions="actions"
             :products="filteredProducts"
             :dispatch="dispatch"
-            v-on:selectedProduct="handleSelectedProduct"
+            v-on:selectedproduct="handleSelectedProduct"
           />
         </div>
         <div v-else>

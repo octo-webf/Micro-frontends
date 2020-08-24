@@ -31,7 +31,7 @@
       <li v-for="item in products" :key="item.id">
         <previewProduct
           :product="item"
-          v-on:selectedProduct="(product) => $emit('selectedProduct', product)"
+          v-on:selectedProduct="(product) => $emit('selectedproduct', product)"
         />
       </li>
     </ul>
