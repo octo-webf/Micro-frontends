@@ -13,14 +13,14 @@
         Computers
       </button>
     </div>
-    <div class="flex">
-      <div v-for="item in products" :key="item.id">
+    <ul class="flex">
+      <li v-for="item in products" :key="item.id">
         <previewProduct
           :product="item"
           v-on:selectedProduct="(product) => $emit('selectedProduct', product)"
         />
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -60,5 +60,10 @@ button {
   background-color: white;
   border: 1px solid lightgray;
   border-radius: 5px;
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
 }
 </style>

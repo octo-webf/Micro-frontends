@@ -8,17 +8,29 @@ section {
   border-radius: 5px;
 }
 
+p,
 h2,
 h3,
 h4,
 h6 {
   margin: 0;
 }
-h5 {
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.empty-basket {
   font-size: medium;
   font-weight: bold;
   font-style: italic;
   color: gray;
+  margin: 20px;
+}
+
+.description {
+  font-weight: bold;
 }
 
 .image {
@@ -39,11 +51,8 @@ h5 {
   box-shadow: 0 0 5px lightgray;
   width: calc(150px + 2vw);
   height: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
   text-align: center;
+  cursor: pointer;
 }
 
 .btn:active {
@@ -55,9 +64,15 @@ h5 {
   background-color: rgb(236, 236, 236);
   border: 1px solid lightgray;
 }
+.btn-trash {
+  background-color: white;
+  border: none;
+  width: 60px;
+}
 
 .btn-danger {
   border: 1px solid red;
+  background-color: white;
   color: red;
 }
 

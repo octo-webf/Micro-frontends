@@ -32,6 +32,7 @@ function App() {
         <ul>
           <li>
             <NavLink
+              id="home-link"
               exact
               className="link"
               activeClassName="link-active"
@@ -42,6 +43,7 @@ function App() {
           </li>
           <li>
             <NavLink
+              id="basket-link"
               exact
               className="link"
               activeClassName="link-active"

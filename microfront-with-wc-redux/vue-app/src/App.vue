@@ -15,7 +15,9 @@
           />
         </div>
         <div v-else>
-          <button v-on:click="() => (showList = true)">Retour</button>
+          <button class="btn" v-on:click="() => (showList = true)">
+            Retour
+          </button>
           <productDetail :product="productSelected" />
         </div>
       </section>
@@ -78,5 +80,15 @@ section {
   min-width: 200px;
   margin: auto;
   padding: 50px;
+}
+
+.btn {
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  box-shadow: 0 0 5px lightgray;
+  width: calc(150px + 2vw);
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
 }
 </style>

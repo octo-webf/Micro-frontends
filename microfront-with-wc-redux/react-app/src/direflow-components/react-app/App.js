@@ -24,43 +24,50 @@ export default function App() {
     <Styled styles={styles}>
       <section>
         <h2>Panier</h2>
-        {basket.length === 0 ? (
-          <>
-            <h5>Votre panier est vide...</h5>
-          </>
-        ) : (
-          basket.map((item) => {
-            return (
-              <div key={item.id} className="flex spaced box">
-                <div className="flex" style={{ width: "80%" }}>
-                  <img src={item.product.imgURL} className="image" />
-                  <div>
-                    <h3>{item.product.name}</h3>
-                    <h6>{item.product.tags}</h6>
+        <ul>
+          {basket.length === 0 ? (
+            <>
+              <li className="empty-basket">Votre panier est vide...</li>
+            </>
+          ) : (
+            basket.map((item) => {
+              return (
+                <li id={item.id} key={item.id} className="flex spaced box">
+                  <div className="flex" style={{ width: "80%" }}>
+                    <img src={item.product.imgURL} className="image" />
+                    <div>
+                      <h3>{item.product.name}</h3>
+                      <p>{item.product.tags}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex spaced" style={{ width: "15%" }}>
-                  <h3>
-                    {item.product.price} x{item.quantity}
-                  </h3>
-                  <img
-                    src="https://image.flaticon.com/icons/svg/3096/3096673.svg"
-                    className="trash"
-                    onClick={() => handleDeleteOne(item.id)}
-                  />
-                </div>
-              </div>
-            );
-          })
-        )}
+                  <div className="flex spaced" style={{ width: "15%" }}>
+                    <p className="description">
+                      {item.product.price} x{item.quantity}
+                    </p>
+                    <button
+                      className="btn-trash"
+                      onClick={() => handleDeleteOne(item.id)}
+                    >
+                      <img
+                        src="https://image.flaticon.com/icons/svg/3096/3096673.svg"
+                        className="trash"
+                        alt="delete item"
+                      />
+                    </button>
+                  </div>
+                </li>
+              );
+            })
+          )}
+        </ul>
         <div className="flex spaced">
-          <div className="btn btn-back" onClick={handleGoBack}>
+          <button className="btn btn-back" onClick={handleGoBack}>
             Retour aux achats
-          </div>
+          </button>
           {basket.length !== 0 && (
-            <div className="btn btn-danger" onClick={handleDeleteAll}>
+            <button className="btn btn-danger" onClick={handleDeleteAll}>
               Tout supprimer
-            </div>
+            </button>
           )}
         </div>
       </section>
