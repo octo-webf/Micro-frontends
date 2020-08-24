@@ -14,9 +14,9 @@ function Button(props) {
 
   return (
     <Styled styles={styles}>
-      <section onClick={handleClickBasket}>
-        <h3>Ajouter {product.name} au panier</h3>
-      </section>
+      <button onClick={handleClickBasket}>
+        Ajouter {product.name} au panier
+      </button>
     </Styled>
   );
 }

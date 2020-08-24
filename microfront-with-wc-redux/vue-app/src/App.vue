@@ -73,6 +73,7 @@ section {
   margin-top: 60px;
   background-color: white;
   border: 1px solid lightgray;
+  border-radius: 5px;
   box-shadow: 0 0 10px lightgray;
   min-width: 200px;
   margin: auto;

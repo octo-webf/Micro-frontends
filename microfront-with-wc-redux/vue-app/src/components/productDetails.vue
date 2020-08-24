@@ -1,9 +1,9 @@
 <template id="productDetail">
   <div class="flex">
     <div>
-      <h2>{{ product.name }}</h2>
-      <h1>{{ product.price }}</h1>
-      <h4>{{ product.tags }}</h4>
+      <h1>{{ product.name }}</h1>
+      <h2>{{ product.price }}</h2>
+      <p>{{ product.tags }}</p>
       <react-button :product="productString"></react-button>
     </div>
     <img class="image" :src="product.imgURL" />
@@ -23,12 +23,31 @@ export default {
 </script>
 
 <style scoped>
+h1,
+h2,
+p {
+  margin: 0;
+}
+
 .flex {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  flex-wrap: wrap-reverse;
+  align-items: flex-start;
 }
 .image {
   height: 50vh;
+}
+
+react-button {
+  margin: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .image {
+    height: auto;
+    width: 60vw;
+    margin: 10px auto;
+  }
 }
 </style>

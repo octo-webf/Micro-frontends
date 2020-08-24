@@ -1,16 +1,20 @@
 <template>
-  <div class="container" v-on:click="() => handleClick(product)">
+  <button
+    :id="product.id"
+    class="container"
+    v-on:click="() => handleClick(product)"
+  >
     <div class="img-container">
       <img :src="product.imgURL" />
     </div>
     <div class="details">
       <h3>{{ product.name }}</h3>
       <div class="flex">
-        <h4>{{ product.category }}</h4>
-        <h4>{{ product.price }}</h4>
+        <p class="description">{{ product.category }}</p>
+        <p class="description">{{ product.price }}</p>
       </div>
     </div>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -62,8 +66,9 @@ img {
 }
 
 h3,
-h4 {
+p {
   margin: 0;
+  text-align: left;
 }
 
 h3 {
@@ -71,7 +76,7 @@ h3 {
   text-overflow: ellipsis;
 }
 
-h4 {
+.description {
   font-size: 14px;
   color: gray;
 }

@@ -1,59 +1,69 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Switch, Link, Route, Redirect } from "react-router-dom";
+import {
+  BrowserRouter,
+  Switch,
+  NavLink,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      isRedirected: false,
-    };
-  }
+function App() {
+  const [isRedirected, setRedirected] = useState(false);
 
-  componentDidMount() {
-    window.addEventListener("redirectHome", this.handleRedirectHome);
-  }
-  componentWillUnmount() {
-    window.removeEventListener("redirectHome", this.handleRedirectHome);
-  }
+  useEffect(() => {
+    window.addEventListener("redirectHome", handleRedirectHome);
+  }, []);
 
-  handleRedirectHome = () => {
-    this.setState({ isRedirected: true });
+  const handleRedirectHome = () => {
+    setRedirected(true);
     setTimeout(() => {
-      this.setState({ isRedirected: false });
+      setRedirected(false);
     }, 100);
   };
 
-  render() {
-    return (
-      <>
-        <BrowserRouter>
-          {this.state.isRedirected && <Redirect to="/" />}
-          <header>
-            <h1>Party.com</h1>
-            <ul>
-              <li>
-                <Link to="/">Produits</Link>
-              </li>
-              <li>
-                <Link to="/basket">Panier</Link>
-              </li>
-            </ul>
-          </header>
-          <div className="micro-frontends">
-            <Switch>
-              <Route exact path="/">
-                <Products />
-              </Route>
-              <Route exact path="/basket">
-                <Basket />
-              </Route>
-            </Switch>
-          </div>
-        </BrowserRouter>
-      </>
-    );
-  }
+  return (
+    <BrowserRouter>
+      {isRedirected && <Redirect to="/" />}
+      <header>
+        <h1>Party.com</h1>
+        <ul>
+          <li>
+            <NavLink
+              exact
+              className="link"
+              activeClassName="link-active"
+              to="/"
+            >
+              Produits
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              exact
+              className="link"
+              activeClassName="link-active"
+              to="/basket"
+            >
+              Panier
+            </NavLink>
+          </li>
+        </ul>
+      </header>
+      <div className="micro-frontends">
+        <Switch>
+          <Route exact path="/">
+            <Products />
+          </Route>
+          <Route exact path="/basket">
+            <Basket />
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 function Products() {

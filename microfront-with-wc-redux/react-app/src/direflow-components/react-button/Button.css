@@ -1,20 +1,18 @@
-section {
+button {
   width: calc(200px + 5vw);
   background-color: green;
   border-radius: 10px;
   border: 1px solid lightgray;
   color: white;
-  text-align: center;
   height: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
+  font-size: 18px;
 }
-section:active {
+button:active {
   position: relative;
   top: 2px;
-}
-h3 {
-  margin: 0;
 }
