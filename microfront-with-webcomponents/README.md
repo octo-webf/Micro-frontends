@@ -130,6 +130,16 @@ Go to `Micro-frontends/microfront-with-wc-redux/` :
 
 ---
 
-## Micro-frontends using Single-SPA
+## Micro-frontends using Single SPA
 
-Still in developpement
+_This method uses Single SPA framework & its helper libraries to create Micro-frontends_
+
+_⚠️ Developper mode only ⚠️_
+
+_⚠️ Unmount problems with Angular framework not solved ⚠️_
+
+Go to `Micro-frontends/microfront-with-single-spa/` :
+
+1. In `angular-app`, `react-app`, `vue-app` & `react-navbar` execute `npm run dev` to build & launch the Angular, React and Vue 'Single SPAs' respectively at http://localhost:9001/, http://localhost:9002/, http://localhost:9003/ & http://localhost:9004/
+
+2. In `./root-config`, run `npm start` to see the result at http://localhost:9000/
