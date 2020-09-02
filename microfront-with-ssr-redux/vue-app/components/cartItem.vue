@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <div class="container-cart-item">
     <div class="img-container">
       <img :src="product.imgURL" :alt="`product-${product.id}`" />
     </div>
@@ -19,7 +19,7 @@
         x
       </button>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -61,20 +61,20 @@ img {
   text-align: right;
 }
 
-.container {
+.container-cart-item {
   display: flex;
   box-shadow: 0 0 8px lightgray;
   border-radius: 10px;
   align-items: center;
   height: 15vh;
   width: 60vw;
-  margin: auto;
+  margin: 10px auto;
   padding: 0 10px;
   position: relative;
   transition: 0.2s ease-out;
 }
 
-.container:hover {
+.container-cart-item:hover {
   top: -3px;
   box-shadow: 0 2px 8px lightgray;
 }

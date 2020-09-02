@@ -38,7 +38,7 @@ server.get("/", (req, res) =>
 server.get("/cart", (req, res) =>
   Promise.all([
     getContents("http://localhost:8000/react-app-2"),
-    getContents("http://localhost:8000/vue-app"),
+    getContents("http://localhost:8000/vue-app/cart"),
   ])
     .then((responses) => {
       res.render("cart", {
