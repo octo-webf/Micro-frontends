@@ -1,61 +1,67 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">/cart</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-          >Documentation</a
-        >
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-          >GitHub</a
-        >
-      </div>
-    </div>
+  <div>
+    <h2>Your cart</h2>
+    <ul>
+      <li v-for="item in getBasket" :key="item.id">
+        <CartItem
+          :id="item.id"
+          :product="item.product"
+          :quantity="item.quantity"
+        />
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+import CartItem from "../components/cartItem";
+import { initSessionStorage } from "../helpers/sessionHelpers";
+
+export default {
+  computed: {
+    ...mapGetters(["getBasket"]),
+  },
+  components: {
+    CartItem,
+  },
+  mounted() {
+    initSessionStorage();
+    this.$store.dispatch("addFromStorage");
+  },
+};
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h2 {
+  margin-top: 10px;
+  font-size: 32px;
   text-align: center;
 }
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+* {
+  box-sizing: border-box;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+ul {
+  margin: auto;
+  padding-left: 0;
 }
 
-.links {
-  padding-top: 15px;
+li {
+  list-style-type: none;
 }
 </style>
