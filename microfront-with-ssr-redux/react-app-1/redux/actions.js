@@ -1,8 +1,8 @@
 import * as types from "./actionTypes";
 
-export const addToBasket = (text) => ({
+export const addToBasket = (product) => ({
   type: types.ADD_TO_BASKET,
-  text,
+  product,
 });
 
 export const deleteFromBasket = (id) => ({
@@ -19,9 +19,9 @@ export const setVisibilityFilter = (filter) => ({
 export const fetchSessionStateBegin = () => ({
   type: types.FETCH_SESSION_STATE,
 });
-export const fetchSessionStateSuccess = (todo) => ({
+export const fetchSessionStateSuccess = (state) => ({
   type: types.FETCH_SESSION_STATE_SUCCESS,
-  todo,
+  basket: state.basket,
 });
 export const fetchSessionStateError = (error) => ({
   type: types.FETCH_SESSION_STATE_ERROR,
@@ -45,7 +45,7 @@ export async function fetchSessionState(dispatch) {
   });
 }
 
-// ITEMS LIST
+// PRODUCT LIST
 export const fetchProductsBegin = () => ({
   type: types.FETCH_PRODUCTS,
 });

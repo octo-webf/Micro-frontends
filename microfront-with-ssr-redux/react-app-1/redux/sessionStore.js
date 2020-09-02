@@ -8,11 +8,4 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(thunk))
 );
 
-export function updateSessionState(store) {
-  let { loading, error, ...state } = store.getState();
-  console.log(state);
-  let state_string = JSON.stringify(state);
-  sessionStorage.setItem("store.state", state_string);
-}
-
 export default store;
