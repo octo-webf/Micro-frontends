@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Your cart</h2>
-    <ul>
+    <ul v-if="getBasket.length > 0">
       <li v-for="item in getBasket" :key="item.id">
         <CartItem
           :id="item.id"
@@ -10,12 +10,20 @@
         />
       </li>
     </ul>
+    <ul v-else>
+      <li>
+        <CartItemSkeleton />
+        <CartItemSkeleton />
+        <CartItemSkeleton />
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import CartItem from "../components/cartItem";
+import CartItemSkeleton from "../components/cartItemSkeleton";
 import { initSessionStorage } from "../helpers/sessionHelpers";
 
 export default {
@@ -24,6 +32,7 @@ export default {
   },
   components: {
     CartItem,
+    CartItemSkeleton,
   },
   mounted() {
     initSessionStorage();
@@ -47,7 +56,7 @@ a {
 }
 
 h2 {
-  margin-top: 10px;
+  margin-top: 10px auto;
   font-size: 32px;
   text-align: center;
 }
