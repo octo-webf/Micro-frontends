@@ -5,6 +5,7 @@ import {
   FETCH_SESSION_STATE_SUCCESS,
   FETCH_SESSION_STATE_ERROR,
 } from "../actionTypes";
+import { syncSessionStorage } from "../../utils/sessionHelpers";
 
 let initialState = { loading: false, error: null, basket: [] };
 
@@ -34,12 +35,14 @@ const basket = (state = initialState, action) => {
             : item;
         });
       }
+      syncSessionStorage(add_list);
       return {
         ...state,
         basket: add_list,
       };
     case DELETE_FROM_BASKET:
       let delete_list = state.basket;
+      syncSessionStorage(delete_list);
       return {
         ...state,
         basket: delete_list.filter((item) => item.id !== action.id),
