@@ -1,0 +1,94 @@
+.container {
+  background: white;
+  border: none;
+  height: 30vh;
+  width: 200px;
+  border-radius: 5px;
+  display: flex;
+  margin: 10px;
+  padding: 0;
+  flex-direction: column;
+  box-shadow: 0 0 8px lightgray;
+  position: relative;
+  top: 0;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.container:hover {
+  top: -3px;
+  box-shadow: 0 2px 8px lightgray;
+}
+
+.imageContainer {
+  height: 25vh;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.previewImage {
+  max-height: 25vh;
+  max-width: 200px;
+}
+
+.description {
+  height: 5vh;
+  width: 200px;
+  padding: 0 5px;
+  margin-top: 5px;
+}
+
+.title {
+  margin: 0;
+  text-align: left;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.price {
+  margin: 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+.tags {
+  margin: 0;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.image_skel {
+  height: 25vh;
+  width: 200px;
+  background: #d3d3d3a6;
+}
+
+.title_skel {
+  margin-top: 2px;
+  height: 14px;
+  width: 70%;
+  border-radius: 10px;
+  background: #d3d3d3a6;
+}
+
+.price_skel {
+  margin-top: 5px;
+  width: 20%;
+  height: 14px;
+  border-radius: 10px;
+  background: #d3d3d3a6;
+}
+
+.tags_skel {
+  height: 14px;
+  width: 40%;
+  margin-top: 5px;
+  border-radius: 10px;
+  background: #d3d3d3a6;
+}
