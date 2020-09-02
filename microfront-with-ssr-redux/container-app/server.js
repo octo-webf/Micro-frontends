@@ -23,23 +23,27 @@ createProxy("/vue-app", "http://localhost:8003/");
 server.get("/", (req, res) =>
   Promise.all([
     getContents("http://localhost:8000/react-app-1"),
-    getContents("http://localhost:8000/react-app-2"),
+    getContents("http://localhost:8000/react-app-2/cart"),
     getContents("http://localhost:8000/vue-app"),
   ])
     .then((responses) => {
       res.render("index", {
         react_app_1: responses[0],
-        vue_app: responses[1],
+        react_app_2: responses[1],
       });
     })
     .catch((error) => res.send(error.message))
 );
 
 server.get("/cart", (req, res) =>
-  Promise.all([getContents("http://localhost:8000/react-app-2")])
+  Promise.all([
+    getContents("http://localhost:8000/react-app-2"),
+    getContents("http://localhost:8000/vue-app"),
+  ])
     .then((responses) => {
       res.render("cart", {
         react_app_2: responses[0],
+        vue_app: responses[1],
       });
     })
     .catch((error) => res.send(error.message))
