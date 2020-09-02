@@ -22,7 +22,7 @@ export const mutations = {
     }
   },
   [REMOVE_ONE_ITEM](state, { id }) {
-    if (state.basket.filter((item) => item.id === id).quantity === 1) {
+    if (state.basket.filter((item) => item.id === id)[0].quantity === 1) {
       state.basket = state.basket.filter((item) => item.id !== id);
     } else {
       state.basket = state.basket.map((item) => {
