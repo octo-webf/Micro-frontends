@@ -21,11 +21,11 @@ a {
 
 header {
   box-shadow: 0 2px 5px lightgray;
-  height: 10vh;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 header h1 {
@@ -41,7 +41,7 @@ nav ul {
 
 nav li {
   width: 40vw;
-  height: 3vh;
+  height: 4vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,12 +54,8 @@ nav li {
 
 .bloc {
   margin: 1vh auto 1vh auto;
-  width: 80vw;
-  height: 88vh;
+  min-height: 80vh;
   background: white;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px lightgray;
 }
 
 @media screen and (max-width: 900px) {

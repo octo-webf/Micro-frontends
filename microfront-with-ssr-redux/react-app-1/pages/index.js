@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className={styles.title}>Product List</h1>
+        <h2 className={styles.title}>Product List</h2>
         <ul className={styles.productsList}>
           {products.length > 0 ? (
             products.map((product) => (
