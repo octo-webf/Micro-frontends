@@ -13,7 +13,11 @@
     <ul v-else>
       <li>
         <CartItemSkeleton />
+      </li>
+      <li>
         <CartItemSkeleton />
+      </li>
+      <li>
         <CartItemSkeleton />
       </li>
     </ul>
@@ -58,6 +62,11 @@ a {
 h2 {
   margin-top: 10px auto;
   font-size: 32px;
+  text-align: center;
+}
+
+p {
+  margin-top: 10px auto;
   text-align: center;
 }
 
