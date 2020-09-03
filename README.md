@@ -7,13 +7,15 @@
 Research on the use of different methods to integrate micro-frontends :
 
 - [With iframes](#micro-frontends-using-iframes)
-- [With Express & EJS](#micro-frontends-using-express--ejs) (server-side rendering)
 - [With JavaScript](#micro-frontends-using-javascript)
-- [With React only](#micro-frontends-using-react-javascript-2)
+- [With React only](#micro-frontends-using-react)
 - With Custom Elements (Web Components)
   - [Simple example](#micro-frontends-using-custom-elements)
   - [With Redux store](#micro-frontends-using-custom-elements-with-redux)
   - [With Vuex store](#micro-frontends-using-custom-elements-with-vuex)
+- Server-side Rendered
+  - [Simple example](#micro-frontends-using-express--ejs-simple-example) - Express/EJS
+  - [Advanced example](#micro-frontends-using-express--ejs-advanced-example) - Express/EJS + sessionStorage + Redux/Vuex
 - [With Single-SPA](#micro-frontends-using-single-spa) Meta-framework (_More information on [Single-SPA's website](https://single-spa.js.org/)_)
 
 ## Micro-frontends using iframes
@@ -23,26 +25,6 @@ Go to `Micro-frontends/microfront-with-iframe/`
 1. In `./ngapp`, use the command `npm run dev` to launch the Angular app locally at http://localhost:5001/
 2. Idem in `./reactapp` & `./vueapp`, which will launch respectively at http://localhost:5002/ & http://localhost:5003/
 3. Launch in `./wrapperapp` the global app using `npm start` to see the result at http://localhost:5000/
-
----
-
-## Micro-frontends using Express & EJS
-
-_This method uses React & Angular as Micro-frontends rendered server-side & EJS to compose Micro-frontends server-side_
-
-Go to `Micro-frontends/microfront-with-express/`
-
-1. In the 3 `./react-X` folders, execute `npm run start:prod`
-
-This will launch 3 React micro-frontends at http://localhost:8001/, http://localhost:8002/ & http://localhost:8003/
-
-2. In the `./angular` folders, also execute `npm run start:prod`
-
-This will launch an Angular micro-frontends at http://localhost:8004/
-
-3. In the root folder, launch the express server with `node server.js`
-
-4. View the result at http://localhost:8000/
 
 ---
 
@@ -66,11 +48,11 @@ View the result at http://localhost:7000/
 
 ---
 
-## Micro-frontends using React (JavaScript 2)
+## Micro-frontends using React
 
 _This method uses React as Micro-frontends & to create Micro-frontends_
 
-Go to `Micro-frontends/microfront-with-js-2/` :
+Go to `Micro-frontends/microfront-with-react/` :
 
 1. In each folder execute `npm start`
 
@@ -127,6 +109,44 @@ Go to `Micro-frontends/microfront-with-wc-redux/` :
 
 2. In `./vuex-app` run `npm start` to serve the `main.js` file, which contains all the vuex logic in a json array file (with modifications for React). The result is served at http://localhost:4100/
 3. In `./wrapper-app`, run `npm start` to see the result at http://localhost:4000/
+
+---
+
+## Micro-frontends using Express & EJS (Simple Example)
+
+_This method uses React & Angular as Micro-frontends rendered server-side & EJS to compose Micro-frontends server-side_
+
+Go to `Micro-frontends/microfront-with-express/`
+
+1. In the 3 `./react-X` folders, execute `npm run start:prod`
+
+This will launch 3 React micro-frontends at http://localhost:8001/, http://localhost:8002/ & http://localhost:8003/
+
+2. In the `./angular` folders, also execute `npm run start:prod`
+
+This will launch an Angular micro-frontends at http://localhost:8004/
+
+3. In the root folder, launch the express server with `node server.js`
+
+4. View the result at http://localhost:8000/
+
+---
+
+## Micro-frontends using Express & EJS (Advanced Example)
+
+_Advanced Server-Side Rendered Micro-frontends using [Next.js](https://nextjs.org/) with Redux, [Nuxt.js](https://nuxtjs.org/) with Vuex and the sessionStorage to pass data from one page to the other_
+
+Go to `Micro-frontends/microfront-with-ssr-storage/`
+
+1. In the 2 `./react-app-X` and the `vue-app`folders, execute `npm run build && npm run start`
+
+This will launch the 3 micro-frontends respectively at http://localhost:8001/, http://localhost:8002/ & http://localhost:8003/
+
+2. In the`./common-content` folder, launch the server with `npm start` from which data will be fetched
+
+3. In the`./container-app` folder, launch the express server with `npm start`
+
+4. View the result at http://localhost:8000/
 
 ---
 
